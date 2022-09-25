@@ -14,4 +14,19 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
+
+    public void Shop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
+
+    public void Social()
+    {
+        SceneManager.LoadScene("Social");
+    }
+
+    public void Grove()
+    {
+        SceneManager.LoadScene("TheGrove");
+    }
 }

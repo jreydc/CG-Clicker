@@ -9,15 +9,13 @@ public class PrestiegeTextBox : MonoBehaviour
     public GameObject[] nextUpgrades;
     public Button button;
 
+    public bool bought;
+
     // Start is called before the first frame update
     void Start()
     {
+        bought = false;
         textbox.SetActive(false);
-
-        for (int i = 0; i < nextUpgrades.Length; i++)
-        {
-            nextUpgrades[i].SetActive(false);
-        }
     }
 
     // Update is called once per frame
@@ -35,6 +33,7 @@ public class PrestiegeTextBox : MonoBehaviour
     {
         CloseTextBox();
         button.interactable = false;
+        bought = true;
         for (int i = 0; i < nextUpgrades.Length; i++)
          {
              nextUpgrades[i].SetActive(true);

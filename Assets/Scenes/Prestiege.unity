@@ -309,6 +309,7 @@ MonoBehaviour:
   textbox: {fileID: 325346393}
   nextUpgrades: []
   button: {fileID: 2105113342}
+  bought: 0
 --- !u!1 &22850283
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +764,7 @@ MonoBehaviour:
   textbox: {fileID: 1462858707}
   nextUpgrades: []
   button: {fileID: 1799837551}
+  bought: 0
 --- !u!1 &63329779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,6 +1970,7 @@ MonoBehaviour:
   - {fileID: 1394202370}
   - {fileID: 1673477565}
   button: {fileID: 1406068640}
+  bought: 0
 --- !u!1 &235076828
 GameObject:
   m_ObjectHideFlags: 0
@@ -2446,6 +2449,7 @@ MonoBehaviour:
   nextUpgrades:
   - {fileID: 1030321380}
   button: {fileID: 2116052729}
+  bought: 0
 --- !u!1 &349322441
 GameObject:
   m_ObjectHideFlags: 0
@@ -4145,17 +4149,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528011922}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1410810621}
-  m_Father: {fileID: 550570092}
-  m_RootOrder: 1
+  m_Father: {fileID: 1530344036}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.6, y: -470.8}
+  m_AnchoredPosition: {x: -17.287848, y: -1096.2893}
   m_SizeDelta: {x: 192.6237, y: 62.6238}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528011924
@@ -4560,7 +4564,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 430721966}
-  - {fileID: 528011923}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4888,6 +4891,7 @@ MonoBehaviour:
   textbox: {fileID: 2060100888}
   nextUpgrades: []
   button: {fileID: 842662335}
+  bought: 0
 --- !u!1 &569541707
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,6 +5370,7 @@ MonoBehaviour:
   - {fileID: 817620539}
   - {fileID: 1853376134}
   button: {fileID: 1258299682}
+  bought: 0
 --- !u!1 &653643228
 GameObject:
   m_ObjectHideFlags: 0
@@ -7189,6 +7194,7 @@ MonoBehaviour:
   textbox: {fileID: 1356038998}
   nextUpgrades: []
   button: {fileID: 207302016}
+  bought: 0
 --- !u!1 &829956476
 GameObject:
   m_ObjectHideFlags: 0
@@ -7887,6 +7893,7 @@ MonoBehaviour:
   textbox: {fileID: 530129899}
   nextUpgrades: []
   button: {fileID: 463339821}
+  bought: 0
 --- !u!1 &914311605
 GameObject:
   m_ObjectHideFlags: 0
@@ -9054,7 +9061,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Infinite Potentail
+  m_text: 'Infinite Potential
 
 '
   m_isRightToLeft: 0
@@ -9591,6 +9598,7 @@ MonoBehaviour:
   - {fileID: 1224258755}
   - {fileID: 1645496186}
   button: {fileID: 1872526403}
+  bought: 0
 --- !u!1 &1038657765
 GameObject:
   m_ObjectHideFlags: 0
@@ -11918,6 +11926,7 @@ MonoBehaviour:
   textbox: {fileID: 1087887429}
   nextUpgrades: []
   button: {fileID: 710881177}
+  bought: 0
 --- !u!1 &1216765409
 GameObject:
   m_ObjectHideFlags: 0
@@ -12110,6 +12119,7 @@ MonoBehaviour:
   - {fileID: 865729973}
   - {fileID: 1203663243}
   button: {fileID: 1161179517}
+  bought: 0
 --- !u!1 &1241572060
 GameObject:
   m_ObjectHideFlags: 0
@@ -13743,6 +13753,7 @@ MonoBehaviour:
   nextUpgrades:
   - {fileID: 0}
   button: {fileID: 1797720842}
+  bought: 0
 --- !u!1 &1406068638
 GameObject:
   m_ObjectHideFlags: 0
@@ -14933,6 +14944,7 @@ RectTransform:
   - {fileID: 919810835}
   - {fileID: 852534365}
   - {fileID: 1114078029}
+  - {fileID: 528011923}
   m_Father: {fileID: 430721966}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15127,6 +15139,7 @@ MonoBehaviour:
   textbox: {fileID: 1136401288}
   nextUpgrades: []
   button: {fileID: 656843602}
+  bought: 0
 --- !u!1 &1616157988
 GameObject:
   m_ObjectHideFlags: 0
@@ -15394,6 +15407,7 @@ MonoBehaviour:
   - {fileID: 44440184}
   - {fileID: 21710930}
   button: {fileID: 80462743}
+  bought: 0
 --- !u!1 &1648407145
 GameObject:
   m_ObjectHideFlags: 0
@@ -16115,6 +16129,7 @@ MonoBehaviour:
   textbox: {fileID: 1957080639}
   nextUpgrades: []
   button: {fileID: 788767080}
+  bought: 0
 --- !u!1 &1734451143
 GameObject:
   m_ObjectHideFlags: 0
@@ -17087,8 +17102,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1803923243}
   - component: {fileID: 1803923242}
+  - component: {fileID: 1803923244}
   m_Layer: 0
-  m_Name: Naviagtion
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17120,6 +17136,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1803923244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803923241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72bca48034602c4b9296e12edf7c18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unusedButtons:
+  - {fileID: 1394202370}
+  - {fileID: 1673477565}
+  - {fileID: 344140120}
+  - {fileID: 1030321380}
+  - {fileID: 640228148}
+  - {fileID: 1595597721}
+  - {fileID: 1853376134}
+  - {fileID: 817620539}
+  - {fileID: 1645496186}
+  - {fileID: 44440184}
+  - {fileID: 2063777246}
+  - {fileID: 21710930}
+  - {fileID: 1224258755}
+  - {fileID: 553903525}
+  - {fileID: 865729973}
+  - {fileID: 1203663243}
 --- !u!1 &1817223368
 GameObject:
   m_ObjectHideFlags: 0
@@ -17371,6 +17416,7 @@ MonoBehaviour:
   textbox: {fileID: 1368828662}
   nextUpgrades: []
   button: {fileID: 838270018}
+  bought: 0
 --- !u!1 &1853497282
 GameObject:
   m_ObjectHideFlags: 0
@@ -19979,6 +20025,7 @@ MonoBehaviour:
   textbox: {fileID: 1866178026}
   nextUpgrades: []
   button: {fileID: 1953732937}
+  bought: 0
 --- !u!1 &2105113341
 GameObject:
   m_ObjectHideFlags: 0
