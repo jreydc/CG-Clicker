@@ -206,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 992933602}
         m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: BuyAutoClick
         m_Mode: 1
@@ -1743,8 +1743,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 992933602}
-        m_TargetAssemblyTypeName: UpgradesFunction, Assembly-CSharp
-        m_MethodName: AddUpgrade2
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+        m_MethodName: BuyAutoClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2105,7 +2105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2777,7 +2777,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 992933602}
         m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: BuyAutoClick
         m_Mode: 1
@@ -3145,7 +3145,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 992933602}
         m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: BuyAutoClick
         m_Mode: 1
@@ -3645,7 +3645,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 992933603}
-  - component: {fileID: 992933604}
   - component: {fileID: 992933602}
   - component: {fileID: 992933604}
   m_Layer: 0
@@ -3664,9 +3663,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 992933601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83409aa09edbc724c807cdff3bac3744, type: 3}
+  m_Script: {fileID: 11500000, guid: e1b04f2592a883f4eb95b13797adeffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 771622832}
+  scoreToAddText: {fileID: 674065582}
+  autoScoreToAddText: {fileID: 1378730848}
+  clickUpgradeText: {fileID: 628469584}
+  autoUpgradeText: {fileID: 2034626632}
+  clickUpgradeButton: {fileID: 2085721237}
+  autoUpgradeButton: {fileID: 524567687}
+  particle: {fileID: 3919873485891022001, guid: 35791ebf6e80da645924544ca3396a36, type: 3}
 --- !u!4 &992933603
 Transform:
   m_ObjectHideFlags: 0
@@ -3690,22 +3697,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 992933601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< Updated upstream
-  m_Script: {fileID: 11500000, guid: ec86930e9bcff074cb008ae1183c6c37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _score: 0
-  _scoreToAdd: 1
-  _passiveScore: 0
-  scoreTxt: {fileID: 771622832}
-  TPSTxt: {fileID: 674065582}
-  SPSTxt: {fileID: 1378730848}
-  particleEffect: {fileID: 3919873485891022001, guid: 35791ebf6e80da645924544ca3396a36, type: 3}
-=======
   m_Script: {fileID: 11500000, guid: ea81928e54eae384dac1d635698b4992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> Stashed changes
 --- !u!1 &1031143348
 GameObject:
   m_ObjectHideFlags: 0
@@ -4937,8 +4931,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 992933602}
-        m_TargetAssemblyTypeName: UpgradesFunction, Assembly-CSharp
-        m_MethodName: AddUpgrade4
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+        m_MethodName: BuyAutoClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5069,7 +5063,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 992933602}
         m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: BuyAutoClick
         m_Mode: 1
@@ -5273,7 +5267,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 992933602}
         m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: BuyAutoClick
         m_Mode: 1
@@ -5493,7 +5487,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 60
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6032,9 +6026,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 992933604}
-        m_TargetAssemblyTypeName: PointsFunction, Assembly-CSharp
-        m_MethodName: OnClick_AddScore
+      - m_Target: {fileID: 992933602}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+        m_MethodName: AddScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6678,8 +6672,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 992933602}
-        m_TargetAssemblyTypeName: UpgradesFunction, Assembly-CSharp
-        m_MethodName: AddUpgrade3
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+        m_MethodName: BuyAutoClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6823,7 +6817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 65
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7225,7 +7219,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7559,8 +7553,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 992933602}
-        m_TargetAssemblyTypeName: UpgradesFunction, Assembly-CSharp
-        m_MethodName: AddUpgrade1
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+        m_MethodName: BuyClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
