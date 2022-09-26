@@ -7,6 +7,7 @@ public class PrestiegeTextBox : MonoBehaviour
 {
     public GameObject textbox;
     public GameObject[] nextUpgrades;
+    public GameObject[] lines;
     public Button button;
 
     public bool bought;
@@ -38,6 +39,10 @@ public class PrestiegeTextBox : MonoBehaviour
          {
              nextUpgrades[i].SetActive(true);
          }
-       
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            lines[i].SetActive(true);
+        }
     }
 }

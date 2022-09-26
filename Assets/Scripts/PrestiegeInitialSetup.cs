@@ -5,6 +5,7 @@ using UnityEngine;
 public class PrestiegeInitialSetup : MonoBehaviour
 {
     public GameObject[] unusedButtons;
+    public GameObject[] lines;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,11 @@ public class PrestiegeInitialSetup : MonoBehaviour
             {
                 unusedButtons[i].SetActive(false);
             }
+        }
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+           lines[i].SetActive(false);
         }
     }
 }
