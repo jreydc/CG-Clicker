@@ -28,7 +28,7 @@ public class PointsFunction : MonoBehaviour
     public void OnClick_AddScore()
     {
         _score = EconomyMain.addScore(_scoreToAdd, _score);
-        Instantiate(particleEffect);
+        Instantiate(particleEffect, transform.position, transform.rotation);
     }
 
     public void OnClick_HoldAddScore()

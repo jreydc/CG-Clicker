@@ -15,23 +15,8 @@ public class ButtonAnimation : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public void Hover()
-    {
-        anim.Play("Hover");
-    }
-
-    public void UnHover()
-    {
-        anim.Play("UnHover");
-    }
-
-    public void Click()
-    {
-        anim.Play("Click");
-    }
-
     public void UnClick()
     {
-        anim.Play("UnClick");
+        anim.Play("UnClick", 0, 0);
     }
 }
