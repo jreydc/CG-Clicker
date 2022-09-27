@@ -49,5 +49,50 @@ public class UpgradesFunction : MonoBehaviour
             pfMain._passiveScore += 5;
         }
     }
+
+    public void AddUpgrade5()
+    {
+        if (pfMain._score >= 100)
+        {
+            pfMain._score = EconomyMain.deductScore(100, pfMain._score);
+            pfMain._passiveScore += 10;
+        }
+    }
+
+    public void AddUpgrade6()
+    {
+        if (pfMain._score >= 120)
+        {
+            pfMain._score = EconomyMain.deductScore(120, pfMain._score);
+            pfMain._passiveScore += 20;
+        }
+    }
+
+    public void AddUpgrade7()
+    {
+        if (pfMain._score >= 150)
+        {
+            pfMain._score = EconomyMain.deductScore(150, pfMain._score);
+            pfMain._passiveScore += 30;
+        }
+    }
+
+    public void AddUpgrade8()
+    {
+        if (pfMain._score >= 200)
+        {
+            pfMain._score = EconomyMain.deductScore(200, pfMain._score);
+            pfMain._passiveScore += 50;
+        }
+    }
+
+    public void AddUpgrade9()
+    {
+        if (pfMain._score >= 1000)
+        {
+            pfMain._score = EconomyMain.deductScore(1000, pfMain._score);
+            pfMain._passiveScore += 100;
+        }
+    }
     #endregion
 }

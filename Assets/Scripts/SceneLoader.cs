@@ -21,7 +21,7 @@ public class SceneLoader : MonoBehaviour
     public void MainScreen()
     {
         SceneManager.LoadScene("Main");
-        dataHandler.SaveData();
+        //dataHandler.SaveData();
     }
 
     public void Shop()
