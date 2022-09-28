@@ -6,11 +6,13 @@ using UnityEngine;
 public class DataHandler : MonoBehaviour
 {
     [SerializeField] private PointsFunction pfMain;
+    [SerializeField] private NewUpgradesFunction upgradeMain;
     string jsonData;
 
     private void Awake()
     {
         pfMain = FindObjectOfType<PointsFunction>();
+        upgradeMain = FindObjectOfType<NewUpgradesFunction>();
         LoadData();
     }
 
@@ -27,6 +29,9 @@ public class DataHandler : MonoBehaviour
         pfMain._score = loadedPData.currentPoints;
         pfMain._scoreToAdd = loadedPData.currentTPS;
         pfMain._passiveScore = loadedPData.currentSPS;
+        upgradeMain.upgradeLevelList = loadedPData.upgradeLevelList;
+        upgradeMain.currentUpgradeCost = loadedPData.currentUpgradeCost;
+        upgradeMain.incrementalUpgradeCost = loadedPData.currentIteration;
     }
 
     public void SaveData()
@@ -36,6 +41,12 @@ public class DataHandler : MonoBehaviour
         pData.currentPoints = pfMain._score;
         pData.currentTPS = pfMain._scoreToAdd;
         pData.currentSPS = pfMain._passiveScore;
+        pData.upgradeLevelList = new List<int>();
+        pData.upgradeLevelList = upgradeMain.upgradeLevelList;
+        pData.currentUpgradeCost = new List<int>();
+        pData.currentUpgradeCost = upgradeMain.currentUpgradeCost;
+        pData.currentIteration = new List<int>();
+        pData.currentIteration = upgradeMain.incrementalUpgradeCost;
 
         jsonData = JsonUtility.ToJson(pData);
         File.WriteAllText(Application.dataPath + "/dataFile.json", jsonData);
@@ -52,5 +63,9 @@ public class DataHandler : MonoBehaviour
         public double currentPoints;
         public int currentTPS;
         public int currentSPS;
+
+        public List<int> upgradeLevelList;
+        public List<int> currentUpgradeCost;
+        public List<int> currentIteration;
     }
 }
