@@ -24,6 +24,13 @@ public class PointsFunction : MonoBehaviour
     float elapsedHoldingTime;
     float elapsedTime;
 
+    Animator anim;
+
+    private void Start()
+    {
+        anim = GameObject.Find("Score").GetComponent<Animator>();
+    }
+
     //Used on the button, will add score and can even be used on other functions
     public void OnClick_AddScore()
     {
@@ -105,6 +112,8 @@ public class PointsFunction : MonoBehaviour
         {
             elapsedTime = elapsedTime % 0.5f;
             _score = EconomyMain.autoAddScore(_passiveScore, _score);
+
+            anim.Play("Score", 0, 0);
         }
     }
 }
