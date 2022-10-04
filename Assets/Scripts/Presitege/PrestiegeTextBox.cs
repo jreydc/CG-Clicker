@@ -10,6 +10,10 @@ public class PrestiegeTextBox : MonoBehaviour
     public GameObject[] lines;
     public Button button;
 
+    PrestigeManager manager;
+
+    public int ID;
+
     public bool bought;
 
     // Start is called before the first frame update
@@ -17,6 +21,8 @@ public class PrestiegeTextBox : MonoBehaviour
     {
         bought = false;
         textbox.SetActive(false);
+
+        manager = GameObject.Find("PrestigeHandler").GetComponent<PrestigeManager>();
     }
 
     // Update is called once per frame
@@ -35,6 +41,8 @@ public class PrestiegeTextBox : MonoBehaviour
         CloseTextBox();
         button.interactable = false;
         bought = true;
+        
+
         for (int i = 0; i < nextUpgrades.Length; i++)
          {
              nextUpgrades[i].SetActive(true);
@@ -44,5 +52,7 @@ public class PrestiegeTextBox : MonoBehaviour
         {
             lines[i].SetActive(true);
         }
+
+        manager.BuyPrestige(ID);
     }
 }

@@ -16,6 +16,7 @@ public class PointsFunction : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreTxt;
     [SerializeField] private TextMeshProUGUI TPSTxt;
     [SerializeField] private TextMeshProUGUI SPSTxt;
+    [SerializeField] private TextMeshProUGUI PresTxt;
 
     [SerializeField] private GameObject particleEffect;
 
@@ -25,17 +26,21 @@ public class PointsFunction : MonoBehaviour
     float elapsedTime;
 
     Animator anim;
+    [SerializeField] private PrestigeManager pres;
 
-    private void Start()
+    private void Awake()
     {
         anim = GameObject.Find("Score").GetComponent<Animator>();
+        pres = GameObject.Find("PrestigeHandler").GetComponent<PrestigeManager>();
     }
 
     //Used on the button, will add score and can even be used on other functions
     public void OnClick_AddScore()
     {
-        _score = EconomyMain.addScore(_scoreToAdd, _score);
+        _score = EconomyMain.addScore(Mathf.RoundToInt(_scoreToAdd * pres.clickMulti), _score);
         Instantiate(particleEffect, transform.position, transform.rotation);
+
+        pres.AddPoint(_scoreToAdd);
     }
 
     public void OnClick_HoldAddScore()
@@ -51,8 +56,9 @@ public class PointsFunction : MonoBehaviour
     private void FixedUpdate()
     {
         countingSystem();
-        TPSTxt.text = "" + _scoreToAdd;
-        SPSTxt.text = _passiveScore + " / s";
+        TPSTxt.text = "" + Mathf.RoundToInt(_scoreToAdd * pres.clickMulti);
+        SPSTxt.text = Mathf.RoundToInt(_passiveScore * pres.autoMulti) + " / s";
+        PresTxt.text = "Prestige Points: " + pres.presPoint;
 
         AutoAddScore();
         HoldClickButton();
@@ -67,7 +73,9 @@ public class PointsFunction : MonoBehaviour
             if (elapsedHoldingTime >= 1f)
             {
                 elapsedHoldingTime = elapsedTime % 1f;
-                _score = EconomyMain.addScore(_scoreToAdd, _score);
+                _score = EconomyMain.addScore(Mathf.RoundToInt(_scoreToAdd * pres.clickMulti), _score);
+
+                pres.AddPoint(_scoreToAdd);
             }
         }
     }
@@ -111,7 +119,9 @@ public class PointsFunction : MonoBehaviour
         if(elapsedTime >= 1f)
         {
             elapsedTime = elapsedTime % 0.5f;
-            _score = EconomyMain.autoAddScore(_passiveScore, _score);
+            _score = EconomyMain.autoAddScore(Mathf.RoundToInt(_passiveScore * pres.autoMulti), _score);
+
+            pres.AutoAddPoint(_passiveScore);
 
             anim.Play("Score", 0, 0);
         }
