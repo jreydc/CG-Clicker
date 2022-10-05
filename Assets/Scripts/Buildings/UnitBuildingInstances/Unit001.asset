@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Unit001
   m_EditorClassIdentifier: 
   displayImage: {fileID: 0}
-  baseCost: 0
-  baseSol: 0
-  currentOwned: 0
+  baseCost: 15
+  currentCost: 26
+  baseSol: 0.1
+  currentSol: 0.5
+  currentOwned: 4
+  unitLevel: 1

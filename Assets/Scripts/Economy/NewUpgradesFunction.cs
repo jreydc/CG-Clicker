@@ -42,7 +42,7 @@ public class NewUpgradesFunction : MonoBehaviour
                 {
                     if (pfMain._score >= currentUpgradeCost[0])
                     {
-                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[0], pfMain._score);
+                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[0], (float)pfMain._score);
                         pfMain._scoreToAdd += 1;
                         upgradeLevelList[0] += 1;
 
@@ -58,7 +58,7 @@ public class NewUpgradesFunction : MonoBehaviour
                 {
                     if (pfMain._score >= currentUpgradeCost[1])
                     {
-                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[1], pfMain._score);
+                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[1], (float)pfMain._score);
                         pfMain._passiveScore += 1;
                         upgradeLevelList[1] += 1;
 
@@ -74,7 +74,7 @@ public class NewUpgradesFunction : MonoBehaviour
                 {
                     if (pfMain._score >= currentUpgradeCost[2])
                     {
-                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[2], pfMain._score);
+                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[2], (float)pfMain._score);
                         pfMain._passiveScore += 2;
                         upgradeLevelList[2] += 1;
 
@@ -90,7 +90,7 @@ public class NewUpgradesFunction : MonoBehaviour
                 {
                     if (pfMain._score >= currentUpgradeCost[3])
                     {
-                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[3], pfMain._score);
+                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[3], (float)pfMain._score);
                         pfMain._passiveScore += 5;
                         upgradeLevelList[3] += 1;
 
@@ -106,7 +106,7 @@ public class NewUpgradesFunction : MonoBehaviour
                 {
                     if (pfMain._score >= currentUpgradeCost[4])
                     {
-                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[4], pfMain._score);
+                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[4], (float)pfMain._score);
                         pfMain._passiveScore += 10;
                         upgradeLevelList[4] += 1;
 
@@ -122,7 +122,7 @@ public class NewUpgradesFunction : MonoBehaviour
                 {
                     if (pfMain._score >= currentUpgradeCost[5])
                     {
-                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[5], pfMain._score);
+                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[5], (float)pfMain._score);
                         pfMain._passiveScore += 20;
                         upgradeLevelList[5] += 1;
 
@@ -138,7 +138,7 @@ public class NewUpgradesFunction : MonoBehaviour
                 {
                     if (pfMain._score >= currentUpgradeCost[6])
                     {
-                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[6], pfMain._score);
+                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[6], (float)pfMain._score);
                         pfMain._passiveScore += 30;
                         upgradeLevelList[6] += 1;
 
@@ -154,7 +154,7 @@ public class NewUpgradesFunction : MonoBehaviour
                 {
                     if (pfMain._score >= currentUpgradeCost[7])
                     {
-                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[7], pfMain._score);
+                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[7], (float)pfMain._score);
                         pfMain._passiveScore += 50;
                         upgradeLevelList[7] += 1;
 
@@ -170,7 +170,7 @@ public class NewUpgradesFunction : MonoBehaviour
                 {
                     if (pfMain._score >= currentUpgradeCost[8])
                     {
-                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[8], pfMain._score);
+                        pfMain._score = EconomyMain.deductScore(currentUpgradeCost[8], (float)pfMain._score);
                         pfMain._passiveScore += 100;
                         upgradeLevelList[8] += 1;
 

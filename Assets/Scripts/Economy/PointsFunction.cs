@@ -37,7 +37,7 @@ public class PointsFunction : MonoBehaviour
     //Used on the button, will add score and can even be used on other functions
     public void OnClick_AddScore()
     {
-        _score = EconomyMain.addScore(Mathf.RoundToInt(_scoreToAdd * pres.clickMulti), _score);
+        _score = EconomyMain.addScore(Mathf.RoundToInt(_scoreToAdd * pres.clickMulti), (float)_score);
         Instantiate(particleEffect, transform.position, transform.rotation);
 
         pres.AddPoint(_scoreToAdd);
@@ -73,7 +73,7 @@ public class PointsFunction : MonoBehaviour
             if (elapsedHoldingTime >= 1f)
             {
                 elapsedHoldingTime = elapsedTime % 1f;
-                _score = EconomyMain.addScore(Mathf.RoundToInt(_scoreToAdd * pres.clickMulti), _score);
+                _score = EconomyMain.addScore(Mathf.RoundToInt(_scoreToAdd * pres.clickMulti), (float)_score);
 
                 pres.AddPoint(_scoreToAdd);
             }
@@ -119,7 +119,7 @@ public class PointsFunction : MonoBehaviour
         if(elapsedTime >= 1f)
         {
             elapsedTime = elapsedTime % 0.5f;
-            _score = EconomyMain.autoAddScore(Mathf.RoundToInt(_passiveScore * pres.autoMulti), _score);
+            _score = EconomyMain.autoAddScore(Mathf.RoundToInt(_passiveScore * pres.autoMulti), (float)_score);
 
             pres.AutoAddPoint(_passiveScore);
 

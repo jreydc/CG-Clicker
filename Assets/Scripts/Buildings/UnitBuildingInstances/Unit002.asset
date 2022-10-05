@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5cfedbf1b33d4e43a1b3877a401b0fa, type: 3}
   m_Name: Unit002
   m_EditorClassIdentifier: 
-  baseCost: 0
-  baseSol: 0
+  displayImage: {fileID: 0}
+  baseCost: 100
+  currentCost: 100
+  baseSol: 1
   currentOwned: 0
+  unitLevel: 1

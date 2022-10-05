@@ -8,21 +8,21 @@ namespace EconomyManager
     public class EconomyMain : MonoBehaviour
     {
         //Add Scores to your iterator
-        internal static double addScore(int points, double current)
+        internal static float addScore(float points, float current)
         {
             current += points;
             return current;
         }
 
         //Automatic farming of points
-        internal static double autoAddScore(int points, double current)
+        internal static float autoAddScore(float points, float current)
         {
             current += points;
             return current;
         }
 
         //For Purchasing Upgrades/Deductions
-        internal static double deductScore(int points, double current)
+        internal static float deductScore(float points, float current)
         {
             current -= points;
             return current;
