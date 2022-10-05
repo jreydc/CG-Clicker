@@ -310,7 +310,9 @@ MonoBehaviour:
   nextUpgrades: []
   lines: []
   button: {fileID: 2105113342}
+  buyButton: {fileID: 416964766}
   ID: 2
+  cost: 10
   bought: 0
 --- !u!1 &22850283
 GameObject:
@@ -501,7 +503,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your Sol per second gains 25% of your tapping power
+  m_text: 'Adds 2.5% to Sol per second and Tapping Power
 
 '
   m_isRightToLeft: 0
@@ -767,7 +769,9 @@ MonoBehaviour:
   nextUpgrades: []
   lines: []
   button: {fileID: 1799837551}
+  buyButton: {fileID: 30406567}
   ID: 2
+  cost: 10
   bought: 0
 --- !u!1 &63329779
 GameObject:
@@ -826,7 +830,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 100 Million Sol
+  m_text: 'Cost: 10 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -1245,7 +1249,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 50 Million Sol
+  m_text: 'Cost: 10 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -2131,7 +2135,9 @@ MonoBehaviour:
   - {fileID: 1260117018}
   - {fileID: 2007662849}
   button: {fileID: 1406068640}
+  buyButton: {fileID: 470022781}
   ID: 3
+  cost: 1
   bought: 0
 --- !u!1 &235076828
 GameObject:
@@ -2190,7 +2196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Adds 50% of your Sol per second to your tapping power.
+  m_text: 'Adds 2.5% to Sol per second and Tapping Power
 
 '
   m_isRightToLeft: 0
@@ -2689,7 +2695,9 @@ MonoBehaviour:
   lines:
   - {fileID: 1137039401}
   button: {fileID: 2116052729}
+  buyButton: {fileID: 700178564}
   ID: 3
+  cost: 3
   bought: 0
 --- !u!1 &349322441
 GameObject:
@@ -2748,7 +2756,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 1 Billion Sol
+  m_text: 'Cost: 10 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -2884,7 +2892,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 100 Million Sol
+  m_text: 'Cost: 10 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -3422,7 +3430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 100 Million Sol
+  m_text: 'Cost: 10 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -5359,7 +5367,9 @@ MonoBehaviour:
   nextUpgrades: []
   lines: []
   button: {fileID: 842662335}
+  buyButton: {fileID: 2540557}
   ID: 0
+  cost: 10
   bought: 0
 --- !u!1 &558330728
 GameObject:
@@ -5643,7 +5653,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Increases idle bonus by 30%
+  m_text: '+5% Sol per second
 
 '
   m_isRightToLeft: 0
@@ -5779,7 +5789,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 1 Million Sol
+  m_text: 'Cost: 1 Prestige Point
 
 '
   m_isRightToLeft: 0
@@ -5923,7 +5933,9 @@ MonoBehaviour:
   - {fileID: 552808359}
   - {fileID: 523184157}
   button: {fileID: 1258299682}
+  buyButton: {fileID: 1896146699}
   ID: 1
+  cost: 5
   bought: 0
 --- !u!1 &653643228
 GameObject:
@@ -6536,7 +6548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+10% Sol per second if your building count ends in 0
+  m_text: '+5% Sol per second
 
 '
   m_isRightToLeft: 0
@@ -6940,7 +6952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tap has small chance of producing double
+  m_text: '+5% Tapping Power
 
 '
   m_isRightToLeft: 0
@@ -7076,7 +7088,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+20% Tapping Power
+  m_text: '+5% Tapping Power
 
 '
   m_isRightToLeft: 0
@@ -7345,12 +7357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'One of two effects:
-
-    - Tap continuously for 30 seconds and gain +30%
-    tapping power
-
-    - Idle for 5 minutes and gain +30% Sol per second
+  m_text: 'Adds 2.5% to Sol per second and Tapping Power
 
 '
   m_isRightToLeft: 0
@@ -7749,7 +7756,9 @@ MonoBehaviour:
   nextUpgrades: []
   lines: []
   button: {fileID: 207302016}
+  buyButton: {fileID: 914311607}
   ID: 1
+  cost: 10
   bought: 0
 --- !u!1 &829956476
 GameObject:
@@ -8450,7 +8459,9 @@ MonoBehaviour:
   nextUpgrades: []
   lines: []
   button: {fileID: 463339821}
+  buyButton: {fileID: 325162005}
   ID: 0
+  cost: 10
   bought: 0
 --- !u!1 &885873846
 GameObject:
@@ -9028,7 +9039,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Adds 10% to Sol per second and Tapping Power
+  m_text: 'Adds 2.5% to Sol per second and Tapping Power
 
 '
   m_isRightToLeft: 0
@@ -10238,7 +10249,9 @@ MonoBehaviour:
   - {fileID: 267605292}
   - {fileID: 177491484}
   button: {fileID: 1872526403}
+  buyButton: {fileID: 1759456120}
   ID: 3
+  cost: 5
   bought: 0
 --- !u!1 &1038657765
 GameObject:
@@ -10583,7 +10596,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 20 Million Sol
+  m_text: 'Cost: 5 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -10719,7 +10732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 1 Billion Sol
+  m_text: 'Cost: 10 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -11231,7 +11244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 100 Million Sol
+  m_text: 'Cost: 10 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -12643,7 +12656,9 @@ MonoBehaviour:
   nextUpgrades: []
   lines: []
   button: {fileID: 710881177}
+  buyButton: {fileID: 2140862180}
   ID: 0
+  cost: 10
   bought: 0
 --- !u!1 &1216765409
 GameObject:
@@ -12844,7 +12859,9 @@ MonoBehaviour:
   - {fileID: 549992070}
   - {fileID: 1686205286}
   button: {fileID: 1161179517}
+  buyButton: {fileID: 1588836623}
   ID: 0
+  cost: 5
   bought: 0
 --- !u!1 &1241572060
 GameObject:
@@ -13992,7 +14009,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 50 Million Sol
+  m_text: 'Cost: 5 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -14261,7 +14278,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tapping the tree may make it drop a fruit containing a bonus
+  m_text: '+5% Tapping Power
 
 '
   m_isRightToLeft: 0
@@ -14555,7 +14572,9 @@ MonoBehaviour:
   - {fileID: 0}
   lines: []
   button: {fileID: 1797720842}
+  buyButton: {fileID: 829956478}
   ID: 3
+  cost: 3
   bought: 0
 --- !u!1 &1406068638
 GameObject:
@@ -15349,7 +15368,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 10 Million Sol
+  m_text: 'Cost: 3 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -15619,7 +15638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 100 Million Sol
+  m_text: 'Cost: 10 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -16077,7 +16096,9 @@ MonoBehaviour:
   nextUpgrades: []
   lines: []
   button: {fileID: 656843602}
+  buyButton: {fileID: 2013575133}
   ID: 1
+  cost: 10
   bought: 0
 --- !u!1 &1616157988
 GameObject:
@@ -16211,7 +16232,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 100 Million Sol
+  m_text: 'Cost: 10 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -16355,7 +16376,9 @@ MonoBehaviour:
   - {fileID: 1909682291}
   - {fileID: 885873846}
   button: {fileID: 80462743}
+  buyButton: {fileID: 774565318}
   ID: 2
+  cost: 5
   bought: 0
 --- !u!1 &1648407145
 GameObject:
@@ -16414,7 +16437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 100 Million Sol
+  m_text: 'Cost: 10 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -17079,7 +17102,9 @@ MonoBehaviour:
   nextUpgrades: []
   lines: []
   button: {fileID: 788767080}
+  buyButton: {fileID: 1910447345}
   ID: 3
+  cost: 3
   bought: 0
 --- !u!1 &1686205286
 GameObject:
@@ -17213,7 +17238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+20% Sol per second if you aren''t tapping
+  m_text: '+5% Sol per second
 
 '
   m_isRightToLeft: 0
@@ -17712,7 +17737,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 10 Million Sol
+  m_text: 'Cost: 3 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -18539,7 +18564,9 @@ MonoBehaviour:
   nextUpgrades: []
   lines: []
   button: {fileID: 838270018}
+  buyButton: {fileID: 1354603896}
   ID: 1
+  cost: 10
   bought: 0
 --- !u!1 &1853497282
 GameObject:
@@ -18809,7 +18836,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 10 Million Sol
+  m_text: 'Cost: 3 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -20059,7 +20086,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+1% Sol per second for every 10 upgrades/buildings you own
+  m_text: '+5% Sol per second
 
 '
   m_isRightToLeft: 0
@@ -20411,7 +20438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Increases continuous tapping bonus by 30%
+  m_text: '+5% Tapping Power
 
 '
   m_isRightToLeft: 0
@@ -21525,7 +21552,9 @@ MonoBehaviour:
   nextUpgrades: []
   lines: []
   button: {fileID: 1953732937}
+  buyButton: {fileID: 797563851}
   ID: 2
+  cost: 10
   bought: 0
 --- !u!1 &2068174453
 GameObject:
@@ -21792,7 +21821,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 50 Million Sol
+  m_text: 'Cost: 5 Prestige Points
 
 '
   m_isRightToLeft: 0
@@ -22194,7 +22223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your Sol per second gains 25% of your tapping power
+  m_text: 'Adds 2.5% to Sol per second and Tapping Power
 
 '
   m_isRightToLeft: 0
