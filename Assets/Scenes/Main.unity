@@ -6345,6 +6345,7 @@ GameObject:
   - component: {fileID: 992933604}
   - component: {fileID: 992933605}
   - component: {fileID: 992933606}
+  - component: {fileID: 992933602}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -6352,6 +6353,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &992933602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992933601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb3a44ac2e242843a9a75521c834ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &992933603
 Transform:
   m_ObjectHideFlags: 0
@@ -10485,6 +10498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1783584595}
   - component: {fileID: 1783584596}
+  - component: {fileID: 1783584597}
   m_Layer: 0
   m_Name: DataManager
   m_TagString: Untagged
@@ -10520,6 +10534,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pfMain: {fileID: 0}
   upgradeMain: {fileID: 0}
+--- !u!114 &1783584597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783584594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961d6759dac62884ba07f8c723204f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingUnitInstance:
+  - {fileID: 11400000, guid: 78383118727185f4786bea735b00bb90, type: 2}
+  - {fileID: 11400000, guid: ea0f36732222587489b080a412ef23df, type: 2}
+  fileName: unitDataInstance.json
 --- !u!1 &1790419203
 GameObject:
   m_ObjectHideFlags: 0
