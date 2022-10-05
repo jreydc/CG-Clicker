@@ -8,11 +8,11 @@ public class PrestiegeTextBox : MonoBehaviour
     public GameObject textbox;
     public GameObject[] nextUpgrades;
     public GameObject[] lines;
-    public Button button;
+    public Button button, buyButton;
 
     PrestigeManager manager;
 
-    public int ID;
+    public int ID, cost;
 
     public bool bought;
 
@@ -23,6 +23,18 @@ public class PrestiegeTextBox : MonoBehaviour
         textbox.SetActive(false);
 
         manager = GameObject.Find("PrestigeHandler").GetComponent<PrestigeManager>();
+    }
+
+    private void Update()
+    {
+        if(manager.presPoint >= cost && !bought)
+        {
+            buyButton.interactable = true;
+        }
+        else
+        {
+            buyButton.interactable = false;
+        }
     }
 
     // Update is called once per frame
@@ -39,6 +51,7 @@ public class PrestiegeTextBox : MonoBehaviour
     public void BuyUpgrade()
     {
         CloseTextBox();
+        buyButton.interactable = false;
         button.interactable = false;
         bought = true;
         
@@ -53,6 +66,6 @@ public class PrestiegeTextBox : MonoBehaviour
             lines[i].SetActive(true);
         }
 
-        manager.BuyPrestige(ID);
+        manager.BuyPrestige(ID, cost);
     }
 }

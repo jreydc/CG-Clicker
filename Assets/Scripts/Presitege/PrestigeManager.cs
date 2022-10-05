@@ -46,7 +46,7 @@ public class PrestigeManager : MonoBehaviour
         }
     }
 
-    public void BuyPrestige(int ID)
+    public void BuyPrestige(int ID, int cost)
     {
         switch (ID)
         {
@@ -62,6 +62,11 @@ public class PrestigeManager : MonoBehaviour
                 autoMulti += 0.025f;
                 clickMulti += 0.025f;
                 break;
+        }
+
+        if (presPoint >= cost)
+        {
+            presPoint -= cost;
         }
     }
 }
