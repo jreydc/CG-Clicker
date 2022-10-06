@@ -25,20 +25,46 @@ public class PrestigeSaveLoad : MonoBehaviour
         jsonData = File.ReadAllText(Application.dataPath + "/dataFile.json");
         Data loadedPData = JsonUtility.FromJson<Data>(jsonData);
 
-        for (int i = 0; i < loadedPData.presCheck.Length; i++)
-        {
-            prestigeData.checkers[i] = loadedPData.presCheck[i];
-        }
+        prestigeData.checkers[0] = loadedPData.upgrade0;
+        prestigeData.checkers[1] = loadedPData.upgrade1;
+        prestigeData.checkers[2] = loadedPData.upgrade2;
+        prestigeData.checkers[3] = loadedPData.upgrade3;
+        prestigeData.checkers[4] = loadedPData.upgrade4;
+        prestigeData.checkers[5] = loadedPData.upgrade5;
+        prestigeData.checkers[6] = loadedPData.upgrade6;
+        prestigeData.checkers[7] = loadedPData.upgrade7;
+        prestigeData.checkers[8] = loadedPData.upgrade8;
+        prestigeData.checkers[9] = loadedPData.upgrade9;
+        prestigeData.checkers[10] = loadedPData.upgrade10;
+        prestigeData.checkers[11] = loadedPData.upgrade11;
+        prestigeData.checkers[12] = loadedPData.upgrade12;
+        prestigeData.checkers[13] = loadedPData.upgrade13;
+        prestigeData.checkers[14] = loadedPData.upgrade14;
+        prestigeData.checkers[15] = loadedPData.upgrade15;
+        prestigeData.checkers[16] = loadedPData.upgrade16;
     }
 
     public void SaveData()
     {
         Data pData = new Data();
 
-        for (int i = 0; i < pData.presCheck.Length; i++)
-        {
-            pData.presCheck[i] = prestigeData.checkers[i];
-        }
+        pData.upgrade0 = prestigeData.checkers[0];
+        pData.upgrade1 = prestigeData.checkers[1];
+        pData.upgrade2 = prestigeData.checkers[2];
+        pData.upgrade3 = prestigeData.checkers[3];
+        pData.upgrade4 = prestigeData.checkers[4];
+        pData.upgrade5 = prestigeData.checkers[5];
+        pData.upgrade6 = prestigeData.checkers[6];
+        pData.upgrade7 = prestigeData.checkers[7];
+        pData.upgrade8 = prestigeData.checkers[8];
+        pData.upgrade9 = prestigeData.checkers[9];
+        pData.upgrade10 = prestigeData.checkers[10];
+        pData.upgrade11 = prestigeData.checkers[11];
+        pData.upgrade12 = prestigeData.checkers[12];
+        pData.upgrade13 = prestigeData.checkers[13];
+        pData.upgrade14 = prestigeData.checkers[14];
+        pData.upgrade15 = prestigeData.checkers[15];
+        pData.upgrade16 = prestigeData.checkers[16];
 
         jsonData = JsonUtility.ToJson(pData);
         File.WriteAllText(Application.dataPath + "/dataFile.json", jsonData);
@@ -52,6 +78,22 @@ public class PrestigeSaveLoad : MonoBehaviour
 
     private class Data
     {
-        public bool[] presCheck = new bool[17];
+        public bool upgrade0;
+        public bool upgrade1;
+        public bool upgrade2;
+        public bool upgrade3;
+        public bool upgrade4;
+        public bool upgrade5;
+        public bool upgrade6;
+        public bool upgrade7;
+        public bool upgrade8;
+        public bool upgrade9;
+        public bool upgrade10;
+        public bool upgrade11;
+        public bool upgrade12;
+        public bool upgrade13;
+        public bool upgrade14;
+        public bool upgrade15;
+        public bool upgrade16;
     }
 }
