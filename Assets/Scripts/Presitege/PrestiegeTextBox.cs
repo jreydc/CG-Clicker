@@ -9,8 +9,10 @@ public class PrestiegeTextBox : MonoBehaviour
     public GameObject[] nextUpgrades;
     public GameObject[] lines;
     public Button button, buyButton;
+    public Image glow;
 
     PrestigeManager manager;
+    [SerializeField]PrestigeDataHandler data;
 
     public int ID, cost;
 
@@ -19,10 +21,19 @@ public class PrestiegeTextBox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bought = false;
         textbox.SetActive(false);
 
         manager = GameObject.Find("PrestigeHandler").GetComponent<PrestigeManager>();
+        data = GameObject.Find("PrestigeHandler").GetComponent<PrestigeDataHandler>();
+
+        if (data.checkers[ID] != true)
+        {
+            Hide();
+        }
+        else
+        {
+            Show();
+        }
     }
 
     private void Update()
@@ -30,14 +41,15 @@ public class PrestiegeTextBox : MonoBehaviour
         if(manager.presPoint >= cost && !bought)
         {
             buyButton.interactable = true;
+            glow.enabled = true;
         }
         else
         {
             buyButton.interactable = false;
+            glow.enabled = false;
         }
     }
 
-    // Update is called once per frame
     public void OpenTextBox()
     {
         textbox.SetActive(true);
@@ -48,24 +60,36 @@ public class PrestiegeTextBox : MonoBehaviour
         textbox.SetActive(false);
     }
 
-    public void BuyUpgrade()
+    void Show()
     {
-        CloseTextBox();
-        buyButton.interactable = false;
-        button.interactable = false;
-        bought = true;
-        
-
-        for (int i = 0; i < nextUpgrades.Length; i++)
-         {
-             nextUpgrades[i].SetActive(true);
-         }
-
         for (int i = 0; i < lines.Length; i++)
         {
             lines[i].SetActive(true);
         }
 
+        bought = true;
+
+        buyButton.interactable = false;
+        button.interactable = false;
+    }
+
+    void Hide()
+    {
+        for (int i = 0; i < lines.Length; i++)
+        {
+            lines[i].SetActive(false);
+        }
+
+        bought = false;
+    }
+
+    public void BuyUpgrade()
+    {
+        CloseTextBox();
+        Show();
+        bought = true;
+
         manager.BuyPrestige(ID, cost);
+        data.checkers[ID] = true;
     }
 }

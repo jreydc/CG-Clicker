@@ -2641,6 +2641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 431302265}
   - component: {fileID: 431302264}
+  - component: {fileID: 431302266}
   m_Layer: 0
   m_Name: PrestigeHandler
   m_TagString: Untagged
@@ -2678,6 +2679,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &431302266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431302263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5800443f31999c94fa58b6a9745e0fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkers: 0000000000000000000000000000000000
 --- !u!1 &444378633
 GameObject:
   m_ObjectHideFlags: 0
@@ -10549,7 +10563,6 @@ MonoBehaviour:
   buildingUnitInstance:
   - {fileID: 11400000, guid: 78383118727185f4786bea735b00bb90, type: 2}
   - {fileID: 11400000, guid: ea0f36732222587489b080a412ef23df, type: 2}
-  fileName: unitDataInstance.json
 --- !u!1 &1790419203
 GameObject:
   m_ObjectHideFlags: 0
