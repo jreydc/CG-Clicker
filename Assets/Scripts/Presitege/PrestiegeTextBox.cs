@@ -13,6 +13,7 @@ public class PrestiegeTextBox : MonoBehaviour
 
     PrestigeManager manager;
     [SerializeField]PrestigeDataHandler data;
+    [SerializeField] PrestigeSaveLoad save;
 
     public int ID, cost;
 
@@ -25,6 +26,7 @@ public class PrestiegeTextBox : MonoBehaviour
 
         manager = GameObject.Find("PrestigeHandler").GetComponent<PrestigeManager>();
         data = GameObject.Find("PrestigeHandler").GetComponent<PrestigeDataHandler>();
+        save = GameObject.Find("Data").GetComponent<PrestigeSaveLoad>();
 
         if (data.checkers[ID] != true)
         {
@@ -91,5 +93,6 @@ public class PrestiegeTextBox : MonoBehaviour
 
         manager.BuyPrestige(ID, cost);
         data.checkers[ID] = true;
+        save.SaveData();
     }
 }

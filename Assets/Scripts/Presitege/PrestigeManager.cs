@@ -39,7 +39,7 @@ public class PrestigeManager : MonoBehaviour
 
     void Update()
     {
-        if(tracker >= 1000000)
+        if (tracker >= 1000000)
         {
             presPoint++;
             tracker = 0;

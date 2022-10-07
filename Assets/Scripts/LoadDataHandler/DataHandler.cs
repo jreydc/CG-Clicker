@@ -7,18 +7,19 @@ public class DataHandler : MonoBehaviour
 {
     [SerializeField] private PointsFunction pfMain;
     [SerializeField] private NewUpgradesFunction upgradeMain;
+    [SerializeField] private PrestigeManager prestigeManager;
     string jsonData;
 
     private void Awake()
     {
         pfMain = FindObjectOfType<PointsFunction>();
         upgradeMain = FindObjectOfType<NewUpgradesFunction>();
-        LoadData();
+        prestigeManager = FindObjectOfType<PrestigeManager>();
     }
 
-    private void Start()
+    void Start()
     {
-        
+        LoadData();
     }
 
     public void LoadData()

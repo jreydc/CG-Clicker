@@ -314,6 +314,7 @@ MonoBehaviour:
   buyButton: {fileID: 416964766}
   glow: {fileID: 792035514}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 12
   cost: 10
   bought: 0
@@ -776,6 +777,7 @@ MonoBehaviour:
   buyButton: {fileID: 30406567}
   glow: {fileID: 847039321}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 10
   cost: 10
   bought: 0
@@ -2145,6 +2147,7 @@ MonoBehaviour:
   buyButton: {fileID: 470022781}
   glow: {fileID: 530767583}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 0
   cost: 1
   bought: 0
@@ -2783,6 +2786,7 @@ MonoBehaviour:
   buyButton: {fileID: 700178564}
   glow: {fileID: 1908530636}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 3
   cost: 3
   bought: 0
@@ -5683,6 +5687,7 @@ MonoBehaviour:
   buyButton: {fileID: 2540557}
   glow: {fileID: 856209963}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 14
   cost: 10
   bought: 0
@@ -6327,6 +6332,7 @@ MonoBehaviour:
   buyButton: {fileID: 1896146699}
   glow: {fileID: 1208097026}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 5
   cost: 5
   bought: 0
@@ -8228,6 +8234,7 @@ MonoBehaviour:
   buyButton: {fileID: 914311607}
   glow: {fileID: 1700629418}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 8
   cost: 10
   bought: 0
@@ -9159,6 +9166,7 @@ MonoBehaviour:
   buyButton: {fileID: 325162005}
   glow: {fileID: 347616953}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 15
   cost: 10
   bought: 0
@@ -10952,6 +10960,7 @@ MonoBehaviour:
   buyButton: {fileID: 1759456120}
   glow: {fileID: 265020335}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 4
   cost: 5
   bought: 0
@@ -13040,50 +13049,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181298444}
   m_CullTransparentMesh: 1
---- !u!1 &1181869006
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1181869008}
-  - component: {fileID: 1181869007}
-  m_Layer: 0
-  m_Name: Data
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1181869007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181869006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2288994b8d0314b43a8fb40f50482ed4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prestigeData: {fileID: 0}
---- !u!4 &1181869008
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181869006}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1185435604
 GameObject:
   m_ObjectHideFlags: 0
@@ -13481,6 +13446,7 @@ MonoBehaviour:
   buyButton: {fileID: 2140862180}
   glow: {fileID: 610828148}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 16
   cost: 10
   bought: 0
@@ -13762,6 +13728,7 @@ MonoBehaviour:
   buyButton: {fileID: 1588836623}
   glow: {fileID: 1811264602}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 13
   cost: 5
   bought: 0
@@ -15553,6 +15520,7 @@ MonoBehaviour:
   buyButton: {fileID: 829956478}
   glow: {fileID: 2097944772}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 1
   cost: 3
   bought: 0
@@ -17080,6 +17048,7 @@ MonoBehaviour:
   buyButton: {fileID: 2013575133}
   glow: {fileID: 368992644}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 6
   cost: 10
   bought: 0
@@ -17363,6 +17332,7 @@ MonoBehaviour:
   buyButton: {fileID: 774565318}
   glow: {fileID: 2097215963}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 9
   cost: 5
   bought: 0
@@ -18092,6 +18062,7 @@ MonoBehaviour:
   buyButton: {fileID: 1910447345}
   glow: {fileID: 857858905}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 2
   cost: 3
   bought: 0
@@ -19688,6 +19659,7 @@ MonoBehaviour:
   buyButton: {fileID: 1354603896}
   glow: {fileID: 1351768819}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 7
   cost: 10
   bought: 0
@@ -22754,6 +22726,7 @@ MonoBehaviour:
   buyButton: {fileID: 797563851}
   glow: {fileID: 1033605634}
   data: {fileID: 0}
+  save: {fileID: 0}
   ID: 11
   cost: 10
   bought: 0
