@@ -4,17 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UnitDataHolder : MonoBehaviour
+public class QuickBarItems : MonoBehaviour
 {
     [SerializeField] private UnitBuildingEconomy economy;
 
     [SerializeField] internal BuildingUnit unit;
 
-    [SerializeField] private TextMeshProUGUI unitName;
-    [SerializeField] private TextMeshProUGUI unitsOwned;
-    [SerializeField] private TextMeshProUGUI solPerSecond;
-    [SerializeField] private TextMeshProUGUI unitLevel;
-    [SerializeField] private TextMeshProUGUI unitCost;
     [SerializeField] private Image unitImage;
 
     [SerializeField] private Button buyButton;
@@ -22,7 +17,6 @@ public class UnitDataHolder : MonoBehaviour
     private void Awake()
     {
         economy = FindObjectOfType<UnitBuildingEconomy>();
-        unitName.text = unit.name;
         unitImage.sprite = unit.displayImage;
         if (unit.currentCost <= unit.baseCost)
             unit.currentCost = unit.baseCost;
@@ -30,12 +24,7 @@ public class UnitDataHolder : MonoBehaviour
 
     private void Update()
     {
-        unitLevel.text = "Level: " + unit.unitLevel;
-        unitsOwned.text = "Owned: " + unit.currentOwned;
-        solPerSecond.text = unit.baseSol + "/s";
-        unitCost.text = unit.currentCost.ToString("F0");
-
-        if(economy.solCount <= unit.currentCost)
+        if (economy.solCount <= unit.currentCost)
         {
             buyButton.interactable = false;
         }
@@ -47,7 +36,7 @@ public class UnitDataHolder : MonoBehaviour
 
     public void OnClick_Buy()
     {
-        if(economy.solCount >= unit.currentCost)
+        if (economy.solCount >= unit.currentCost)
         {
             OnBuy();
         }
