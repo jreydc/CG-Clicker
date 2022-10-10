@@ -6,10 +6,14 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private DataHandler dataHandler;
+    public GameObject social, shop;
 
     private void Awake()
     {
         dataHandler = FindObjectOfType<DataHandler>();
+
+        social.SetActive(false);
+        shop.SetActive(false);
     }
 
     public void Prestiege()
@@ -26,14 +30,24 @@ public class SceneLoader : MonoBehaviour
 
     public void Shop()
     {
-        SceneManager.LoadScene("Shop");
+        shop.SetActive(true);
         dataHandler.SaveData();
+    }
+
+    public void CloseShop()
+    {
+        shop.SetActive(false);
     }
 
     public void Social()
     {
-        SceneManager.LoadScene("Social");
+        social.SetActive(true);
         dataHandler.SaveData();
+    }
+
+    public void CloseSocial()
+    {
+        social.SetActive(false);
     }
 
     public void Grove()
