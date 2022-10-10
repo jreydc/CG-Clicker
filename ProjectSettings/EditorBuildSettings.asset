@@ -12,12 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Prestiege.unity
     guid: eb79256ca4b5ee542a72e0928fc6eb1c
   - enabled: 1
-    path: Assets/Scenes/Shop.unity
-    guid: 94300c6cb7a2d8d4fb06de6c1e1d67d6
-  - enabled: 1
-    path: Assets/Scenes/Social.unity
-    guid: e76d3c899836246478551436939e5ce2
-  - enabled: 1
     path: Assets/Scenes/TheGrove.unity
     guid: 5c4f67f5ea532474ea20b0a9828b971c
   m_configObjects: {}
