@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5cfedbf1b33d4e43a1b3877a401b0fa, type: 3}
   m_Name: Unit001
   m_EditorClassIdentifier: 
-  displayImage: {fileID: 21300000, guid: a2b9f64e0af07274386308b01be7d08d, type: 3}
+  displayImage: {fileID: 21300000, guid: 383bb848bb117bf458b39c54ecd14f87, type: 3}
   baseCost: 15
-  currentCost: 15
+  currentCost: 92
   baseSol: 0.1
-  currentSol: 0
-  currentOwned: 0
-  unitLevel: 5
+  currentSol: 1.3000002
+  currentOwned: 13
+  unitLevel: 18

@@ -29,6 +29,8 @@ public class UnitBuildingEconomy : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gtpsText;
     #endregion
 
+    public GameObject particle;
+
     private void Awake()
     {
         unitInstance.AddRange(GameObject.FindObjectsOfType<UnitDataHolder>());
@@ -101,5 +103,6 @@ public class UnitBuildingEconomy : MonoBehaviour
     public void OnClick_AddSol()
     {
         solCount += tapsPerSecond;
+        Instantiate(particle, transform.position, transform.rotation);
     }
 }
