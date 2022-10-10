@@ -15,6 +15,7 @@ public class UnitDataHolder : MonoBehaviour
     [SerializeField] private TextMeshProUGUI solPerSecond;
     [SerializeField] private TextMeshProUGUI unitLevel;
     [SerializeField] private TextMeshProUGUI unitCost;
+    [SerializeField] private Image unitImage;
 
     [SerializeField] private Button buyButton;
 
@@ -22,7 +23,8 @@ public class UnitDataHolder : MonoBehaviour
     {
         economy = FindObjectOfType<UnitBuildingEconomy>();
         unitName.text = unit.name;
-        if(unit.currentCost <= unit.baseCost)
+        unitImage.sprite = unit.displayImage;
+        if (unit.currentCost <= unit.baseCost)
             unit.currentCost = unit.baseCost;
     }
 
@@ -31,7 +33,7 @@ public class UnitDataHolder : MonoBehaviour
         unitLevel.text = "Level: " + unit.unitLevel;
         unitsOwned.text = "Owned: " + unit.currentOwned;
         solPerSecond.text = unit.baseSol + "/s";
-        unitCost.text = unit.currentCost.ToString("F2");
+        unitCost.text = unit.currentCost.ToString("F0");
     }
 
     public void OnClick_Buy()
@@ -43,11 +45,12 @@ public class UnitDataHolder : MonoBehaviour
     }
     void OnBuy()
     {
+        unit.unitLevel++;
         unit.currentOwned++;
         unit.currentSol += unit.baseSol;
         economy.solCount -= unit.currentCost;
         unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
-        economy.solPerSecond = unit.currentSol;
+        economy.solPerSecond += unit.currentSol;
     }
 
     //Where M is the number of that type of unit you own

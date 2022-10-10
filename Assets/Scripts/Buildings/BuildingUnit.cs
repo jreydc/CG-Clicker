@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "New Building", menuName = "Unit Building")]
 public class BuildingUnit : ScriptableObject
 {
-    public Image displayImage;
+    public Sprite displayImage;
 
     public float baseCost;
     public float currentCost;

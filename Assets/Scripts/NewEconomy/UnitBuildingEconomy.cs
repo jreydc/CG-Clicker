@@ -12,6 +12,8 @@ public class UnitBuildingEconomy : MonoBehaviour
     [SerializeField] internal float solCount;
     private float internalCounter;
 
+    [SerializeField] private Animator solCountAnim;
+
     #region NUMBER_VARIABLES
     [SerializeField] internal float solPerSecond;
     [SerializeField] internal float tapsPerSecond = 1.0f;
@@ -30,6 +32,7 @@ public class UnitBuildingEconomy : MonoBehaviour
     private void Awake()
     {
         unitInstance.AddRange(GameObject.FindObjectsOfType<UnitDataHolder>());
+        solCountAnim = solCountText.GetComponent<Animator>();
     }
 
     private void Start()
@@ -42,9 +45,9 @@ public class UnitBuildingEconomy : MonoBehaviour
 
     private void Update()
     {
-        spsText.text = solPerSecond + "/s";
+        spsText.text = solPerSecond.ToString("F1") + "/s";
         tpsText.text = tapsPerSecond.ToString();
-        gtpsText.text = guardianTapsPerSecond.ToString();
+        //gtpsText.text = guardianTapsPerSecond.ToString();
         countingSystem();
     }
 
@@ -91,6 +94,7 @@ public class UnitBuildingEconomy : MonoBehaviour
         {
             elapsedTime = elapsedTime % 0.5f;
             solCount = EconomyMain.autoAddScore(solPerSecond, solCount);
+            solCountAnim.Play(0);
         }
     }
 
