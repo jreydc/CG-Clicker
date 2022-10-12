@@ -19,3 +19,4 @@ MonoBehaviour:
   currentSol: 48
   currentOwned: 6
   unitLevel: 7
+  unitID: 3

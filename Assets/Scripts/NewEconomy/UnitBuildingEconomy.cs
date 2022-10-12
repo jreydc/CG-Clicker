@@ -35,7 +35,6 @@ public class UnitBuildingEconomy : MonoBehaviour
 
     private void Awake()
     {
-        unitInstance.AddRange(GameObject.FindObjectsOfType<UnitDataHolder>());
         solCountAnim = solCountText.GetComponent<Animator>();
 
         prestigeManager = GameObject.Find("PrestigeHandler").GetComponent<PrestigeManager>();

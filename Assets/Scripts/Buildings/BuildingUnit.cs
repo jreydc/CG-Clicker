@@ -14,6 +14,7 @@ public class BuildingUnit : ScriptableObject
     public float currentSol;
     public float currentOwned;
     public int unitLevel = 1;
+    public int unitID;
 }
 
 public class BuildingTech : MonoBehaviour

@@ -19,3 +19,4 @@ MonoBehaviour:
   currentSol: 0
   currentOwned: 0
   unitLevel: 1
+  unitID: 12

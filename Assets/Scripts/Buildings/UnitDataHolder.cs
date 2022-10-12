@@ -19,6 +19,9 @@ public class UnitDataHolder : MonoBehaviour
 
     [SerializeField] private Button buyButton;
 
+    public delegate void upgradeLogic();
+    public static event upgradeLogic onClickCaluclate;
+
     private void Awake()
     {
         economy = FindObjectOfType<UnitBuildingEconomy>();
@@ -50,6 +53,7 @@ public class UnitDataHolder : MonoBehaviour
         if(economy.solCount >= unit.currentCost)
         {
             OnBuy();
+            onClickCaluclate();
         }
     }
     void OnBuy()
