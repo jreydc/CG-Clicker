@@ -12,6 +12,8 @@ public class PrestigeManager : MonoBehaviour
 
     private static PrestigeManager instance;
 
+    [SerializeField] private TextMeshProUGUI pointText;
+
     void Awake()
     {
         if (instance == null)
@@ -48,6 +50,13 @@ public class PrestigeManager : MonoBehaviour
             tracker = 0;
             cost = nextCostCalc(totalPoints);
         }
+
+        if(pointText == null)
+        {
+            pointText = GameObject.Find("PrestigePoints").GetComponent<TextMeshProUGUI>();
+        }
+
+        pointText.text = "Cycle Points: " + presPoint;
     }
 
     public void BuyPrestige(int ID, int cost)
