@@ -16133,7 +16133,7 @@ GameObject:
   - component: {fileID: 1439601140}
   - component: {fileID: 1439601139}
   m_Layer: 5
-  m_Name: Points
+  m_Name: PrestigePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19339,7 +19339,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1803923243}
   - component: {fileID: 1803923242}
-  - component: {fileID: 1803923244}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -19376,36 +19375,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1803923244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803923241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72bca48034602c4b9296e12edf7c18c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unusedButtons:
-  - {fileID: 1394202370}
-  - {fileID: 1673477565}
-  - {fileID: 344140120}
-  - {fileID: 1030321380}
-  - {fileID: 640228148}
-  - {fileID: 1595597721}
-  - {fileID: 1853376134}
-  - {fileID: 817620539}
-  - {fileID: 1645496186}
-  - {fileID: 44440184}
-  - {fileID: 2063777246}
-  - {fileID: 21710930}
-  - {fileID: 1224258755}
-  - {fileID: 553903525}
-  - {fileID: 865729973}
-  - {fileID: 1203663243}
-  points: {fileID: 1439601139}
 --- !u!1 &1811264601
 GameObject:
   m_ObjectHideFlags: 0
