@@ -14,6 +14,8 @@ public class UnitBuildingEconomy : MonoBehaviour
 
     [SerializeField] private Animator solCountAnim;
 
+    [SerializeField] private PrestigeManager prestigeManager;
+
     #region NUMBER_VARIABLES
     [SerializeField] internal float solPerSecond;
     [SerializeField] internal float tapsPerSecond = 1.0f;
@@ -35,6 +37,8 @@ public class UnitBuildingEconomy : MonoBehaviour
     {
         unitInstance.AddRange(GameObject.FindObjectsOfType<UnitDataHolder>());
         solCountAnim = solCountText.GetComponent<Animator>();
+
+        prestigeManager = GameObject.Find("PrestigeHandler").GetComponent<PrestigeManager>();
     }
 
     private void Start()
@@ -97,6 +101,8 @@ public class UnitBuildingEconomy : MonoBehaviour
             elapsedTime = elapsedTime % 0.5f;
             solCount = EconomyMain.autoAddScore(solPerSecond, solCount);
             solCountAnim.Play(0);
+
+            prestigeManager.AutoAddPoint(solPerSecond);
         }
     }
 
@@ -104,5 +110,7 @@ public class UnitBuildingEconomy : MonoBehaviour
     {
         solCount += tapsPerSecond;
         Instantiate(particle, transform.position, transform.rotation);
+
+        prestigeManager.AddPoint(tapsPerSecond);
     }
 }

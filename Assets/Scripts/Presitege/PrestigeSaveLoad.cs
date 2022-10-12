@@ -48,6 +48,10 @@ public class PrestigeSaveLoad : MonoBehaviour
         prestigeManager.presPoint = loadedPData.prestigePoints;
         prestigeManager.autoMulti = loadedPData.autoMultiplier;
         prestigeManager.clickMulti = loadedPData.clickMultiplier;
+
+        prestigeManager.tracker = loadedPData.presTracker;
+        prestigeManager.cost = loadedPData.presCost;
+        prestigeManager.totalPoints = loadedPData.prestigePointTotal;
     }
 
     public void SaveData()
@@ -75,6 +79,10 @@ public class PrestigeSaveLoad : MonoBehaviour
         pData.prestigePoints = prestigeManager.presPoint;
         pData.autoMultiplier = prestigeManager.autoMulti;
         pData.clickMultiplier = prestigeManager.clickMulti;
+
+        pData.presTracker = prestigeManager.tracker;
+        pData.presCost = prestigeManager.cost;
+        pData.prestigePointTotal = prestigeManager.totalPoints;
 
         jsonData = JsonUtility.ToJson(pData);
         File.WriteAllText(Application.dataPath + "/presDataFile.json", jsonData);
@@ -109,5 +117,9 @@ public class PrestigeSaveLoad : MonoBehaviour
         public int prestigePoints;
         public float autoMultiplier;
         public float clickMultiplier;
+
+        public float presTracker;
+        public int prestigePointTotal;
+        public float presCost;
     }
 }

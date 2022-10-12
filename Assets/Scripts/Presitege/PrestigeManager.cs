@@ -5,8 +5,8 @@ using TMPro;
 
 public class PrestigeManager : MonoBehaviour
 {
-    [SerializeField]private int tracker;
-    public int presPoint;
+    public float cost, tracker;
+    public int presPoint, totalPoints;
     public float clickMulti = 1;
     public float autoMulti = 1;
 
@@ -25,24 +25,28 @@ public class PrestigeManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+
+        cost = nextCostCalc(totalPoints);
     }
 
-    public void AddPoint(int points)
+    public void AddPoint(float points)
     {
         tracker += points;
     }
 
-    public void AutoAddPoint(int points)
+    public void AutoAddPoint(float points)
     {
         tracker += points;
     }
 
     void Update()
     {
-        if (tracker >= 1000000)
+        if (tracker >= cost)
         {
             presPoint++;
+            totalPoints++;
             tracker = 0;
+            cost = nextCostCalc(totalPoints);
         }
     }
 
@@ -128,5 +132,12 @@ public class PrestigeManager : MonoBehaviour
         {
             presPoint -= cost;
         }
+    }
+
+    //K is the number of points previously earned
+    private float nextCostCalc(int K)
+    {
+        float price = (Mathf.Pow(10, 12)) * (Mathf.Pow((K + 1), 3) - (Mathf.Pow(K, 3)));
+        return price;
     }
 }
