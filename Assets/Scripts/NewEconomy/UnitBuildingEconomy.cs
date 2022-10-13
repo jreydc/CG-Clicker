@@ -27,7 +27,7 @@ public class UnitBuildingEconomy : MonoBehaviour
     #region UI_VARIABLES
     [SerializeField] private TextMeshProUGUI solCountText;
     [SerializeField] private TextMeshProUGUI spsText;
-    [SerializeField] private TextMeshProUGUI tpsText;
+    //[SerializeField] private TextMeshProUGUI tpsText;
     [SerializeField] private TextMeshProUGUI gtpsText;
     #endregion
 
@@ -51,7 +51,7 @@ public class UnitBuildingEconomy : MonoBehaviour
     private void Update()
     {
         spsText.text = solPerSecond.ToString("F1") + "/s";
-        tpsText.text = tapsPerSecond.ToString();
+        //tpsText.text = tapsPerSecond.ToString();
         //gtpsText.text = guardianTapsPerSecond.ToString();
         countingSystem();
     }
