@@ -19,6 +19,11 @@ public class UnitDataHolder : MonoBehaviour
 
     [SerializeField] private Button buyButton;
 
+    public delegate void upgradeLogic(BuildingUnit unit);
+    public static event upgradeLogic onClickCaluclate;
+
+    [SerializeField] PlaySound sound;
+
     private void Awake()
     {
         economy = FindObjectOfType<UnitBuildingEconomy>();
@@ -26,6 +31,8 @@ public class UnitDataHolder : MonoBehaviour
         unitImage.sprite = unit.displayImage;
         if (unit.currentCost <= unit.baseCost)
             unit.currentCost = unit.baseCost;
+
+        sound = GameObject.Find("SoundManager").GetComponent<PlaySound>();
     }
 
     private void Update()
@@ -50,6 +57,7 @@ public class UnitDataHolder : MonoBehaviour
         if(economy.solCount >= unit.currentCost)
         {
             OnBuy();
+            onClickCaluclate(unit);
         }
     }
     void OnBuy()
@@ -60,6 +68,8 @@ public class UnitDataHolder : MonoBehaviour
         economy.solCount -= unit.currentCost;
         unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
         economy.solPerSecond += unit.currentSol;
+
+        sound.Buy();
     }
 
     //Where M is the number of that type of unit you own
