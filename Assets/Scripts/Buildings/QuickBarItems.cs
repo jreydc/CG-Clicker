@@ -14,12 +14,16 @@ public class QuickBarItems : MonoBehaviour
 
     [SerializeField] private Button buyButton;
 
+    [SerializeField] private PlaySound sound;
+
     private void Awake()
     {
         economy = FindObjectOfType<UnitBuildingEconomy>();
         unitImage.sprite = unit.displayImage;
         if (unit.currentCost <= unit.baseCost)
             unit.currentCost = unit.baseCost;
+
+        sound = GameObject.Find("SoundManager").GetComponent<PlaySound>();
     }
 
     private void Update()
@@ -49,6 +53,8 @@ public class QuickBarItems : MonoBehaviour
         economy.solCount -= unit.currentCost;
         unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
         economy.solPerSecond += unit.currentSol;
+
+        sound.Buy();
     }
 
     //Where M is the number of that type of unit you own
