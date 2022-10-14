@@ -12,7 +12,9 @@ public class UnitTierUpgrade : ScriptableObject
 
     public int currentLevel;
 
+
     public float basePrice;
+    private float priceMultiplier = 5f;
 
     private void Awake()
     {
@@ -43,7 +45,8 @@ public class UnitTierUpgrade : ScriptableObject
     #region PRICE_VALUES
     void PriceIterator()
     {
-        basePrice *= 10;
+        basePrice *= priceMultiplier;
+        priceMultiplier *= 2;
     }
     #endregion
 }

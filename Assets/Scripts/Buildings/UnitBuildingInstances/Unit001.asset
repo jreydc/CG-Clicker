@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 21300000, guid: 383bb848bb117bf458b39c54ecd14f87, type: 3}
   baseCost: 15
-  currentCost: 15
+  currentCost: 17
   baseSol: 0.1
-  currentSol: 0
-  currentOwned: 0
-  unitLevel: 1
+  currentSol: 0.1
+  currentOwned: 1
+  unitLevel: 2
   unitID: 1

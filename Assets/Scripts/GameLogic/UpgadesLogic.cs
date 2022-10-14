@@ -13,22 +13,123 @@ public class UpgadesLogic : MonoBehaviour
     public GameObject upgradeInstance;
     public Transform parent;
 
+    public delegate void SaveData(GameObject instantiatedObject);
+    public static event SaveData saveData;
+
     private void Awake()
     {
-        UnitBuildingEconomy.upgradeCounterInterval += Count;
+        UnitDataHolder.upgradeCounterInterval += Count;
     }
 
     void Count()
     {
         for(int i = 0; i < unitInstances.Count; i++)
         {
-
+            if (i == 1)
+            {
+                switch (unitInstances[i].currentOwned)
+                {
+                    case 1:
+                        {
+                            for(int j = 2; i < unitInstances.Count; i++)
+                            {
+                                if(unitInstances[j].currentOwned == 15)
+                                {
+                                    UpgradeFunction(j);
+                                    break;
+                                }
+                            }
+                            break;
+                        }
+                    default:
+                        {
+                            break;
+                        }
+                }
+            }
+            else
+            {
+                switch (unitInstances[i].currentOwned)
+                {
+                    case 1:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 5:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 10:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 25:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 50:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 100:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 150:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 200:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 250:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 300:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 350:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 400:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 450:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                    case 500:
+                        {
+                            UpgradeFunction(i);
+                            break;
+                        }
+                }
+            }
         }
     }
 
-    void UpgradeFunction()
+    void UpgradeFunction(int index)
     {
-        currentID = unitInstances[indexID].unitID;
-        Instantiate(upgradeInstance, parent.transform);
+        currentID = unitInstances[index].unitID;
+        GameObject GO = Instantiate(upgradeInstance, parent.transform);
+        saveData(GO);
     }
 }

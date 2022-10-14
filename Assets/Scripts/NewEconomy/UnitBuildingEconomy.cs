@@ -36,9 +36,6 @@ public class UnitBuildingEconomy : MonoBehaviour
     public delegate void buildingCounter(float currentSol);
     public static event buildingCounter buildingCounterInterval;
 
-    public delegate void upgradeCounter();
-    public static event upgradeCounter upgradeCounterInterval;
-
     private void Awake()
     {
         solCountAnim = solCountText.GetComponent<Animator>();
@@ -111,7 +108,6 @@ public class UnitBuildingEconomy : MonoBehaviour
 
             prestigeManager.AutoAddPoint(solPerSecond);
             buildingCounterInterval(solCount);
-            upgradeCounterInterval();
         }
     }
 
@@ -126,6 +122,7 @@ public class UnitBuildingEconomy : MonoBehaviour
 
     public void SpawnBuilding(int index)
     {
-        unitInstance[index].gameObject.SetActive(true);
+        if(!unitInstance[index].isActiveAndEnabled)
+            unitInstance[index].gameObject.SetActive(true);
     }
 }

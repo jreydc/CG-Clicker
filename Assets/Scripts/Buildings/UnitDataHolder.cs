@@ -19,8 +19,9 @@ public class UnitDataHolder : MonoBehaviour
 
     [SerializeField] private Button buyButton;
 
-    public delegate void upgradeLogic(BuildingUnit unit);
-    public static event upgradeLogic onClickCaluclate;
+    public delegate void upgradeCounter();
+    public static event upgradeCounter upgradeCounterInterval;
+
 
     [SerializeField] PlaySound sound;
 
@@ -42,13 +43,13 @@ public class UnitDataHolder : MonoBehaviour
         solPerSecond.text = unit.baseSol + "/s";
         unitCost.text = unit.currentCost.ToString("F0");
 
-        if(economy.solCount <= unit.currentCost)
+        if(economy.solCount >= unit.currentCost)
         {
-            buyButton.interactable = false;
+            buyButton.interactable = true;
         }
         else
         {
-            buyButton.interactable = true;
+            buyButton.interactable = false;
         }
     }
 
@@ -57,7 +58,7 @@ public class UnitDataHolder : MonoBehaviour
         if(economy.solCount >= unit.currentCost)
         {
             OnBuy();
-            onClickCaluclate(unit);
+            upgradeCounterInterval();
         }
     }
     void OnBuy()

@@ -18,9 +18,9 @@ public class BuildingsLogic : MonoBehaviour
     {
         for(int i = 2; i < unit.Count; i++)
         {
-            if(unit[i].baseCost >= currentSol)
+            if(currentSol >= unit[i].currentCost)
             {
-                spawnBuilding((unit[i].unitID - 1));
+                spawnBuilding(unit[i].unitID);
                 break;
             }
         }
