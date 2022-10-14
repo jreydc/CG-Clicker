@@ -16,8 +16,3 @@ public class BuildingUnit : ScriptableObject
     public int unitLevel = 1;
     public int unitID;
 }
-
-public class BuildingTech : MonoBehaviour
-{
-    
-}

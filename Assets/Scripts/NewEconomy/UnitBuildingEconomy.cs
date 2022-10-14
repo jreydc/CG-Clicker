@@ -7,7 +7,7 @@ using EconomyManager;
 
 public class UnitBuildingEconomy : MonoBehaviour
 {
-    [SerializeField] private List<UnitDataHolder> unitInstance;
+    [SerializeField] internal List<UnitDataHolder> unitInstance;
 
     [SerializeField] internal float solCount;
     private float internalCounter;

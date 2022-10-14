@@ -8,12 +8,39 @@ public class UnitTierUpgrade : ScriptableObject
     [Range(0, 19)]
     public int unitIdentifier;
 
-    public float tpsUpgrade;
-    public float gtpsUpgrade;
-    public float spsUpgrade;
+    public float multiplier;
 
-    public float UpgradeTPS(int currentLevel, float currentTPS)
+    public int currentLevel;
+
+    public float basePrice;
+
+    private void Awake()
     {
-        return currentTPS *= tpsUpgrade;
+        PriceIterator();
     }
+
+    public float UpgradeTPS(int _currentLevel, float currentTPS)
+    {
+        currentLevel++;
+        return currentTPS *= multiplier;
+    }
+
+    public float UpgardeSPS(int _currentLevel, float currentSPS)
+    {
+        currentLevel++;
+        return currentSPS *= multiplier;
+    }
+
+    public float UpgradeGTPS(int _currentLevel, float currentGTPS)
+    {
+        currentLevel++;
+        return currentGTPS *= multiplier;
+    }
+
+    #region PRICE_VALUES
+    void PriceIterator()
+    {
+        basePrice *= 10;
+    }
+    #endregion
 }
