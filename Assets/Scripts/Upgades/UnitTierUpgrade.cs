@@ -22,18 +22,21 @@ public class UnitTierUpgrade : ScriptableObject
     public float UpgradeTPS(int _currentLevel, float currentTPS)
     {
         currentLevel++;
+        PriceIterator();
         return currentTPS *= multiplier;
     }
 
     public float UpgardeSPS(int _currentLevel, float currentSPS)
     {
         currentLevel++;
+        PriceIterator();
         return currentSPS *= multiplier;
     }
 
     public float UpgradeGTPS(int _currentLevel, float currentGTPS)
     {
         currentLevel++;
+        PriceIterator();
         return currentGTPS *= multiplier;
     }
 

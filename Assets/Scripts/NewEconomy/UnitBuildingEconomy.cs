@@ -33,11 +33,19 @@ public class UnitBuildingEconomy : MonoBehaviour
 
     public GameObject particle;
 
+    public delegate void buildingCounter(float currentSol);
+    public static event buildingCounter buildingCounterInterval;
+
+    public delegate void upgradeCounter();
+    public static event upgradeCounter upgradeCounterInterval;
+
     private void Awake()
     {
         solCountAnim = solCountText.GetComponent<Animator>();
 
         prestigeManager = GameObject.Find("PrestigeHandler").GetComponent<PrestigeManager>();
+
+        BuildingsLogic.spawnBuilding += SpawnBuilding;
     }
 
     private void Start()
@@ -102,6 +110,8 @@ public class UnitBuildingEconomy : MonoBehaviour
             solCountAnim.Play(0);
 
             prestigeManager.AutoAddPoint(solPerSecond);
+            buildingCounterInterval(solCount);
+            upgradeCounterInterval();
         }
     }
 
@@ -111,5 +121,11 @@ public class UnitBuildingEconomy : MonoBehaviour
         Instantiate(particle, transform.position, transform.rotation);
 
         prestigeManager.AddPoint(tapsPerSecond);
+    }
+
+
+    public void SpawnBuilding(int index)
+    {
+        unitInstance[index].gameObject.SetActive(true);
     }
 }
