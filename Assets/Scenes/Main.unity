@@ -4447,7 +4447,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431302263}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5425e43a4818f54fb4daf52e2bc2260, type: 3}
   m_Name: 
@@ -4827,7 +4827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &454313830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9330,9 +9330,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 992933605}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: Prestiege
+      - m_Target: {fileID: 992933606}
+        m_TargetAssemblyTypeName: Reset, Assembly-CSharp
+        m_MethodName: Re
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11136,6 +11136,7 @@ GameObject:
   - component: {fileID: 992933605}
   - component: {fileID: 992933602}
   - component: {fileID: 992933604}
+  - component: {fileID: 992933606}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -11225,8 +11226,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataHandler: {fileID: 0}
+  prestigeData: {fileID: 0}
   social: {fileID: 734728417}
   shop: {fileID: 1410296089}
+--- !u!114 &992933606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992933601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69b5a01fbe026148a8622b3f47aa69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildings:
+  - {fileID: 11400000, guid: 78383118727185f4786bea735b00bb90, type: 2}
+  - {fileID: 11400000, guid: ea0f36732222587489b080a412ef23df, type: 2}
+  - {fileID: 11400000, guid: 3db89b9d430f7e64a888b352d3d18a40, type: 2}
+  - {fileID: 11400000, guid: 2d37c39ff2f636c44828531e841b8814, type: 2}
+  - {fileID: 11400000, guid: ee663c3f74be83b428deb717e3521a6c, type: 2}
+  - {fileID: 11400000, guid: 4fc531b192c52b8488b013d1d22b15ad, type: 2}
+  - {fileID: 11400000, guid: 2896697eaaf2ff74f891bb4d4535dcb4, type: 2}
+  - {fileID: 11400000, guid: bd8ed0329f1efba408b5f5dc49e80bde, type: 2}
+  - {fileID: 11400000, guid: 1c1aa829fc61e8444a67bff12b835af1, type: 2}
+  - {fileID: 11400000, guid: dfa26ba3aa8be5040b448b99ca3ae05e, type: 2}
+  - {fileID: 11400000, guid: d6fa0b9cd0894b142afddeb8b2cbef45, type: 2}
+  - {fileID: 11400000, guid: dce6b2879e402dc44a042a1a4401c7c9, type: 2}
+  - {fileID: 11400000, guid: 424771f7d340bb74dbdf8b9b064eebe1, type: 2}
+  - {fileID: 11400000, guid: 7c5299b8431413c48bd3a9ff9b58fb72, type: 2}
+  - {fileID: 11400000, guid: fe8bad87e6aa77e45b588d60e36add17, type: 2}
+  - {fileID: 11400000, guid: 329dd9a4488e3024f89d60f7082908a5, type: 2}
+  - {fileID: 11400000, guid: 286c018bcc4a46a47b26c451b5f4e954, type: 2}
+  - {fileID: 11400000, guid: 8f9b43cc630843f44b552b927f62954f, type: 2}
+  - {fileID: 11400000, guid: 6f19651c7e834344bb7471f649c51d22, type: 2}
+  economy: {fileID: 992933602}
+  presManager: {fileID: 431302264}
+  scene: {fileID: 992933605}
+  presButton: {fileID: 822429247}
+  presPointTex: {fileID: 527511629}
 --- !u!1001 &996558002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14528,7 +14567,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0.00032806396, y: -0.000030517578}
-  m_SizeDelta: {x: 405.0752, y: 0}
+  m_SizeDelta: {x: 405.0752, y: -698.3976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1249137763
 MonoBehaviour:
@@ -14583,6 +14622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataGO: []
+  loadedDataGO: []
+  dataHandler: {fileID: 0}
 --- !u!1 &1270052774
 GameObject:
   m_ObjectHideFlags: 0

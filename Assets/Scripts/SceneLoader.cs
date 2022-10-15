@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private DataHandler dataHandler;
+    [SerializeField] private PrestigeSaveLoad prestigeData;
     public GameObject social, shop;
 
     private void Awake()
     {
         dataHandler = FindObjectOfType<DataHandler>();
+        prestigeData = FindObjectOfType<PrestigeSaveLoad>();
 
         social.SetActive(false);
         shop.SetActive(false);
@@ -20,6 +22,7 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Prestiege");
         dataHandler.SaveData();
+        prestigeData.SaveData();
     }
 
     public void MainScreen()
