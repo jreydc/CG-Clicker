@@ -7,7 +7,7 @@ public class DataHandler : MonoBehaviour
 {
     [SerializeField] private UnitBuildingEconomy unitBuildingEconomy;
     [SerializeField] private PrestigeManager prestigeManager;
-    [SerializeField] private UpgradeListData upgradeDataList;
+    //[SerializeField] private UpgradeListData upgradeDataList;
     string jsonData;
 
     public delegate void LoadDataList();
@@ -17,7 +17,7 @@ public class DataHandler : MonoBehaviour
     {
         unitBuildingEconomy = FindObjectOfType<UnitBuildingEconomy>();
         prestigeManager = FindObjectOfType<PrestigeManager>();
-        upgradeDataList = FindObjectOfType<UpgradeListData>();
+        //upgradeDataList = FindObjectOfType<UpgradeListData>();
     }
 
     void Start()
@@ -33,8 +33,8 @@ public class DataHandler : MonoBehaviour
         unitBuildingEconomy.solCount = loadedPData.currentPoints;
         unitBuildingEconomy.tapsPerSecond = loadedPData.currentTPS;
         unitBuildingEconomy.solPerSecond = loadedPData.currentSPS;
-        upgradeDataList.dataGO = loadedPData.dataList;
-        loadDataList();
+        //upgradeDataList.dataGO = loadedPData.dataList;
+        //loadDataList();
         /*
         upgradeMain.upgradeLevelList = loadedPData.upgradeLevelList;
         upgradeMain.currentUpgradeCost = loadedPData.currentUpgradeCost;
@@ -49,7 +49,7 @@ public class DataHandler : MonoBehaviour
         pData.currentPoints = unitBuildingEconomy.solCount;
         pData.currentTPS = unitBuildingEconomy.tapsPerSecond;
         pData.currentSPS = unitBuildingEconomy.solPerSecond;
-        pData.dataList = upgradeDataList.dataGO;
+        //spData.dataList = upgradeDataList.dataGO;
         /*
         pData.upgradeLevelList = new List<int>();
         pData.upgradeLevelList = upgradeMain.upgradeLevelList;
@@ -77,6 +77,6 @@ public class DataHandler : MonoBehaviour
         public float currentPoints;
         public float currentTPS;
         public float currentSPS;
-        public List<GameObject> dataList;
+        //public List<GameObject> dataList;
     }
 }

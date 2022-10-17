@@ -14583,6 +14583,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataGO: []
+  tierList:
+  - {fileID: 11400000, guid: 6ca214cc1187ed942a93283fc5824dae, type: 2}
+  - {fileID: 11400000, guid: 55d09391000775b4faf052a3f68552af, type: 2}
+  - {fileID: 11400000, guid: d8be1e752f5d2ff41bfd2992b0c2ad27, type: 2}
+  - {fileID: 11400000, guid: 4b53ae6e07420414fbc8fa6a8bfe10d1, type: 2}
+  - {fileID: 11400000, guid: 7856c55539c9ce242b484f3bcae3c0c9, type: 2}
+  - {fileID: 11400000, guid: 2fdda4b6cf4689e42b27151c2fd17509, type: 2}
+  - {fileID: 11400000, guid: b78752de93b39e345b74c50c0e83f92c, type: 2}
+  - {fileID: 11400000, guid: 8557090b2e0ca084d91c4f055b7f0ff9, type: 2}
+  - {fileID: 11400000, guid: 73bed637748b0de47becf95a787fbf0a, type: 2}
+  - {fileID: 11400000, guid: fe4a67ffef762ab4d85fe548a35b41bb, type: 2}
+  - {fileID: 11400000, guid: b8b83051d221e88489bfc6725fda5fd3, type: 2}
+  - {fileID: 11400000, guid: f4bf58b39a4f51a47b08708ae5d23125, type: 2}
+  - {fileID: 11400000, guid: 73b362fcd36381f4383e050627e701e7, type: 2}
+  - {fileID: 11400000, guid: 5602527668eb9114ca56ca996ab6956f, type: 2}
+  - {fileID: 11400000, guid: 9f1d2692e5cc68f4694a274a6c367065, type: 2}
+  - {fileID: 11400000, guid: d213d9cfba2efa345b6e746e55d8a1ce, type: 2}
+  - {fileID: 11400000, guid: 5686f12ccd6ee2446b0a5edd96f23d14, type: 2}
+  - {fileID: 11400000, guid: 985550f327aae2947905f0c52837129b, type: 2}
+  - {fileID: 11400000, guid: 5676b0c8a4a2e8e47813f1a4155e516e, type: 2}
+  instanceCount: 0
+  dataGOPrefab: {fileID: 3434669899894602719, guid: 5ccf5ed8a6cb22743937bd487ab77401, type: 3}
+  dataHandler: {fileID: 0}
 --- !u!1 &1270052774
 GameObject:
   m_ObjectHideFlags: 0
@@ -20003,7 +20026,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitBuildingEconomy: {fileID: 0}
   prestigeManager: {fileID: 0}
-  upgradeDataList: {fileID: 0}
 --- !u!1 &1791631711
 GameObject:
   m_ObjectHideFlags: 0

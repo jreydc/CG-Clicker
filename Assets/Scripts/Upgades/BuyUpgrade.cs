@@ -21,8 +21,12 @@ public class BuyUpgrade : MonoBehaviour
     private void Start()
     {
         unitInfo = upgrades.unitInfo[(upgrades.currentID - 1)];
-
         levelText.text = unitInfo.currentLevel.ToString();
+    }
+
+    public void GetUnitInfo(UnitTierUpgrade info)
+    {
+        unitInfo = info;
     }
 
     public void OnBuy_Upgrade()
@@ -80,7 +84,7 @@ public class BuyUpgrade : MonoBehaviour
                     break;
                 }
         }
-
+        GameObject.FindObjectOfType<UpgradeListData>().DestroyID(unitInfo.unitIdentifier);
         Destroy(this.gameObject);
     }
 }

@@ -13,7 +13,7 @@ public class UpgadesLogic : MonoBehaviour
     public GameObject upgradeInstance;
     public Transform parent;
 
-    public delegate void SaveData(GameObject instantiatedObject);
+    public delegate void SaveData(GameObject instantiatedObject, int unitID);
     public static event SaveData saveData;
 
     private void Awake()
@@ -130,6 +130,6 @@ public class UpgadesLogic : MonoBehaviour
     {
         currentID = unitInstances[index].unitID;
         GameObject GO = Instantiate(upgradeInstance, parent.transform);
-        saveData(GO);
+        saveData(GO, (currentID - 1));
     }
 }
