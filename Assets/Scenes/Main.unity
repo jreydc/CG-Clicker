@@ -11264,6 +11264,7 @@ MonoBehaviour:
   economy: {fileID: 992933602}
   presManager: {fileID: 431302264}
   scene: {fileID: 992933605}
+  data: {fileID: 1783584596}
   presButton: {fileID: 822429247}
   presPointTex: {fileID: 527511629}
 --- !u!1001 &996558002
@@ -14622,7 +14623,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataGO: []
-  loadedDataGO: []
+  tierList: []
+  unitID: 
+  instanceCount: 0
+  dataGOPrefab: {fileID: 0}
   dataHandler: {fileID: 0}
 --- !u!1 &1270052774
 GameObject:
@@ -20044,7 +20048,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitBuildingEconomy: {fileID: 0}
   prestigeManager: {fileID: 0}
-  upgradeDataList: {fileID: 0}
 --- !u!1 &1791631711
 GameObject:
   m_ObjectHideFlags: 0
