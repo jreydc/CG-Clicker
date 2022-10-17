@@ -16,7 +16,12 @@ public class Reset : MonoBehaviour
 
     private void Update()
     {
-        if(presManager.totalPoints < 1)
+        if(presManager == null)
+        {
+            presManager = FindObjectOfType<PrestigeManager>();
+        }
+
+        if(presManager.totalPoints == 0)
         {
             presButton.interactable = false;
             presPointTex.SetActive(false);
