@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba83f6052b4e83c4b8463d8ff7446ba2, type: 3}
-  m_Name: UnitUpgrade 19
+  m_Name: UnitUpgrade 20
   m_EditorClassIdentifier: 
-  unitIdentifier: 19
+  unitIdentifier: 20
   multiplier: 2
   currentLevel: 0
-  basePrice: 1.2e+23
+  basePrice: 1.9e+25

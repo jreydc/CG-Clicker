@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: UnitUpgrade 7
   m_EditorClassIdentifier: 
   unitIdentifier: 7
-  tpsUpgrade: 0
-  gtpsUpgrade: 0
-  spsUpgrade: 0
+  multiplier: 2
+  currentLevel: 0
+  basePrice: 14000000

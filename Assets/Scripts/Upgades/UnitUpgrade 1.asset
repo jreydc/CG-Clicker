@@ -15,3 +15,4 @@ MonoBehaviour:
   unitIdentifier: 1
   multiplier: 2
   currentLevel: 0
+  basePrice: 100

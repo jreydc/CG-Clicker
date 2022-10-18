@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: UnitUpgrade 13
   m_EditorClassIdentifier: 
   unitIdentifier: 13
-  tpsUpgrade: 0
-  gtpsUpgrade: 0
-  spsUpgrade: 0
+  multiplier: 2
+  currentLevel: 0
+  basePrice: 1.4e+14
