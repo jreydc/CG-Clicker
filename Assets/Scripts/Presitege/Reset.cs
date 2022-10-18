@@ -10,13 +10,19 @@ public class Reset : MonoBehaviour
     public UnitBuildingEconomy economy;
     public PrestigeManager presManager;
     public SceneLoader scene;
+    public DataHandler data;
 
     public Button presButton;
     public GameObject presPointTex;
 
     private void Update()
     {
-        if(presManager.totalPoints < 1)
+        if(presManager == null)
+        {
+            presManager = FindObjectOfType<PrestigeManager>();
+        }
+
+        if(presManager.totalPoints == 0)
         {
             presButton.interactable = false;
             presPointTex.SetActive(false);
@@ -37,6 +43,8 @@ public class Reset : MonoBehaviour
     private IEnumerator Redo()
     {
         economy.solCount = 0;
+        economy.solPerSecond = 0.1f;
+        economy.tapsPerSecond = 1;
         presManager.tracker = 0;
 
         for (int i = 0; i < buildings.Length; i++)
@@ -47,6 +55,7 @@ public class Reset : MonoBehaviour
             buildings[i].currentSol = 0;
         }
 
+        data.SaveData();
         scene.Prestiege();
 
         yield return null;
