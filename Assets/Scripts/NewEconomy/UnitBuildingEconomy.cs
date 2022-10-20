@@ -15,6 +15,7 @@ public class UnitBuildingEconomy : MonoBehaviour
     [SerializeField] private Animator solCountAnim;
 
     [SerializeField] private PrestigeManager prestigeManager;
+    [SerializeField] private Multipliers multipliers;
 
     #region NUMBER_VARIABLES
     [SerializeField] internal float solPerSecond;
@@ -41,6 +42,7 @@ public class UnitBuildingEconomy : MonoBehaviour
         solCountAnim = solCountText.GetComponent<Animator>();
 
         prestigeManager = GameObject.Find("PrestigeHandler").GetComponent<PrestigeManager>();
+        multipliers = FindObjectOfType<Multipliers>();
 
         BuildingsLogic.spawnBuilding += SpawnBuilding;
     }
@@ -103,20 +105,20 @@ public class UnitBuildingEconomy : MonoBehaviour
         if (elapsedTime >= 1f)
         {
             elapsedTime = elapsedTime % 0.5f;
-            solCount = EconomyMain.autoAddScore(solPerSecond, solCount);
+            solCount = EconomyMain.autoAddScore(solPerSecond * multipliers.autoMulti, solCount);
             solCountAnim.Play(0);
 
-            prestigeManager.AutoAddPoint(solPerSecond);
+            prestigeManager.AutoAddPoint(solPerSecond * multipliers.autoMulti);
             buildingCounterInterval(solCount);
         }
     }
 
     public void OnClick_AddSol()
     {
-        solCount += tapsPerSecond;
+        solCount += tapsPerSecond * multipliers.clickMulti;
         Instantiate(particle, transform.position, transform.rotation);
 
-        prestigeManager.AddPoint(tapsPerSecond);
+        prestigeManager.AddPoint(tapsPerSecond * multipliers.clickMulti);
     }
 
 

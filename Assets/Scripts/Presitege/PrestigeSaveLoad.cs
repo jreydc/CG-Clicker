@@ -7,12 +7,14 @@ public class PrestigeSaveLoad : MonoBehaviour
 {
     [SerializeField] private PrestigeDataHandler prestigeData;
     [SerializeField] private PrestigeManager prestigeManager;
+    [SerializeField] private Multipliers multipliers;
     string jsonData;
 
     private void Awake()
     {
-        prestigeData = FindObjectOfType<PrestigeDataHandler>();
-        prestigeManager = FindObjectOfType<PrestigeManager>();
+        prestigeData = GetComponent<PrestigeDataHandler>();
+        prestigeManager = GetComponent<PrestigeManager>();
+        multipliers = GetComponent<Multipliers>();
 
         LoadData();
     }
@@ -46,8 +48,8 @@ public class PrestigeSaveLoad : MonoBehaviour
         prestigeData.checkers[16] = loadedPData.upgrade16;
 
         prestigeManager.presPoint = loadedPData.prestigePoints;
-        prestigeManager.autoMulti = loadedPData.autoMultiplier;
-        prestigeManager.clickMulti = loadedPData.clickMultiplier;
+        multipliers.autoMulti = loadedPData.autoMultiplier;
+        multipliers.clickMulti = loadedPData.clickMultiplier;
 
         prestigeManager.tracker = loadedPData.presTracker;
         prestigeManager.cost = loadedPData.presCost;
@@ -77,8 +79,8 @@ public class PrestigeSaveLoad : MonoBehaviour
         pData.upgrade16 = prestigeData.checkers[16];
 
         pData.prestigePoints = prestigeManager.presPoint;
-        pData.autoMultiplier = prestigeManager.autoMulti;
-        pData.clickMultiplier = prestigeManager.clickMulti;
+        pData.autoMultiplier = multipliers.autoMulti;
+        pData.clickMultiplier = multipliers.clickMulti;
 
         pData.presTracker = prestigeManager.tracker;
         pData.presCost = prestigeManager.cost;

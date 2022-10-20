@@ -7,10 +7,9 @@ public class PrestigeManager : MonoBehaviour
 {
     public float cost, tracker;
     public int presPoint, totalPoints;
-    public float clickMulti = 1;
-    public float autoMulti = 1;
 
     [SerializeField] private TextMeshProUGUI pointText;
+    [SerializeField] private Multipliers multiplier;
 
     void Awake()
     {
@@ -42,6 +41,11 @@ public class PrestigeManager : MonoBehaviour
             pointText = GameObject.Find("PrestigePoints").GetComponent<TextMeshProUGUI>();
         }
 
+        if(multiplier == null)
+        {
+            multiplier = FindObjectOfType<Multipliers>();
+        }
+
         pointText.text = "Cycle Points: " + presPoint;
     }
 
@@ -50,60 +54,60 @@ public class PrestigeManager : MonoBehaviour
         switch (ID)
         {
             case 1:
-                autoMulti += 0.025f;
-                clickMulti += 0.025f;
+                multiplier.autoMulti += 0.025f;
+                multiplier.clickMulti += 0.025f;
                 break;
 
             case 2:
-                autoMulti += 0.025f;
-                clickMulti += 0.025f;
+                multiplier.autoMulti += 0.025f;
+                multiplier.clickMulti += 0.025f;
                 break;
 
             case 3:
-                autoMulti += 0.025f;
-                clickMulti += 0.025f;
+                multiplier.autoMulti += 0.025f;
+                multiplier.clickMulti += 0.025f;
                 break;
 
             case 4:
-                autoMulti += 0.025f;
-                clickMulti += 0.025f;
+                multiplier.autoMulti += 0.025f;
+                multiplier.clickMulti += 0.025f;
                 break;
 
             case 5:
-                autoMulti += 0.025f;
-                clickMulti += 0.025f;
+                multiplier.autoMulti += 0.025f;
+                multiplier.clickMulti += 0.025f;
                 break;
 
             case 6:
-                clickMulti += 0.05f;
+                multiplier.clickMulti += 0.05f;
                 break;
 
             case 7:
-                clickMulti += 0.05f;
+                multiplier.clickMulti += 0.05f;
                 break;
 
             case 8:
-                clickMulti += 0.05f;
+                multiplier.clickMulti += 0.05f;
                 break;
 
             case 9:
-                clickMulti += 0.05f;
+                multiplier.autoMulti += 0.05f;
                 break;
 
             case 10:
-                autoMulti += 0.05f;
+                multiplier.autoMulti += 0.05f;
                 break;
 
             case 11:
-                autoMulti += 0.05f;
+                multiplier.autoMulti += 0.05f;
                 break;
 
             case 12:
-                autoMulti += 0.05f;
+                multiplier.autoMulti += 0.05f;
                 break;
 
             case 13:
-                autoMulti += 0.05f;
+                multiplier.autoMulti += 0.05f;
                 break;
 
             case 14:

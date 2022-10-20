@@ -7,10 +7,11 @@ public class AchievementTracker : MonoBehaviour
     public bool[] achievements;
 
     public AchievementDataHandler achievementData;
-    public float sapCount;
+    [SerializeField] private Multipliers multipliers;
 
     void Awake()
     {
+        multipliers = FindObjectOfType<Multipliers>();
         achievementData = GetComponent<AchievementDataHandler>();
     }
 
@@ -19,7 +20,8 @@ public class AchievementTracker : MonoBehaviour
         if (achievements[achID] != true)
         {
             achievements[achID] = true;
-            sapCount += 0.04f;
+            multipliers.autoMulti += 0.04f;
+            multipliers.clickMulti += 0.04f;
             achievementData.SaveData();
         }
     }
