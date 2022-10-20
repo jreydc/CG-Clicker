@@ -25,6 +25,10 @@ public class UnitDataHolder : MonoBehaviour
 
     [SerializeField] PlaySound sound;
 
+    [SerializeField] AchievementTracker achievementTracker;
+    [SerializeField] BuildingBuyCount buildingBuy;
+    [SerializeField] int nextAch;
+
     private void Awake()
     {
         economy = FindObjectOfType<UnitBuildingEconomy>();
@@ -34,6 +38,8 @@ public class UnitDataHolder : MonoBehaviour
             unit.currentCost = unit.baseCost;
 
         sound = GameObject.Find("SoundManager").GetComponent<PlaySound>();
+        achievementTracker = FindObjectOfType<AchievementTracker>();
+        buildingBuy = FindObjectOfType<BuildingBuyCount>();
     }
 
     private void Update()
@@ -69,6 +75,11 @@ public class UnitDataHolder : MonoBehaviour
         economy.solCount -= unit.currentCost;
         unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
         economy.solPerSecond += unit.currentSol;
+
+        if(unit.currentOwned >= buildingBuy.buildingCount[nextAch]){
+            achievementTracker.Unlock(unit.unitID);
+            nextAch++;
+        }
 
         sound.Buy();
     }

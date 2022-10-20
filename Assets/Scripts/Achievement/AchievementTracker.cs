@@ -7,6 +7,7 @@ public class AchievementTracker : MonoBehaviour
     public bool[] achievements;
 
     public AchievementDataHandler achievementData;
+    public float sapCount;
 
     void Awake()
     {
@@ -15,7 +16,11 @@ public class AchievementTracker : MonoBehaviour
 
     public void Unlock(int achID)
     {
-        achievements[achID] = true;
-        achievementData.SaveData();
+        if (achievements[achID] != true)
+        {
+            achievements[achID] = true;
+            sapCount += 0.04f;
+            achievementData.SaveData();
+        }
     }
 }

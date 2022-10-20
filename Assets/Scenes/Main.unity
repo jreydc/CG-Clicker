@@ -16861,6 +16861,7 @@ GameObject:
   - component: {fileID: 1459658704}
   - component: {fileID: 1459658703}
   - component: {fileID: 1459658706}
+  - component: {fileID: 1459658707}
   - component: {fileID: 1459658705}
   m_Layer: 0
   m_Name: AchivementManager
@@ -16908,8 +16909,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fdf08b4a323af469ff4289f0e3d813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  achievements: 00000000000000000000000000000000000000
+  achievements: 0000000000000000000000000000000000000000
   achievementData: {fileID: 0}
+  sapCount: 0
 --- !u!114 &1459658706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16923,6 +16925,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   achievementTracker: {fileID: 0}
+--- !u!114 &1459658707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459658702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a075a712867c5468bdef0c6fbfa028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCount: 010000003200000096000000c8000000fa0000002c0100005e01000090010000c2010000f401000026020000580200008a020000bc020000ee02000020030000
 --- !u!1 &1469645412
 GameObject:
   m_ObjectHideFlags: 0

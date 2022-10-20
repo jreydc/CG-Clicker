@@ -27,6 +27,8 @@ public class AchievementDataHandler : MonoBehaviour
         {
             achievementTracker.achievements[i] = loadedPData.unlocks[i];
         }
+
+        achievementTracker.sapCount = loadedPData.sappy;
     }
 
     // Update is called once per frame
@@ -39,6 +41,8 @@ public class AchievementDataHandler : MonoBehaviour
             pData.unlocks[i] = achievementTracker.achievements[i];
         }
 
+        pData.sappy = achievementTracker.sapCount;
+
         jsonData = JsonUtility.ToJson(pData);
         File.WriteAllText(Application.dataPath + "/achievementFile.json", jsonData);
     }
@@ -50,6 +54,7 @@ public class AchievementDataHandler : MonoBehaviour
 
     private class Data
     {
-        public bool[] unlocks = new bool[19];
+        public bool[] unlocks = new bool[20];
+        public float sappy;
     }
 }
