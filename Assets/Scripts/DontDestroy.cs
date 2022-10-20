@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
-    private static DontDestroy instance;
+    [HideInInspector]
+    public string objectID;
 
-    void Awake()
+    private void Awake()
     {
-        if (instance == null)
+        objectID = name + transform.position.ToString();
+    }
+
+    void Start()
+    {
+        for (int i = 0; i < Object.FindObjectsOfType<DontDestroy>().Length; i++)
         {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-            return;
+            if (Object.FindObjectsOfType<DontDestroy>()[i] != this)
+            {
+                if (Object.FindObjectsOfType<DontDestroy>()[i].objectID == objectID)
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
 
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 }

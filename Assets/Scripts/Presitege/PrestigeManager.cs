@@ -10,24 +10,10 @@ public class PrestigeManager : MonoBehaviour
     public float clickMulti = 1;
     public float autoMulti = 1;
 
-    private static PrestigeManager instance;
-
     [SerializeField] private TextMeshProUGUI pointText;
 
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-
-        DontDestroyOnLoad(this.gameObject);
-
         cost = nextCostCalc(totalPoints);
     }
 

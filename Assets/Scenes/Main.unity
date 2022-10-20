@@ -4433,6 +4433,7 @@ GameObject:
   - component: {fileID: 431302265}
   - component: {fileID: 431302264}
   - component: {fileID: 431302266}
+  - component: {fileID: 431302267}
   m_Layer: 0
   m_Name: PrestigeHandler
   m_TagString: Untagged
@@ -4486,6 +4487,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkers: 0000000000000000000000000000000000
+--- !u!114 &431302267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431302263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b04adc729b4fcc489845a83e46f7c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 
 --- !u!1 &436051970
 GameObject:
   m_ObjectHideFlags: 0
@@ -11265,6 +11279,7 @@ MonoBehaviour:
   economy: {fileID: 992933602}
   presManager: {fileID: 431302264}
   scene: {fileID: 992933605}
+  data: {fileID: 1783584596}
   presButton: {fileID: 822429247}
   presPointTex: {fileID: 527511629}
 --- !u!1001 &996558002
@@ -16835,6 +16850,79 @@ RectTransform:
   m_AnchoredPosition: {x: 265, y: 463}
   m_SizeDelta: {x: 80, y: 79}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1459658702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1459658704}
+  - component: {fileID: 1459658703}
+  - component: {fileID: 1459658706}
+  - component: {fileID: 1459658705}
+  m_Layer: 0
+  m_Name: AchivementManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1459658703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459658702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b04adc729b4fcc489845a83e46f7c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 
+--- !u!4 &1459658704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459658702}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 382.23572, y: 607.56055, z: -182.03395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1459658705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459658702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5fdf08b4a323af469ff4289f0e3d813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievements: 00000000000000000000000000000000000000
+  achievementData: {fileID: 0}
+--- !u!114 &1459658706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459658702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009e1cdb2cc06c04aacb3775dc4c0f86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementTracker: {fileID: 0}
 --- !u!1 &1469645412
 GameObject:
   m_ObjectHideFlags: 0
@@ -17834,6 +17922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b04adc729b4fcc489845a83e46f7c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
 --- !u!114 &1591789544
 MonoBehaviour:
   m_ObjectHideFlags: 0
