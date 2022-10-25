@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingsLogic : MonoBehaviour
 {
-    [SerializeField] private List<BuildingUnit> unit;
+    [SerializeField] private List<UnitDataHolder> unit;
 
     public delegate void spawnSpecificBuilding(int index);
     public static event spawnSpecificBuilding spawnBuilding;
@@ -18,9 +18,9 @@ public class BuildingsLogic : MonoBehaviour
     {
         for(int i = 2; i < unit.Count; i++)
         {
-            if(currentSol >= unit[i].currentCost)
+            if(currentSol >= unit[i].unit.currentCost)
             {
-                spawnBuilding(unit[i].unitID);
+                spawnBuilding(unit[i].unit.unitID);
                 break;
             }
         }

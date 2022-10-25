@@ -17181,6 +17181,7 @@ GameObject:
   - component: {fileID: 1449023436}
   - component: {fileID: 1449023437}
   - component: {fileID: 1449023438}
+  - component: {fileID: 1449023439}
   m_Layer: 5
   m_Name: Buildings
   m_TagString: Untagged
@@ -17266,6 +17267,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &1449023439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449023435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45feaf4f15b149d4589591eb2f1e069e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit:
+  - {fileID: 212447312}
+  - {fileID: 59602694}
+  - {fileID: 1365916898}
+  - {fileID: 1695978212}
+  - {fileID: 1957640307}
+  - {fileID: 1555487192}
+  - {fileID: 438222698}
+  - {fileID: 2076459164}
+  - {fileID: 128881760}
+  - {fileID: 2008739928}
+  - {fileID: 443259935}
+  - {fileID: 1494103919}
+  - {fileID: 1320829029}
+  - {fileID: 929434068}
+  - {fileID: 456015113}
+  - {fileID: 1271491621}
+  - {fileID: 383935146}
+  - {fileID: 980799294}
+  - {fileID: 1613081185}
 --- !u!1 &1455309244
 GameObject:
   m_ObjectHideFlags: 0
