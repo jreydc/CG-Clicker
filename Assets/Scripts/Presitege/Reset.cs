@@ -12,7 +12,7 @@ public class Reset : MonoBehaviour
     public SceneLoader scene;
     public DataHandler data;
 
-    public Button presButton;
+    public GameObject presButton;
     public GameObject presPointTex;
 
     private void Update()
@@ -24,12 +24,12 @@ public class Reset : MonoBehaviour
 
         if(presManager.totalPoints == 0)
         {
-            presButton.interactable = false;
+            presButton.SetActive(false);
             presPointTex.SetActive(false);
         }
         else
         {
-            presButton.interactable = true;
+            presButton.SetActive(true);
             presPointTex.SetActive(true);
         }
     }

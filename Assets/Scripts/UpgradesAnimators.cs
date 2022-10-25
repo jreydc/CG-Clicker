@@ -5,27 +5,30 @@ using UnityEngine;
 public class UpgradesAnimators : MonoBehaviour
 {
     public Animator anim;
-    public GameObject openButton, closeButton;
+    public bool isOpen;
 
     // Start is called before the first frame update
     void Start()
     {
+        isOpen = false;
         anim = GetComponent<Animator>();
-        closeButton.SetActive(false);
-        openButton.SetActive(true);
     }
 
     public void Open()
     {
-        anim.Play("Open");
-        closeButton.SetActive(true);
-        openButton.SetActive(false);
+        if (!isOpen)
+        {
+            anim.Play("Open");
+            isOpen = true;
+        }
     }
 
     public void Close()
     {
-        anim.Play("Close");
-        closeButton.SetActive(false);
-        openButton.SetActive(true);
+        if (isOpen)
+        {
+            anim.Play("Close");
+            isOpen = false;
+        }
     }
 }

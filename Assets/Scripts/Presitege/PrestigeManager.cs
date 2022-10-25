@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PrestigeManager : MonoBehaviour
 {
     public float cost, tracker;
     public int presPoint, totalPoints;
+    public Button presButton;
 
     [SerializeField] private TextMeshProUGUI pointText;
     [SerializeField] private Multipliers multiplier;
@@ -44,6 +46,11 @@ public class PrestigeManager : MonoBehaviour
         if(multiplier == null)
         {
             multiplier = FindObjectOfType<Multipliers>();
+        }
+
+        if(presButton == null)
+        {
+            presButton = GameObject.Find("PrestigeButton").GetComponent<Button>();
         }
 
         pointText.text = "Cycle Points: " + presPoint;
