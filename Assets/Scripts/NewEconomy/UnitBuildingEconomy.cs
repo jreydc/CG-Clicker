@@ -37,6 +37,9 @@ public class UnitBuildingEconomy : MonoBehaviour
     public delegate void buildingCounter(float currentSol);
     public static event buildingCounter buildingCounterInterval;
 
+    public delegate void initialSpawn(float currentSol);
+    public static event initialSpawn initSpawn;
+
     private void Awake()
     {
         solCountAnim = solCountText.GetComponent<Animator>();
@@ -53,6 +56,7 @@ public class UnitBuildingEconomy : MonoBehaviour
         {
             solPerSecond += (unitInstance[i].unit.baseSol * unitInstance[i].unit.currentOwned);
         }
+        initSpawn(solCount);
     }
 
     private void Update()
@@ -124,7 +128,6 @@ public class UnitBuildingEconomy : MonoBehaviour
 
     public void SpawnBuilding(int index)
     {
-        if(!unitInstance[index].isActiveAndEnabled)
-            unitInstance[index].gameObject.SetActive(true);
+
     }
 }

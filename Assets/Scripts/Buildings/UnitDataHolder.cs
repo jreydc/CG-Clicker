@@ -6,6 +6,7 @@ using TMPro;
 
 public class UnitDataHolder : MonoBehaviour
 {
+    [SerializeField] private List<BuildingUnit> l_unit;
     [SerializeField] private UnitBuildingEconomy economy;
 
     [SerializeField] internal BuildingUnit unit;
@@ -31,15 +32,7 @@ public class UnitDataHolder : MonoBehaviour
 
     private void Awake()
     {
-        economy = FindObjectOfType<UnitBuildingEconomy>();
-        unitName.text = unit.name;
-        unitImage.sprite = unit.displayImage;
-        if (unit.currentCost <= unit.baseCost)
-            unit.currentCost = unit.baseCost;
-
-        sound = GameObject.Find("SoundManager").GetComponent<PlaySound>();
-        achievementTracker = FindObjectOfType<AchievementTracker>();
-        buildingBuy = FindObjectOfType<BuildingBuyCount>();
+        
     }
 
     private void Update()
@@ -90,5 +83,24 @@ public class UnitDataHolder : MonoBehaviour
     {
         float price = Mathf.Round(baseCost * (Mathf.Pow(1.15f, (M - F))));
         return price;
+    }
+
+    public void setUnit(int index)
+    {
+        unit = l_unit[index];
+        PopulateData();
+    }
+
+    void PopulateData()
+    {
+        economy = FindObjectOfType<UnitBuildingEconomy>();
+        unitName.text = unit.name;
+        unitImage.sprite = unit.displayImage;
+        if (unit.currentCost <= unit.baseCost)
+            unit.currentCost = unit.baseCost;
+
+        sound = GameObject.Find("SoundManager").GetComponent<PlaySound>();
+        achievementTracker = FindObjectOfType<AchievementTracker>();
+        buildingBuy = FindObjectOfType<BuildingBuyCount>();
     }
 }

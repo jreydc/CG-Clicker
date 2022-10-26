@@ -10,19 +10,18 @@ public class DataHandler : MonoBehaviour
     //[SerializeField] private UpgradeListData upgradeDataList;
     string jsonData;
 
-    public delegate void LoadDataList();
-    public static event LoadDataList loadDataList;
-
     private void Awake()
     {
         unitBuildingEconomy = FindObjectOfType<UnitBuildingEconomy>();
         prestigeManager = FindObjectOfType<PrestigeManager>();
         //upgradeDataList = FindObjectOfType<UpgradeListData>();
+
+        LoadData();
     }
 
     void Start()
     {
-        LoadData();
+        //LoadData();
     }
 
     public void LoadData()
