@@ -886,7 +886,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 63494748}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 992933607}
+        m_TargetAssemblyTypeName: BuySellMode, Assembly-CSharp
+        m_MethodName: Sell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &63494748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12133,6 +12145,7 @@ GameObject:
   - component: {fileID: 992933602}
   - component: {fileID: 992933604}
   - component: {fileID: 992933606}
+  - component: {fileID: 992933607}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -12264,6 +12277,19 @@ MonoBehaviour:
   data: {fileID: 1783584596}
   presButton: {fileID: 346215642}
   presPointTex: {fileID: 527511629}
+--- !u!114 &992933607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992933601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06151cec588105c41b57b1023f776413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buy: 0
 --- !u!1001 &996558002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17944,7 +17970,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1418684320}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 992933607}
+        m_TargetAssemblyTypeName: BuySellMode, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1418684320
 MonoBehaviour:
   m_ObjectHideFlags: 0

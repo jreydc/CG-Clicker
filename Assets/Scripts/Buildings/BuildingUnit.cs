@@ -15,4 +15,6 @@ public class BuildingUnit : ScriptableObject
     public float currentOwned;
     public int unitLevel = 1;
     public int unitID;
+
+    public float sellCost;
 }
