@@ -68,10 +68,17 @@ public class UnitDataHolder : MonoBehaviour
             }
         } else
         {
-            unitCost.text = unit.sellCost.ToString("F0");
-
+            if(unit.currentOwned != 0)
+            {
+                buyButton.interactable = true;
+                unitCost.text = unit.sellCost.ToString("F0");
+            }
+            else
+            {
+                buyButton.interactable = false;
+                unitCost.text = "";
+            }
             buyButton.GetComponent<Image>().color = Color.red;
-            buyButton.interactable = true;
         }
     }
 
