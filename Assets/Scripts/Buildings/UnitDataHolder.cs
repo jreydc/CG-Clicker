@@ -34,7 +34,7 @@ public class UnitDataHolder : MonoBehaviour
 
     private void Awake()
     {
-
+        buySell = FindObjectOfType<BuySellMode>();
     }
 
     private void Update()

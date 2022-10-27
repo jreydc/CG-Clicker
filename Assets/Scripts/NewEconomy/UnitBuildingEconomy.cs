@@ -7,7 +7,7 @@ using EconomyManager;
 
 public class UnitBuildingEconomy : MonoBehaviour
 {
-    [SerializeField] internal List<UnitDataHolder> unitInstance;
+    [SerializeField] internal List<BuildingUnit> unitInstance;
 
     [SerializeField] internal float solCount;
     private float internalCounter;
@@ -54,7 +54,7 @@ public class UnitBuildingEconomy : MonoBehaviour
     {
         for (int i = 0; i < unitInstance.Count; i++)
         {
-            solPerSecond += (unitInstance[i].unit.baseSol * unitInstance[i].unit.currentOwned);
+            solPerSecond += (unitInstance[i].baseSol * unitInstance[i].currentOwned);
         }
         initSpawn(solCount);
     }
