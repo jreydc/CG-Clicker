@@ -46,7 +46,9 @@ public class UnitDataHolder : MonoBehaviour
 
         if (buySell.buy == true)
         {
-            unitCost.text = unit.currentCost.ToString("F0");
+            //= ROUNDUP(ROUNDUP(BASE_COST * (1 - 1.15 ^ 10)) / (1 - 1.15))
+
+            unitCost.text = Mathf.Round(Mathf.Round((unit.currentCost * (Mathf.Pow(1 + 1.15f, buySell.amount) / (1 + 1.15f))))).ToString("F0");
             buyButton.GetComponent<Image>().color = Color.white;
             if (economy.solCount >= unit.currentCost)
             {
@@ -78,17 +80,19 @@ public class UnitDataHolder : MonoBehaviour
 
     public void OnClick_Buy()
     {
-         if (buySell.buy == true)
-        {
-            if (economy.solCount >= unit.currentCost)
+        if (buySell.buy == true)
             {
-                OnBuy();
-                upgradeCounterInterval();
+                if (economy.solCount >= unit.currentCost)
+                {
+                    OnBuy();
+                    upgradeCounterInterval();
+                }
             }
-        } else
-        {
-            OnSell();
-        }
+            else
+            {
+                OnSell();
+            }
+        
     }
     void OnBuy()
     {
