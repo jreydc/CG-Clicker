@@ -125,6 +125,12 @@ public class UnitBuildingEconomy : MonoBehaviour
         prestigeManager.AddPoint(tapsPerSecond * multipliers.clickMulti);
     }
 
+    public void BonusSol(float bonusSol)
+    {
+        solCount += bonusSol;
+        prestigeManager.AddPoint(bonusSol);
+    }
+
 
     public void SpawnBuilding(int index)
     {
