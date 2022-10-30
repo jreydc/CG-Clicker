@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6117211044683921758
+--- !u!1 &1274004112041541219
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6117211044683921759}
-  - component: {fileID: 6117211044683921731}
-  - component: {fileID: 6117211044683921730}
-  - component: {fileID: 6117211044683921729}
-  - component: {fileID: 6117211044683921728}
-  - component: {fileID: 6117211044683921732}
+  - component: {fileID: 1274004111531975350}
+  - component: {fileID: 1274004112041541222}
+  - component: {fileID: 1274004112041541223}
+  - component: {fileID: 1274004112041541220}
+  - component: {fileID: 1274004112041541221}
+  - component: {fileID: 1274004112041541218}
   m_Layer: 5
   m_Name: Toucan
   m_TagString: Untagged
@@ -21,13 +21,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &6117211044683921759
+--- !u!224 &1274004111531975350
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6117211044683921758}
+  m_GameObject: {fileID: 1274004112041541219}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,21 +40,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.82227}
   m_SizeDelta: {x: 166.4226, y: 98.3554}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6117211044683921731
+--- !u!222 &1274004112041541222
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6117211044683921758}
+  m_GameObject: {fileID: 1274004112041541219}
   m_CullTransparentMesh: 1
---- !u!114 &6117211044683921730
+--- !u!114 &1274004112041541223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6117211044683921758}
+  m_GameObject: {fileID: 1274004112041541219}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -78,13 +78,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6117211044683921729
+--- !u!114 &1274004112041541220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6117211044683921758}
+  m_GameObject: {fileID: 1274004112041541219}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -118,11 +118,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 6117211044683921730}
+  m_TargetGraphic: {fileID: 1274004112041541223}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6117211044683921732}
+      - m_Target: {fileID: 1274004112041541218}
         m_TargetAssemblyTypeName: Toucan, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -134,14 +134,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!95 &6117211044683921728
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SpawnClickText, Assembly-CSharp
+        m_MethodName: ToucSpawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!95 &1274004112041541221
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6117211044683921758}
+  m_GameObject: {fileID: 1274004112041541219}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e08903c50c9a3414c93c03653ed7cbd1, type: 2}
@@ -153,16 +165,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6117211044683921732
+--- !u!114 &1274004112041541218
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6117211044683921758}
+  m_GameObject: {fileID: 1274004112041541219}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 819b934a494a4e14d803bb378d99bf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusSol: 0
   economy: {fileID: 0}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Toucan : MonoBehaviour
 {
     int moveSpeed = 25;
+    public float bonusSol;
     UnitBuildingEconomy unitBuilding;
     [SerializeField] private UnitBuildingEconomy economy;
     PlaySound sound;
@@ -18,6 +19,7 @@ public class Toucan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bonusSol = Random.Range(unitBuilding.solCount * 0.25f, unitBuilding.solCount * 0.5f);
         Invoke("Die", 55);
     }
 
@@ -29,7 +31,6 @@ public class Toucan : MonoBehaviour
 
     public void OnClick()
     {
-        float bonusSol = Random.Range(unitBuilding.solCount * 0.25f, unitBuilding.solCount * 0.5f);
         economy.BonusSol(bonusSol);
         sound.Buy();
         Die();

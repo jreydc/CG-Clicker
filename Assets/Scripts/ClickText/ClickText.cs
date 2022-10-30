@@ -13,9 +13,9 @@ public class ClickText : MonoBehaviour
     {
         transform.SetParent(GameObject.Find("ScoreText").transform);
 
-        unit = GameObject.Find("Game Manager").GetComponent<UnitBuildingEconomy>();
+        //unit = GameObject.Find("Game Manager").GetComponent<UnitBuildingEconomy>();
 
-        self.text = "+" + unit.tapsPerSecond.ToString() + " Sol";
+        //self.text = "+" + unit.tapsPerSecond.ToString() + " Sol";
 
         Invoke("Die", 1f);
     }
