@@ -49,8 +49,9 @@ public class UnitDataHolder : MonoBehaviour
             //= ROUNDUP(ROUNDUP(BASE_COST * (1 - 1.15 ^ 10)) / (1 - 1.15))
 
             unitCost.text = Mathf.Round(Mathf.Round((unit.currentCost * (Mathf.Pow(1 + 1.15f, buySell.amount) / (1 + 1.15f))))).ToString("F0");
+
             buyButton.GetComponent<Image>().color = Color.white;
-            if (economy.solCount >= unit.currentCost)
+            if (economy.solCount >= Mathf.Round(Mathf.Round((unit.currentCost * (Mathf.Pow(1 + 1.15f, buySell.amount) / (1 + 1.15f))))))
             {
                 buyButton.interactable = true;
             }
@@ -81,72 +82,73 @@ public class UnitDataHolder : MonoBehaviour
     public void OnClick_Buy()
     {
         if (buySell.buy == true)
-            {
-                if (economy.solCount >= unit.currentCost)
-                {
-                    OnBuy();
-                    upgradeCounterInterval();
-                }
-            }
-            else
-            {
-                OnSell();
-            }
-        
-    }
-    void OnBuy()
-    {
-        unit.unitLevel++;
-        unit.currentOwned++;
-        unit.currentSol += unit.baseSol;
-        economy.solCount -= unit.currentCost;
-        unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
-        economy.solPerSecond += unit.currentSol;
-        unit.sellCost = unit.currentCost / 2.2f;
-        if (unit.currentOwned >= buildingBuy.buildingCount[nextAch])
         {
-            achievementTracker.Unlock(unit.unitID);
-            nextAch++;
+
+            if (economy.solCount >= Mathf.Round(Mathf.Round((unit.currentCost * (Mathf.Pow(1 + 1.15f, buySell.amount) / (1 + 1.15f))))))
+            {
+                OnBuy();
+                upgradeCounterInterval();
+            }
         }
-        sound.Buy();
+        else
+        {
+            OnSell();
+        }
     }
 
-    void OnSell()
-    {
-        unit.unitLevel--;
-        unit.currentOwned--;
-        unit.currentSol -= unit.baseSol;
-        economy.solCount += unit.sellCost;
-        unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
-        economy.solPerSecond -= unit.currentSol;
-        unit.sellCost = unit.currentCost / 2.2f;
-        sound.Buy();
-    }
+        void OnBuy()
+        {
+            unit.unitLevel += buySell.amount;
+            unit.currentOwned += buySell.amount;
+            unit.currentSol += unit.baseSol * buySell.amount;
+            economy.solCount -= Mathf.Round(Mathf.Round((unit.currentCost * (Mathf.Pow(1 + 1.15f, buySell.amount) / (1 + 1.15f)))));
+            unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
+            economy.solPerSecond += unit.currentSol;
+            unit.sellCost = unit.currentCost / 2.2f;
+            if (unit.currentOwned >= buildingBuy.buildingCount[nextAch])
+            {
+                achievementTracker.Unlock(unit.unitID);
+                nextAch++;
+            }
+            sound.Buy();
+        }
 
-    //Where M is the number of that type of unit you own
-    // and F as the number of that type of unit you recieve for free
-    private float priceActuator(float baseCost, float M, float F)
-    {
-        float price = Mathf.Round(baseCost * (Mathf.Pow(1.15f, (M - F))));
-        return price;
-    }
+        void OnSell()
+        {
+            unit.unitLevel--;
+            unit.currentOwned--;
+            unit.currentSol -= unit.baseSol;
+            economy.solCount += unit.sellCost;
+            unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
+            economy.solPerSecond -= unit.currentSol;
+            unit.sellCost = unit.currentCost / 2.2f;
+            sound.Buy();
+        }
 
-    public void setUnit(int index)
-    {
-        unit = l_unit[index];
-        PopulateData();
-    }
+        //Where M is the number of that type of unit you own
+        // and F as the number of that type of unit you recieve for free
+        private float priceActuator(float baseCost, float M, float F)
+        {
+            float price = Mathf.Round(baseCost * (Mathf.Pow(1.15f, (M - F))));
+            return price;
+        }
 
-    void PopulateData()
-    {
-        economy = FindObjectOfType<UnitBuildingEconomy>();
-        unitName.text = unit.name;
-        unitImage.sprite = unit.displayImage;
-        if (unit.currentCost <= unit.baseCost)
-            unit.currentCost = unit.baseCost;
+        public void setUnit(int index)
+        {
+            unit = l_unit[index];
+            PopulateData();
+        }
 
-        sound = GameObject.Find("SoundManager").GetComponent<PlaySound>();
-        achievementTracker = FindObjectOfType<AchievementTracker>();
-        buildingBuy = FindObjectOfType<BuildingBuyCount>();
+        void PopulateData()
+        {
+            economy = FindObjectOfType<UnitBuildingEconomy>();
+            unitName.text = unit.name;
+            unitImage.sprite = unit.displayImage;
+            if (unit.currentCost <= unit.baseCost)
+                unit.currentCost = unit.baseCost;
+
+            sound = GameObject.Find("SoundManager").GetComponent<PlaySound>();
+            achievementTracker = FindObjectOfType<AchievementTracker>();
+            buildingBuy = FindObjectOfType<BuildingBuyCount>();
+        }
     }
-}

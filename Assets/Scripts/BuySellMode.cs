@@ -5,7 +5,7 @@ using UnityEngine;
 public class BuySellMode : MonoBehaviour
 {
     public bool buy;
-    public float amount;
+    public int amount;
 
     public UnitDataHolder[] unitDatas;
 
