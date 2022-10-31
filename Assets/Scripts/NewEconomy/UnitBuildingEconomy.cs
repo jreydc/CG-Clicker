@@ -61,7 +61,7 @@ public class UnitBuildingEconomy : MonoBehaviour
 
     private void Update()
     {
-        spsText.text = solPerSecond.ToString("F1") + "/s";
+        spsText.text = (solPerSecond * multipliers.autoMulti * multipliers.toucAuto).ToString("F1") + "/s";
         //tpsText.text = tapsPerSecond.ToString();
         //gtpsText.text = guardianTapsPerSecond.ToString();
         countingSystem();
@@ -109,20 +109,20 @@ public class UnitBuildingEconomy : MonoBehaviour
         if (elapsedTime >= 1f)
         {
             elapsedTime = elapsedTime % 0.5f;
-            solCount = EconomyMain.autoAddScore(solPerSecond * multipliers.autoMulti, solCount);
+            solCount = EconomyMain.autoAddScore(solPerSecond * multipliers.autoMulti * multipliers.toucAuto, solCount);
             solCountAnim.Play(0);
 
-            prestigeManager.AutoAddPoint(solPerSecond * multipliers.autoMulti);
+            prestigeManager.AutoAddPoint(solPerSecond * multipliers.autoMulti * multipliers.toucAuto);
             buildingCounterInterval(solCount);
         }
     }
 
     public void OnClick_AddSol()
     {
-        solCount += tapsPerSecond * multipliers.clickMulti;
+        solCount += tapsPerSecond * multipliers.clickMulti * multipliers.toucClick;
         Instantiate(particle, transform.position, transform.rotation);
 
-        prestigeManager.AddPoint(tapsPerSecond * multipliers.clickMulti);
+        prestigeManager.AddPoint(tapsPerSecond * multipliers.clickMulti * multipliers.toucClick);
     }
 
     public void BonusSol(float bonusSol)

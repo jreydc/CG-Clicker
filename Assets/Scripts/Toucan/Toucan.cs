@@ -6,20 +6,25 @@ public class Toucan : MonoBehaviour
 {
     int moveSpeed = 25;
     public float bonusSol;
-    UnitBuildingEconomy unitBuilding;
     [SerializeField] private UnitBuildingEconomy economy;
-    PlaySound sound;
+    [SerializeField] SpawnClickText spawnText;
+    [SerializeField]PlaySound sound;
+    [SerializeField] Multipliers multi;
+
+    int bonusTime;
 
     private void Awake()
     {
-        unitBuilding = FindObjectOfType<UnitBuildingEconomy>();
+        economy = FindObjectOfType<UnitBuildingEconomy>();
         sound = FindObjectOfType<PlaySound>();
+        spawnText = FindObjectOfType<SpawnClickText>();
+        multi = FindObjectOfType<Multipliers>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        bonusSol = Random.Range(unitBuilding.solCount * 0.25f, unitBuilding.solCount * 0.5f);
+        bonusSol = Random.Range(economy.solCount * 0.25f, economy.solCount * 0.5f);
         Invoke("Die", 55);
     }
 
@@ -31,8 +36,32 @@ public class Toucan : MonoBehaviour
 
     public void OnClick()
     {
-        economy.BonusSol(bonusSol);
-        sound.Buy();
+        int chooser = Random.Range(1, 4);
+
+        switch (chooser)
+        {
+            case 1:
+                economy.BonusSol(bonusSol);
+                sound.Buy();
+                spawnText.ToucSpawn(chooser, bonusTime);
+                break;
+
+            case 2:
+                bonusTime = Random.Range(30, 61);
+                print(bonusTime);
+                multi.ToucAuto(bonusTime);
+                sound.Buy();
+                spawnText.ToucSpawn(chooser, bonusTime);
+                break;
+
+            case 3:
+                bonusTime = Random.Range(30, 61);
+                print(bonusTime);
+                multi.ToucClick(bonusTime);
+                sound.Buy();
+                spawnText.ToucSpawn(chooser, bonusTime);
+                break;
+        }
         Die();
     }
 

@@ -3966,6 +3966,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoMulti: 1
   clickMulti: 1
+  toucAuto: 1
+  toucClick: 1
 --- !u!114 &431302269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23423,7 +23425,7 @@ PrefabInstance:
     - target: {fileID: 1274004112041541218, guid: 75908689260a4cb4499c072976e091e4, type: 3}
       propertyPath: economy
       value: 
-      objectReference: {fileID: 992933602}
+      objectReference: {fileID: 0}
     - target: {fileID: 1274004112041541219, guid: 75908689260a4cb4499c072976e091e4, type: 3}
       propertyPath: m_Name
       value: Toucan

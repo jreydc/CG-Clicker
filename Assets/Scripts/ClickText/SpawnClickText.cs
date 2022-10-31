@@ -20,13 +20,28 @@ public class SpawnClickText : MonoBehaviour
     public void Spawn()
     {
         GameObject spawnedText = Instantiate(text, Input.mousePosition, transform.rotation);
-        spawnedText.GetComponentInChildren<TextMeshProUGUI>().text = "+" + (unit.tapsPerSecond * multipliers.clickMulti) + " Sols";
+        spawnedText.GetComponentInChildren<TextMeshProUGUI>().text = "+" + (unit.tapsPerSecond * multipliers.clickMulti * multipliers.toucClick) + " Sols";
     }
 
-    public void ToucSpawn()
-    {
+    public void ToucSpawn(int chooser, int bonusTime)
+    { 
         GameObject spawnedText = Instantiate(text, Input.mousePosition, transform.rotation);
-        spawnedText.GetComponentInChildren<TextMeshProUGUI>().text = "+" + touc.bonusSol + " Sols";
+
+        switch (chooser)
+        {
+            case 1:
+                spawnedText.GetComponentInChildren<TextMeshProUGUI>().text = "+" + Mathf.RoundToInt(touc.bonusSol) + " Sols";
+                break;
+
+            case 2:
+                spawnedText.GetComponentInChildren<TextMeshProUGUI>().text = "x7 Auto Sols for " + bonusTime + " Seconds!";
+                break;
+
+            case 3:
+                spawnedText.GetComponentInChildren<TextMeshProUGUI>().text = "x7 Tap Sols for " + bonusTime + " Seconds!";
+                break;
+        }
+        
     }
 
     private void Update()
