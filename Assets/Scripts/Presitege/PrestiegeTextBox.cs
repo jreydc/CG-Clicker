@@ -24,9 +24,9 @@ public class PrestiegeTextBox : MonoBehaviour
     {
         textbox.SetActive(false);
 
-        manager = GameObject.Find("PrestigeHandler").GetComponent<PrestigeManager>();
-        data = GameObject.Find("PrestigeHandler").GetComponent<PrestigeDataHandler>();
-        save = GameObject.Find("Data").GetComponent<PrestigeSaveLoad>();
+        manager = FindObjectOfType<PrestigeManager>();
+        data = FindObjectOfType<PrestigeDataHandler>();
+        save = FindObjectOfType<PrestigeSaveLoad>();
 
         if (data.checkers[ID] != true)
         {

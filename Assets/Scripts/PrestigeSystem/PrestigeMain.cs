@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class PrestigeMain : MonoBehaviour
 {
-    //What should be put here?
+
 }

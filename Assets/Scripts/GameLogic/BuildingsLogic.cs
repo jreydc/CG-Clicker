@@ -18,6 +18,11 @@ public class BuildingsLogic : MonoBehaviour
         UnitBuildingEconomy.initSpawn += SpawnInstant;
     }
 
+    private void Start()
+    {
+        //Text
+    }
+
     void CheckBuildingReqs(float currentSol)
     {
         for(int i = 0; i < unit.Count; i++)
@@ -54,5 +59,21 @@ public class BuildingsLogic : MonoBehaviour
         GameObject spawnedGO = Instantiate(unitGO, this.transform);
         spawnedGO.GetComponent<UnitDataHolder>().setUnit(index);
         listUnitGO.Add(spawnedGO);
+    }
+
+    private void OnApplicationQuit()
+    {
+        Disable();
+    }
+
+    private void OnDestroy()
+    {
+        Disable();   
+    }
+
+    void Disable()
+    {
+        UnitBuildingEconomy.buildingCounterInterval -= CheckBuildingReqs;
+        UnitBuildingEconomy.initSpawn -= SpawnInstant;
     }
 }
