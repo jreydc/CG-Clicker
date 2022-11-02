@@ -132,4 +132,14 @@ public class UpgadesLogic : MonoBehaviour
         GameObject GO = Instantiate(upgradeInstance, parent.transform);
         saveData(GO, (currentID - 1));
     }
+
+    private void OnDestroy()
+    {
+        UnitDataHolder.upgradeCounterInterval -= Count;
+    }
+
+    private void OnApplicationQuit()
+    {
+        UnitDataHolder.upgradeCounterInterval -= Count;
+    }
 }

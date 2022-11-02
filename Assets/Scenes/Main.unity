@@ -14556,7 +14556,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4e4f78df5753f9b419830359060d2e18, type: 2}
   unitID: 
   instanceCount: 0
-  dataGOPrefab: {fileID: 0}
+  dataGOPrefab: {fileID: 3434669899894602719, guid: 5ccf5ed8a6cb22743937bd487ab77401, type: 3}
   dataHandler: {fileID: 0}
 --- !u!1 &1270052774
 GameObject:

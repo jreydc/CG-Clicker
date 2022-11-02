@@ -1,3 +1,4 @@
+using System.Linq;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
@@ -43,11 +44,13 @@ public class UpgradeListData : MonoBehaviour
 
         for (int i = 0; i < instanceCount; i++)
         {
-            GameObject GO = Instantiate(dataGOPrefab, this.transform);
-            GO.GetComponent<BuyUpgrade>().GetUnitInfo(tierList[loadedData.unitID[i]]);
-            dataGO.Add(GO);
+            if (dataGO.ElementAtOrDefault(i) != null)
+            {
+                GameObject GO = Instantiate(dataGOPrefab, this.transform);
+                GO.GetComponent<BuyUpgrade>().GetUnitInfo(tierList[loadedData.unitID[i]]);
+                dataGO.Add(GO);
+            }
         }
-
         Debug.Log("Load Data");
     }
 
