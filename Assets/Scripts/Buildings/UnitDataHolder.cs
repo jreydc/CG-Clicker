@@ -51,20 +51,30 @@ public class UnitDataHolder : MonoBehaviour
             if (buySell.amount != 1)
             {
                 unitCost.text = Mathf.Round(Mathf.Round((unit.currentCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))).ToString("F0");
+
+                if (economy.solCount >= Mathf.Round(Mathf.Round((unit.currentCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))))
+                {
+                    buyButton.interactable = true;
+                }
+                else
+                {
+                    buyButton.interactable = false;
+                }
             }
             else
             {
                 unitCost.text = unit.currentCost.ToString("F0");
+
+                if (economy.solCount >= unit.currentCost)
+                {
+                    buyButton.interactable = true;
+                }
+                else
+                {
+                    buyButton.interactable = false;
+                }
             }
             buyButton.GetComponent<Image>().color = Color.white;
-            if (economy.solCount >= Mathf.Round(Mathf.Round((unit.currentCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))))
-            {
-                buyButton.interactable = true;
-            }
-            else
-            {
-                buyButton.interactable = false;
-            }
         }
         else
         {
@@ -89,14 +99,11 @@ public class UnitDataHolder : MonoBehaviour
     {
         if (buySell.buy == true)
         {
-
-            if (economy.solCount >= Mathf.Round(Mathf.Round((unit.currentCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))))
-            {
-                OnBuy();
-                upgradeCounterInterval();
-            }
+             OnBuy();
+             upgradeCounterInterval();
+            
         }
-        else
+        else if(buySell.buy == false && unit.currentOwned < 0)
         {
             OnSell();
         }
@@ -107,7 +114,16 @@ public class UnitDataHolder : MonoBehaviour
             unit.unitLevel += buySell.amount;
             unit.currentOwned += buySell.amount;
             unit.currentSol += unit.baseSol * buySell.amount;
+
+        if (buySell.amount != 1)
+        {
             economy.solCount -= Mathf.Round(Mathf.Round((unit.currentCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f)))));
+        }
+        else
+        {
+            economy.solCount -= unit.currentCost;
+        }
+
             unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
             economy.solPerSecond += unit.currentSol;
             unit.sellCost = unit.currentCost / 2.2f;
