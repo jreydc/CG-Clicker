@@ -48,10 +48,16 @@ public class UnitDataHolder : MonoBehaviour
         {
             //= ROUNDUP(ROUNDUP(BASE_COST * (1 - 1.15 ^ 10)) / (1 - 1.15))
 
-            unitCost.text = Mathf.Round(Mathf.Round((unit.currentCost * (Mathf.Pow(1 + 1.15f, buySell.amount) / (1 + 1.15f))))).ToString("F0");
-
+            if (buySell.amount != 1)
+            {
+                unitCost.text = Mathf.Round(Mathf.Round((unit.currentCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))).ToString("F0");
+            }
+            else
+            {
+                unitCost.text = unit.currentCost.ToString("F0");
+            }
             buyButton.GetComponent<Image>().color = Color.white;
-            if (economy.solCount >= Mathf.Round(Mathf.Round((unit.currentCost * (Mathf.Pow(1 + 1.15f, buySell.amount) / (1 + 1.15f))))))
+            if (economy.solCount >= Mathf.Round(Mathf.Round((unit.currentCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))))
             {
                 buyButton.interactable = true;
             }
@@ -84,7 +90,7 @@ public class UnitDataHolder : MonoBehaviour
         if (buySell.buy == true)
         {
 
-            if (economy.solCount >= Mathf.Round(Mathf.Round((unit.currentCost * (Mathf.Pow(1 + 1.15f, buySell.amount) / (1 + 1.15f))))))
+            if (economy.solCount >= Mathf.Round(Mathf.Round((unit.currentCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))))
             {
                 OnBuy();
                 upgradeCounterInterval();
@@ -101,7 +107,7 @@ public class UnitDataHolder : MonoBehaviour
             unit.unitLevel += buySell.amount;
             unit.currentOwned += buySell.amount;
             unit.currentSol += unit.baseSol * buySell.amount;
-            economy.solCount -= Mathf.Round(Mathf.Round((unit.currentCost * (Mathf.Pow(1 + 1.15f, buySell.amount) / (1 + 1.15f)))));
+            economy.solCount -= Mathf.Round(Mathf.Round((unit.currentCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f)))));
             unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
             economy.solPerSecond += unit.currentSol;
             unit.sellCost = unit.currentCost / 2.2f;
