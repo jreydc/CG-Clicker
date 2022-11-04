@@ -50,6 +50,6 @@ public class AchievementDataHandler : MonoBehaviour
 
     private class Data
     {
-        public bool[] unlocks = new bool[20];
+        public bool[] unlocks = new bool[60];
     }
 }
