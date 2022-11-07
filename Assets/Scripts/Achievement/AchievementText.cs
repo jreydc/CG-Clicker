@@ -15,7 +15,7 @@ public class AchievementText : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Play()
+    public void Play()
     {
         anim.Play("Appear");
     }

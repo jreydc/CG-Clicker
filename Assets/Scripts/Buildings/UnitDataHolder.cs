@@ -26,6 +26,8 @@ public class UnitDataHolder : MonoBehaviour
 
     [SerializeField] PlaySound sound;
 
+    [SerializeField] AchievementText achievementText;
+
     [SerializeField] AchievementTracker achievementTracker;
     [SerializeField] BuildingBuyCount buildingBuy;
     [SerializeField] int nextAch;
@@ -36,6 +38,8 @@ public class UnitDataHolder : MonoBehaviour
     {
         buySell = FindObjectOfType<BuySellMode>();
         GameObject.FindObjectOfType<UpgadesLogic>().InitializeDelegate();
+
+        achievementText = FindObjectOfType<AchievementText>();
     }
 
     private void Update()
@@ -79,12 +83,18 @@ public class UnitDataHolder : MonoBehaviour
         }
         else
         {
-            unitCost.text = unit.sellCost.ToString("F0");
+            if (buySell.amount != 1)
+            {
+                unitCost.text = Mathf.Round(Mathf.Round((unit.sellCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))).ToString("F0");
+            }
+            else
+            {
+                unitCost.text = unit.sellCost.ToString("F0");
+            }
 
-            if (unit.currentOwned != 0)
+            if (unit.currentOwned > buySell.amount)
             {
                 buyButton.interactable = true;
-                unitCost.text = unit.sellCost.ToString("F0");
             }
             else
             {
@@ -92,7 +102,6 @@ public class UnitDataHolder : MonoBehaviour
                 unitCost.text = "";
             }
             buyButton.GetComponent<Image>().color = Color.red;
-            buyButton.interactable = true;
         }
     }
 
@@ -103,7 +112,7 @@ public class UnitDataHolder : MonoBehaviour
              OnBuy();
              upgradeCounterInterval();
         }
-        else if(buySell.buy == false && unit.currentOwned < 0)
+        else if(buySell.buy == false && unit.currentOwned > buySell.amount)
         {
             OnSell();
         }
@@ -125,7 +134,7 @@ public class UnitDataHolder : MonoBehaviour
         }
 
             unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
-            economy.solPerSecond += unit.currentSol;
+            economy.solPerSecond += unit.currentSol * buySell.amount;
             unit.sellCost = unit.currentCost / 2.2f;
             if (unit.currentOwned >= buildingBuy.buildingCount[nextAch])
             {
@@ -133,14 +142,20 @@ public class UnitDataHolder : MonoBehaviour
             {
                 case 0:
                     achievementTracker.Unlock(unit.unitID);
+                    achievementText.achName.text = unit.name + " Bronze";
+                    achievementText.Play();
                     break;
 
                 case 1:
                     achievementTracker.Unlock(unit.unitID + 19);
+                    achievementText.achName.text = unit.name + " Silver";
+                    achievementText.Play();
                     break;
 
                 case 2:
                     achievementTracker.Unlock(unit.unitID + 38);
+                    achievementText.achName.text = unit.name + " Gold";
+                    achievementText.Play();
                     break;
             }
                 nextAch++;
@@ -150,10 +165,19 @@ public class UnitDataHolder : MonoBehaviour
 
         void OnSell()
         {
-            unit.unitLevel--;
-            unit.currentOwned--;
-            unit.currentSol -= unit.baseSol;
+            unit.unitLevel-= buySell.amount;
+            unit.currentOwned-= buySell.amount;
+            unit.currentSol -= unit.baseSol * buySell.amount;
+
+        if (buySell.amount != 1)
+        {
+            economy.solCount += Mathf.Round(Mathf.Round((unit.sellCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f)))));
+        }
+        else
+        {
             economy.solCount += unit.sellCost;
+        }
+
             unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
             economy.solPerSecond -= unit.currentSol;
             unit.sellCost = unit.currentCost / 2.2f;
