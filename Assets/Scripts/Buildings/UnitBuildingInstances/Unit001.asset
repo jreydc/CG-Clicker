@@ -20,3 +20,4 @@ MonoBehaviour:
   currentOwned: 0
   unitLevel: 1
   unitID: 1
+  sellCost: 7.7272725

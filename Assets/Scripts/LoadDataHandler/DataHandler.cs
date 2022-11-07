@@ -26,19 +26,22 @@ public class DataHandler : MonoBehaviour
 
     public void LoadData()
     {
-        jsonData = File.ReadAllText(Application.dataPath + "/dataFile.json");
-        Data loadedPData = JsonUtility.FromJson<Data>(jsonData);
+        if(File.Exists(Application.dataPath + "/dataFile.json"))
+        {
+            jsonData = File.ReadAllText(Application.dataPath + "/dataFile.json");
+            Data loadedPData = JsonUtility.FromJson<Data>(jsonData);
 
-        unitBuildingEconomy.solCount = loadedPData.currentPoints;
-        unitBuildingEconomy.tapsPerSecond = loadedPData.currentTPS;
-        unitBuildingEconomy.solPerSecond = loadedPData.currentSPS;
-        //upgradeDataList.dataGO = loadedPData.dataList;
-        //loadDataList();
-        /*
-        upgradeMain.upgradeLevelList = loadedPData.upgradeLevelList;
-        upgradeMain.currentUpgradeCost = loadedPData.currentUpgradeCost;
-        upgradeMain.incrementalUpgradeCost = loadedPData.currentIteration;
-        */
+            unitBuildingEconomy.solCount = loadedPData.currentPoints;
+            unitBuildingEconomy.tapsPerSecond = loadedPData.currentTPS;
+            unitBuildingEconomy.solPerSecond = loadedPData.currentSPS;
+            //upgradeDataList.dataGO = loadedPData.dataList;
+            //loadDataList();
+            /*
+            upgradeMain.upgradeLevelList = loadedPData.upgradeLevelList;
+            upgradeMain.currentUpgradeCost = loadedPData.currentUpgradeCost;
+            upgradeMain.incrementalUpgradeCost = loadedPData.currentIteration;
+            */
+        }
     }
 
     public void SaveData()

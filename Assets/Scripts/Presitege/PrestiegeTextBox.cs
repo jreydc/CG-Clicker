@@ -28,6 +28,7 @@ public class PrestiegeTextBox : MonoBehaviour
         data = FindObjectOfType<PrestigeDataHandler>();
         save = FindObjectOfType<PrestigeSaveLoad>();
 
+        /*
         if (data.checkers[ID] != true)
         {
             Hide();
@@ -36,6 +37,7 @@ public class PrestiegeTextBox : MonoBehaviour
         {
             Show();
         }
+        */
     }
 
     private void Update()
@@ -92,7 +94,7 @@ public class PrestiegeTextBox : MonoBehaviour
         bought = true;
 
         manager.BuyPrestige(ID, cost);
-        data.checkers[ID] = true;
+        //data.checkers[ID] = true;
         save.SaveData();
     }
 }

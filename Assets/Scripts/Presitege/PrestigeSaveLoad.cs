@@ -28,7 +28,7 @@ public class PrestigeSaveLoad : MonoBehaviour
     {
         jsonData = File.ReadAllText(Application.dataPath + "/presDataFile.json");
         Data loadedPData = JsonUtility.FromJson<Data>(jsonData);
-
+        /*
         prestigeData.checkers[0] = loadedPData.upgrade0;
         prestigeData.checkers[1] = loadedPData.upgrade1;
         prestigeData.checkers[2] = loadedPData.upgrade2;
@@ -46,6 +46,7 @@ public class PrestigeSaveLoad : MonoBehaviour
         prestigeData.checkers[14] = loadedPData.upgrade14;
         prestigeData.checkers[15] = loadedPData.upgrade15;
         prestigeData.checkers[16] = loadedPData.upgrade16;
+        */
 
         prestigeManager.presPoint = loadedPData.prestigePoints;
         multipliers.autoMulti = loadedPData.autoMultiplier;
@@ -60,6 +61,7 @@ public class PrestigeSaveLoad : MonoBehaviour
     {
         Data pData = new Data();
 
+        /*
         pData.upgrade0 = prestigeData.checkers[0];
         pData.upgrade1 = prestigeData.checkers[1];
         pData.upgrade2 = prestigeData.checkers[2];
@@ -85,6 +87,7 @@ public class PrestigeSaveLoad : MonoBehaviour
         pData.presTracker = prestigeManager.tracker;
         pData.presCost = prestigeManager.cost;
         pData.prestigePointTotal = prestigeManager.totalPoints;
+        */
 
         jsonData = JsonUtility.ToJson(pData);
         File.WriteAllText(Application.dataPath + "/presDataFile.json", jsonData);

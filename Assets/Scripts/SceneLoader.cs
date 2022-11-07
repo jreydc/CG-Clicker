@@ -14,7 +14,7 @@ public class SceneLoader : MonoBehaviour
         dataHandler = FindObjectOfType<DataHandler>();
         prestigeData = FindObjectOfType<PrestigeSaveLoad>();
 
-        social.SetActive(false);
+        //social.SetActive(false);
         shop.SetActive(false);
     }
 

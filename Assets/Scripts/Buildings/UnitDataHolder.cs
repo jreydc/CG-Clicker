@@ -35,6 +35,7 @@ public class UnitDataHolder : MonoBehaviour
     private void Awake()
     {
         buySell = FindObjectOfType<BuySellMode>();
+        GameObject.FindObjectOfType<UpgadesLogic>().InitializeDelegate();
     }
 
     private void Update()
@@ -101,7 +102,6 @@ public class UnitDataHolder : MonoBehaviour
         {
              OnBuy();
              upgradeCounterInterval();
-            
         }
         else if(buySell.buy == false && unit.currentOwned < 0)
         {

@@ -18,7 +18,24 @@ public class UpgadesLogic : MonoBehaviour
 
     private void Awake()
     {
+        //UnitDataHolder.upgradeCounterInterval += Count;
+    }
+
+    public void InitializeDelegate()
+    {
         UnitDataHolder.upgradeCounterInterval += Count;
+        //Added Counter
+    }
+
+    public void DestroyDelegate()
+    {
+        UnitDataHolder.upgradeCounterInterval -= Count;
+        //Deleted Counter
+    }
+
+    private void Start()
+    {
+        //A
     }
 
     void Count()
