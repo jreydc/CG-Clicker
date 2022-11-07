@@ -129,7 +129,20 @@ public class UnitDataHolder : MonoBehaviour
             unit.sellCost = unit.currentCost / 2.2f;
             if (unit.currentOwned >= buildingBuy.buildingCount[nextAch])
             {
-                achievementTracker.Unlock(unit.unitID);
+            switch (nextAch)
+            {
+                case 0:
+                    achievementTracker.Unlock(unit.unitID);
+                    break;
+
+                case 1:
+                    achievementTracker.Unlock(unit.unitID + 19);
+                    break;
+
+                case 2:
+                    achievementTracker.Unlock(unit.unitID + 38);
+                    break;
+            }
                 nextAch++;
             }
             sound.Buy();
