@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlaySound : MonoBehaviour
 {
-    public AudioSource click, buy;
+    public AudioSource click, buy, squawck;
 
     private float pitchVal;
     void Start()
@@ -27,5 +27,13 @@ public class PlaySound : MonoBehaviour
 
         buy.pitch = pitchVal;
         buy.Play();
+    }
+
+    public void Sqwack()
+    {
+        pitchVal = Random.Range(1f, 1.3f);
+
+        squawck.pitch = pitchVal;
+        squawck.Play();
     }
 }

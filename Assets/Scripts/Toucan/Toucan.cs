@@ -42,7 +42,7 @@ public class Toucan : MonoBehaviour
         {
             case 1:
                 economy.BonusSol(bonusSol);
-                sound.Buy();
+                sound.Sqwack();
                 spawnText.ToucSpawn(chooser, bonusTime);
                 break;
 
@@ -50,7 +50,7 @@ public class Toucan : MonoBehaviour
                 bonusTime = Random.Range(30, 61);
                 print(bonusTime);
                 multi.ToucAuto(bonusTime);
-                sound.Buy();
+                sound.Sqwack();
                 spawnText.ToucSpawn(chooser, bonusTime);
                 break;
 
@@ -58,7 +58,7 @@ public class Toucan : MonoBehaviour
                 bonusTime = Random.Range(30, 61);
                 print(bonusTime);
                 multi.ToucClick(bonusTime);
-                sound.Buy();
+                sound.Sqwack();
                 spawnText.ToucSpawn(chooser, bonusTime);
                 break;
         }
