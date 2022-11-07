@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -188,8 +189,8 @@ public class UnitDataHolder : MonoBehaviour
         // and F as the number of that type of unit you recieve for free
         private float priceActuator(float baseCost, float M, float F)
         {
-            float price = Mathf.Round(baseCost * (Mathf.Pow(1.15f, (M - F))));
-            return price;
+            double price = Math.Round(baseCost * (Math.Pow(1.15f, (M - F))));
+            return (float)price;
         }
 
         public void setUnit(int index)
