@@ -41,6 +41,7 @@ public class UnitDataHolder : MonoBehaviour
         GameObject.FindObjectOfType<UpgadesLogic>().InitializeDelegate();
 
         achievementText = FindObjectOfType<AchievementText>();
+        sound = FindObjectOfType<PlaySound>();
     }
 
     private void Update()

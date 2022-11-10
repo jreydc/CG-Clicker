@@ -7,7 +7,7 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private DataHandler dataHandler;
     [SerializeField] private PrestigeSaveLoad prestigeData;
-    public GameObject social, shop;
+    public GameObject social, shop, settings;
 
     private void Awake()
     {
@@ -16,6 +16,8 @@ public class SceneLoader : MonoBehaviour
 
         //social.SetActive(false);
         shop.SetActive(false);
+        settings.SetActive(false);
+        social.SetActive(false);
     }
 
     public void Prestiege()
@@ -51,6 +53,16 @@ public class SceneLoader : MonoBehaviour
     public void CloseSocial()
     {
         social.SetActive(false);
+    }
+
+    public void Settings()
+    {
+        settings.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        settings.SetActive(false);
     }
 
     public void Grove()
