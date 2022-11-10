@@ -9,7 +9,14 @@ public class Multipliers : MonoBehaviour
     public float toucAuto;
     public float toucClick;
 
+    [SerializeField] ShineSpin shineSpin;
+
     int waitTime;
+
+    private void Awake()
+    {
+        shineSpin = FindObjectOfType<ShineSpin>();
+    }
 
     public void ToucAuto(int wait)
     {
@@ -21,7 +28,9 @@ public class Multipliers : MonoBehaviour
     public IEnumerator Auto()
     {
         toucAuto = 7;
+        shineSpin.On();
         yield return new WaitForSeconds(waitTime);
+        shineSpin.Off();
         toucAuto = 1;
     }
 
@@ -35,7 +44,9 @@ public class Multipliers : MonoBehaviour
     public IEnumerator Click()
     {
         toucClick = 7;
+        shineSpin.On();
         yield return new WaitForSeconds(waitTime);
+        shineSpin.Off();
         toucClick = 1;
     }
 }

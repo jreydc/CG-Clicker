@@ -7,9 +7,18 @@ public class PlaySound : MonoBehaviour
     public AudioSource click, buy, squawck;
 
     private float pitchVal;
-    void Start()
+    public void Mute()
     {
-        
+        click.volume = 0;
+        buy.volume = 0;
+        squawck.volume = 0;
+    }
+
+    public void UnMute()
+    {
+        click.volume = 0.3f;
+        buy.volume = 0.3f;
+        squawck.volume = 0.3f;
     }
 
     // Update is called once per frame

@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class SpawnToucan : MonoBehaviour
 {
-    public GameObject toucan;
+    public GameObject toucan, textBox;
     float waitTime;
 
     // Start is called before the first frame update
     void Start()
     {
         waitTime = Random.Range(120, 421);
+
+        textBox.SetActive(false);
 
         Invoke("Spawn", waitTime);
         print("waiting for " + waitTime + " seconds");

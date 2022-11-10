@@ -10,8 +10,11 @@ public class Toucan : MonoBehaviour
     [SerializeField] SpawnClickText spawnText;
     [SerializeField]PlaySound sound;
     [SerializeField] Multipliers multi;
+    [SerializeField] GameObject textBox;
+    [SerializeField] AdManager adManager;
 
-    int bonusTime;
+
+    int bonusTime, chooser;
 
     private void Awake()
     {
@@ -19,6 +22,11 @@ public class Toucan : MonoBehaviour
         sound = FindObjectOfType<PlaySound>();
         spawnText = FindObjectOfType<SpawnClickText>();
         multi = FindObjectOfType<Multipliers>();
+        textBox = GameObject.Find("ToucTextBox");
+        adManager = FindObjectOfType<AdManager>();
+
+        chooser = Random.Range(1, 4);
+        bonusTime = Random.Range(60, 181);
     }
 
     // Start is called before the first frame update
@@ -36,29 +44,29 @@ public class Toucan : MonoBehaviour
 
     public void OnClick()
     {
-        int chooser = Random.Range(1, 4);
+        textBox.SetActive(true);
+        adManager.WatchAd(chooser, bonusTime, bonusSol);
+        sound.Sqwack();
+    }
 
+    public void GiveBonus()
+    {
         switch (chooser)
         {
             case 1:
                 economy.BonusSol(bonusSol);
-                sound.Sqwack();
                 spawnText.ToucSpawn(chooser, bonusTime);
                 break;
 
             case 2:
-                bonusTime = Random.Range(30, 61);
                 print(bonusTime);
                 multi.ToucAuto(bonusTime);
-                sound.Sqwack();
                 spawnText.ToucSpawn(chooser, bonusTime);
                 break;
 
             case 3:
-                bonusTime = Random.Range(30, 61);
                 print(bonusTime);
                 multi.ToucClick(bonusTime);
-                sound.Sqwack();
                 spawnText.ToucSpawn(chooser, bonusTime);
                 break;
         }
