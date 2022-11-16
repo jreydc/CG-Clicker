@@ -21,10 +21,6 @@ public class UnitDataHolder : MonoBehaviour
 
     [SerializeField] private Button buyButton;
 
-    public delegate void upgradeCounter();
-    public static event upgradeCounter upgradeCounterInterval;
-
-
     [SerializeField] PlaySound sound;
 
     [SerializeField] AchievementText achievementText;
@@ -38,7 +34,6 @@ public class UnitDataHolder : MonoBehaviour
     private void Awake()
     {
         buySell = FindObjectOfType<BuySellMode>();
-        GameObject.FindObjectOfType<UpgadesLogic>().InitializeDelegate();
 
         achievementText = FindObjectOfType<AchievementText>();
         sound = FindObjectOfType<PlaySound>();
@@ -112,7 +107,6 @@ public class UnitDataHolder : MonoBehaviour
         if (buySell.buy == true)
         {
              OnBuy();
-             upgradeCounterInterval();
         }
         else if(buySell.buy == false && unit.currentOwned > buySell.amount)
         {

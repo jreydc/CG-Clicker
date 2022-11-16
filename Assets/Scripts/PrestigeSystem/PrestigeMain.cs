@@ -71,7 +71,7 @@ public class PrestigeMain : MonoBehaviour
 
     private double CalculatePrestigePoints()
     {
-        print(Math.Floor(Math.Pow((ecoMain.solCount / (Math.Pow(10, 12))), (1 % 3))));
+        //print(Math.Floor(Math.Pow((ecoMain.solCount / (Math.Pow(10, 12))), (1 % 3))));
         return Math.Floor(Math.Pow((ecoMain.solCount / (Math.Pow(10, 12))), (1 % 3)));
     }
 

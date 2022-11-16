@@ -40,6 +40,9 @@ public class UnitBuildingEconomy : MonoBehaviour
     public delegate void initialSpawn(float currentSol);
     public static event initialSpawn initSpawn;
 
+    public delegate void upgradeCounter();
+    public static event upgradeCounter upgradeCounterInterval;
+
     private void Awake()
     {
         solCountAnim = solCountText.GetComponent<Animator>();
@@ -47,7 +50,7 @@ public class UnitBuildingEconomy : MonoBehaviour
         prestigeManager = FindObjectOfType<PrestigeMain>();
         multipliers = FindObjectOfType<Multipliers>();
 
-        BuildingsLogic.spawnBuilding += SpawnBuilding;
+        //BuildingsLogic.spawnBuilding += SpawnBuilding;
     }
 
     private void Start()
@@ -65,6 +68,8 @@ public class UnitBuildingEconomy : MonoBehaviour
         //tpsText.text = tapsPerSecond.ToString();
         //gtpsText.text = guardianTapsPerSecond.ToString();
         countingSystem();
+        buildingCounterInterval(solCount);
+        upgradeCounterInterval();
     }
 
     private void FixedUpdate()
@@ -113,7 +118,6 @@ public class UnitBuildingEconomy : MonoBehaviour
             solCountAnim.Play(0);
 
             //prestigeManager.AutoAddPoint(solPerSecond * multipliers.autoMulti * multipliers.toucAuto);
-            buildingCounterInterval(solCount);
         }
     }
 
@@ -129,11 +133,5 @@ public class UnitBuildingEconomy : MonoBehaviour
     {
         solCount += bonusSol;
         //prestigeManager.AddPoint(bonusSol);
-    }
-
-
-    public void SpawnBuilding(int index)
-    {
-
     }
 }
