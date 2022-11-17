@@ -10,11 +10,11 @@ public class ShineSpin : MonoBehaviour
     private float convertedTime = 50;
     private float smooth;
 
-    Image image;
+    SpriteRenderer image;
 
     private void Awake()
     {
-        image = GetComponent<Image>();
+        image = GetComponent<SpriteRenderer>();
         image.color = new Color(1, 1, 1, 0);
     }
 
