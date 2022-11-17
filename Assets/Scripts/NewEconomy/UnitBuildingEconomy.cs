@@ -33,6 +33,7 @@ public class UnitBuildingEconomy : MonoBehaviour
     #endregion
 
     public GameObject particle;
+    public ParticleSystem autoParticle;
 
     public delegate void buildingCounter(float currentSol);
     public static event buildingCounter buildingCounterInterval;
@@ -70,6 +71,11 @@ public class UnitBuildingEconomy : MonoBehaviour
         countingSystem();
         buildingCounterInterval(solCount);
         upgradeCounterInterval();
+
+        if(solPerSecond >= 3)
+        {
+            autoParticle.loop = true;
+        }
     }
 
     private void FixedUpdate()

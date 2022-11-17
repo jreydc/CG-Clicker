@@ -17,3 +17,4 @@ MonoBehaviour:
   multiplier: 0
   upgradeCost: 0
   ID: 2
+  image: {fileID: 21300000, guid: cbae450624077054eac478f1a3773fba, type: 3}

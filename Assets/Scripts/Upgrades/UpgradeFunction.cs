@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "New Upgrade", menuName = "Upgrades")]
 public class UpgradeFunction : ScriptableObject
@@ -17,6 +18,7 @@ public class UpgradeFunction : ScriptableObject
     public float multiplier;
     public float upgradeCost;
     public int ID;
+    public Sprite image;
 
     public void BuyFunction()
     {
