@@ -18,3 +18,4 @@ MonoBehaviour:
   upgradeCost: 0
   ID: 1
   image: {fileID: 21300000, guid: 383bb848bb117bf458b39c54ecd14f87, type: 3}
+  function: Probably just swap it out once we know for sure what these actually do
