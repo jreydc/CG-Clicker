@@ -18,3 +18,4 @@ MonoBehaviour:
   upgradeCost: 0
   ID: 0
   image: {fileID: 21300000, guid: 3b0dfe2cb73dc0b4d8d91ea94e1d8382, type: 3}
+  function: This is where the upgrade description goes

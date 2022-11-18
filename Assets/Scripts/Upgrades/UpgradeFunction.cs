@@ -19,6 +19,7 @@ public class UpgradeFunction : ScriptableObject
     public float upgradeCost;
     public int ID;
     public Sprite image;
+    public string function;
 
     public void BuyFunction()
     {

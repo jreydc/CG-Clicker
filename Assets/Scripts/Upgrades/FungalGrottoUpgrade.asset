@@ -18,3 +18,4 @@ MonoBehaviour:
   upgradeCost: 0
   ID: 4
   image: {fileID: 21300000, guid: be8efa98eb04763438e57dc79c8f0a9f, type: 3}
+  function: 5% more fun! Maybe
