@@ -91,25 +91,60 @@ public class UnitBuildingEconomy : MonoBehaviour
         {
             solCountText.text = solCount.ToString("F1");
         }
-        else if (solCount >= 1000) //greater than or equal to 1000
+        else if (solCount >= 1000 && solCount < 1000000) //greater than or equal to 1000
         {
             internalCounter = solCount / 1000;
-            solCountText.text = internalCounter.ToString("F2") + "K"; //(F2) rounded to 2 decimal places
+            solCountText.text = internalCounter.ToString("F1") + "K"; //Thousand
         }
-        else if (solCount >= 1000000) //greater than or equal to 1,000,000
+        else if (solCount >= 1000000 && solCount < 1000000000) //Million
         {
             internalCounter = solCount / 1000000;
-            solCountText.text = internalCounter.ToString("F2") + "M";
+            solCountText.text = internalCounter.ToString("F3") + "M";
         }
-        else if (solCount >= 1000000000) //greater than or equal to 1,000,000,000
+        else if (solCount >= 1000000000 && solCount < 1000000000000) //Billion
         {
             internalCounter = solCount / 1000000000;
-            solCountText.text = internalCounter.ToString("F2") + "B";
+            solCountText.text = internalCounter.ToString("F3") + "B";
         }
-        else if (solCount >= 1000000000000) //greater than or equal to 1,000,000,000,000
+        else if (solCount >= 1000000000000 && solCount < 1000000000000000) //Trillion
         {
             internalCounter = solCount / 1000000000000;
-            solCountText.text = internalCounter.ToString("F2") + "T";
+            solCountText.text = internalCounter.ToString("F3") + "T";
+        }
+        else if(solCount >= 1000000000000000 && solCount < 1000000000000000000) // Quadrillion
+        {
+            internalCounter = solCount / 1000000000000000;
+            solCountText.text = internalCounter.ToString("F3") + "QD";
+        }
+        else if(solCount >= 1000000000000000000 && solCount < 1e+21) //Quintillion
+        {
+            internalCounter = solCount / 1000000000000000000;
+            solCountText.text = internalCounter.ToString("F3") + "QT";
+        }
+        else if(solCount >= 1e+21 && solCount < 1e+24) // Sextillion
+        {
+            internalCounter = solCount / (float)1e+21;
+            solCountText.text = internalCounter.ToString("F3") + "SX";
+        }
+        else if (solCount >= 1e+24 && solCount < 1e+27) // Septillion
+        {
+            internalCounter = solCount / (float)1e+24;
+            solCountText.text = internalCounter.ToString("F3") + "SP";
+        }
+        else if (solCount >= 1e+27 && solCount < 1e+30) // Octillion
+        {
+            internalCounter = solCount / (float)1e+27;
+            solCountText.text = internalCounter.ToString("F3") + "O";
+        }
+        else if(solCount >= 1e+30 && solCount < 1e+33) //Nonillion
+        {
+            internalCounter = solCount / (float)1e+30;
+            solCountText.text = internalCounter.ToString("F3") + "N";
+        }
+        else if (solCount >= 1e+33) //Decillion
+        {
+            internalCounter = solCount / (float)1e+33;
+            solCountText.text = internalCounter.ToString("F3") + "D";
         }
         //Might add more later
     }
