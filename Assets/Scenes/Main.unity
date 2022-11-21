@@ -20107,6 +20107,7 @@ GameObject:
   - component: {fileID: 992933606}
   - component: {fileID: 992933607}
   - component: {fileID: 992933608}
+  - component: {fileID: 992933609}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -20265,6 +20266,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 34345899c05c80c46aa2c792b2380100, type: 2}
   upgradePrefab: {fileID: 3434669899894602719, guid: 5ccf5ed8a6cb22743937bd487ab77401, type: 3}
   parent: {fileID: 1249137762}
+--- !u!114 &992933609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992933601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af70322db598634fac0e45d8aadfbc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &996558002
 PrefabInstance:
   m_ObjectHideFlags: 0

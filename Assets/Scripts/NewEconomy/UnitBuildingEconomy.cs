@@ -167,6 +167,8 @@ public class UnitBuildingEconomy : MonoBehaviour
         solCount += tapsPerSecond * multipliers.clickMulti * multipliers.toucClick;
         Instantiate(particle, transform.position, transform.rotation);
 
+        Vibrator.Vibrate(500);
+
         //prestigeManager.AddPoint(tapsPerSecond * multipliers.clickMulti * multipliers.toucClick);
     }
 
