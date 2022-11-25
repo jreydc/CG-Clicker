@@ -16,4 +16,4 @@ Try the game for yourself!\
 [WebGL Game Link](https://hammerhead-app-4z6cm.ondigitalocean.app/ "Game Link")
 
 APK Version of the Game!\
-[APK Download Link](https://drive.google.com/file/d/1bJlCAPwSZuTjfrNcOPmVyTeO95sQ7pQy/view?usp=share_link)
+[APK Download Link](https://drive.google.com/file/d/1AWeMF61dukPm0IvmUaN1Lhziom4R0kFX/view?usp=share_link)
