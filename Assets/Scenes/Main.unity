@@ -4126,7 +4126,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &346215643
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15281,6 +15281,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d37c39ff2f636c44828531e841b8814, type: 2}
   - {fileID: 11400000, guid: ee663c3f74be83b428deb717e3521a6c, type: 2}
   - {fileID: 11400000, guid: 4fc531b192c52b8488b013d1d22b15ad, type: 2}
+  upgradesInstance:
+  - {fileID: 11400000, guid: 38691cfa710deef49900aa2529c93a67, type: 2}
+  - {fileID: 11400000, guid: 6b7368f70fb8e8e4f818fcf9372ff1ed, type: 2}
+  - {fileID: 11400000, guid: e6e7d7159f4151f4a8240b1ed6ae9088, type: 2}
+  - {fileID: 11400000, guid: 585e8464f4b46e94e8c0a42f4b015ff6, type: 2}
+  - {fileID: 11400000, guid: c9bb6ecc5e3b14f41a7cf4673965e13f, type: 2}
+  - {fileID: 11400000, guid: 34345899c05c80c46aa2c792b2380100, type: 2}
   solCount: 0
   solCountAnim: {fileID: 0}
   prestigeManager: {fileID: 0}
@@ -20119,7 +20126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00033569336, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0.00036621094, y: -0.000030517578}
   m_SizeDelta: {x: -238.9248, y: -358.6891}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1249137763
@@ -20938,7 +20945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1313623892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26684,7 +26691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1659595842
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29253,6 +29260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitBuildingEconomy: {fileID: 0}
   prestigeManager: {fileID: 0}
+  jsonFileName: dataFile
 --- !u!1001 &1790972816
 PrefabInstance:
   m_ObjectHideFlags: 0

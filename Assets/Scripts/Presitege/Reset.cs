@@ -55,7 +55,7 @@ public class Reset : MonoBehaviour
             buildings[i].currentSol = 0;
         }
 
-        data.SaveData();
+        data.WriteToJson();
         scene.Prestiege();
 
         yield return null;

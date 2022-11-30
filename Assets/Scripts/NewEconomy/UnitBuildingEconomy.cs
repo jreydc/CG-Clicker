@@ -8,6 +8,7 @@ using EconomyManager;
 public class UnitBuildingEconomy : MonoBehaviour
 {
     [SerializeField] internal List<BuildingUnit> unitInstance;
+    [SerializeField] internal List<UpgradeFunction> upgradesInstance;
 
     [SerializeField] internal float solCount;
     private float internalCounter;
@@ -18,9 +19,9 @@ public class UnitBuildingEconomy : MonoBehaviour
     [SerializeField] private Multipliers multipliers;
 
     #region NUMBER_VARIABLES
-    [SerializeField] internal float solPerSecond;
+    [SerializeField] internal float solPerSecond = 0f;
     [SerializeField] internal float tapsPerSecond = 1.0f;
-    [SerializeField] internal float guardianTapsPerSecond;
+    [SerializeField] internal float guardianTapsPerSecond = 0f;
 
     float elapsedTime;
     #endregion
@@ -60,7 +61,21 @@ public class UnitBuildingEconomy : MonoBehaviour
         {
             solPerSecond += (unitInstance[i].baseSol * unitInstance[i].currentOwned);
         }
+
+        for(int i = 0; i < upgradesInstance.Count; i++)
+        {
+            solPerSecond += upgradesInstance[i].currentProduction;
+        }
         initSpawn(solCount);
+    }
+
+    public void Formatter(float currentProd)
+    {
+        solPerSecond -= currentProd;
+    }
+    public void RefreshForUpgrades(int i)
+    {
+        solPerSecond += upgradesInstance[i].currentProduction;
     }
 
     private void Update()
@@ -74,7 +89,7 @@ public class UnitBuildingEconomy : MonoBehaviour
 
         if(solPerSecond >= 3)
         {
-            autoParticle.loop = true;
+            //autoParticle.loop = true;
         }
     }
 
@@ -164,7 +179,8 @@ public class UnitBuildingEconomy : MonoBehaviour
 
     public void OnClick_AddSol()
     {
-        solCount += tapsPerSecond * multipliers.clickMulti * multipliers.toucClick;
+        //solCount += tapsPerSecond * multipliers.clickMulti * multipliers.toucClick;
+        solCount += tapsPerSecond;
         Instantiate(particle, transform.position, transform.rotation);
 
         //Vibrator.Vibrate(500);

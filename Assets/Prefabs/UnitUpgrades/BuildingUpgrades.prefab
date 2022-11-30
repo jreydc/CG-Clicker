@@ -317,10 +317,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab7c6bf29b1ddc48b0b7944a6aa9d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  building:
+  - {fileID: 11400000, guid: 78383118727185f4786bea735b00bb90, type: 2}
+  - {fileID: 11400000, guid: ea0f36732222587489b080a412ef23df, type: 2}
+  - {fileID: 11400000, guid: 3db89b9d430f7e64a888b352d3d18a40, type: 2}
+  - {fileID: 11400000, guid: 2d37c39ff2f636c44828531e841b8814, type: 2}
+  - {fileID: 11400000, guid: ee663c3f74be83b428deb717e3521a6c, type: 2}
+  - {fileID: 11400000, guid: 4fc531b192c52b8488b013d1d22b15ad, type: 2}
   unitInfo: {fileID: 0}
   levelText: {fileID: 2533556147242331805}
   priceText: {fileID: 7697735278122146985}
   functionText: {fileID: 2141153375065015086}
+  buyButton: {fileID: 3434669900244610932}
   dispImage: {fileID: 3434669901199694218}
 --- !u!1 &3434669900244610930
 GameObject:

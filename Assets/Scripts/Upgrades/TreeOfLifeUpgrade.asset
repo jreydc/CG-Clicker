@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   upgradeLevel: 1
-  multiplier: 0
-  upgradeCost: 0
-  ID: 0
+  baseProduction: 1
+  currentProduction: 0
+  baseUpgradeCost: 25
+  currentUpgradeCost: 25
+  ID: 1
   image: {fileID: 21300000, guid: 3b0dfe2cb73dc0b4d8d91ea94e1d8382, type: 3}
   function: This is where the upgrade description goes

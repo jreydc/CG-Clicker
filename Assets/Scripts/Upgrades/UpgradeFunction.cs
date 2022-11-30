@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "New Upgrade", menuName = "Upgrades")]
 public class UpgradeFunction : ScriptableObject
 {
+    //Might become obselete
     public enum Upgrade
     {
         Tap,
@@ -15,97 +17,83 @@ public class UpgradeFunction : ScriptableObject
 
     public Upgrade upgradeType;
     public int upgradeLevel = 1;
-    public float multiplier;
-    public float upgradeCost;
+    [SerializeField] internal float baseProduction;
+    public float currentProduction;
+    [SerializeField] internal float baseUpgradeCost;
+    public float currentUpgradeCost;
     public int ID;
     public Sprite image;
+    [TextArea]
     public string function;
-
     public void BuyFunction()
     {
-        if(GameObject.FindObjectOfType<UnitBuildingEconomy>().solCount >= upgradeCost)
+        if (GameObject.FindObjectOfType<UnitBuildingEconomy>().solCount >= currentUpgradeCost)
         {
-            switch (upgradeType)
+            GameObject.FindObjectOfType<UnitBuildingEconomy>().Formatter(currentProduction);
+            float currentSol = GameObject.FindObjectOfType<UnitBuildingEconomy>().solCount;
+            GameObject.FindObjectOfType<UnitBuildingEconomy>().solCount = currentSol - currentUpgradeCost;
+
+            switch (upgradeLevel)
             {
-                case Upgrade.Tap:
+                case 1:
+                case 2:
+                case 3:
                     {
-                        switch (upgradeLevel)
+                        if(ID == 1)
                         {
-                            case 1:
-                                {
-                                    break;
-                                }
-                            case 2:
-                                {
-                                    break;
-                                }
-                            case 3:
-                                {
-                                    break;
-                                }
-                            default:
-                                {
-                                    return;
-                                }
+                            GameObject.FindObjectOfType<UnitBuildingEconomy>().tapsPerSecond *= 2;
+                            break;
                         }
+                        currentProduction = baseProduction * 2;
                         break;
                     }
-                case Upgrade.SPS:
+                case 4:
                     {
-                        switch (upgradeLevel)
+                        if (ID == 1)
                         {
-                            case 1:
-                                {
-                                    //GameObject.FindObjectOfType<UnitBuildingEconomy>().solPerSecond = Mathf.Pow(GameObject.FindObjectOfType<UnitBuildingEconomy>().solPerSecond, multiplier);
-                                    break;
-                                }
-                            case 2:
-                                {
-                                    //GameObject.FindObjectOfType<UnitBuildingEconomy>().solPerSecond = Mathf.Pow(GameObject.FindObjectOfType<UnitBuildingEconomy>().solPerSecond, multiplier);
-                                    break;
-                                }
-                            case 3:
-                                {
-                                    //GameObject.FindObjectOfType<UnitBuildingEconomy>().solPerSecond = Mathf.Pow(GameObject.FindObjectOfType<UnitBuildingEconomy>().solPerSecond, multiplier);
-                                    break;
-                                }
-                            default:
-                                {
-                                    return;
-                                }
+                            GameObject.FindObjectOfType<UnitBuildingEconomy>().tapsPerSecond *= 5;
+                            break;
                         }
+                        currentProduction = baseProduction * 2;
                         break;
                     }
-                case Upgrade.GTPS:
+                case 5:
                     {
-                        switch (upgradeLevel)
+                        if (ID == 1)
                         {
-                            case 1:
-                                {
-                                    break;
-                                }
-                            case 2:
-                                {
-                                    break;
-                                }
-                            case 3:
-                                {
-                                    break;
-                                }
-                            default:
-                                {
-                                    return;
-                                }
+                            GameObject.FindObjectOfType<UnitBuildingEconomy>().tapsPerSecond *= 10;
+                            break;
                         }
-                        break;
+                        currentProduction = baseProduction * 2;
+                        break; 
                     }
-                default:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                case 13:
+                case 14:
                     {
-                        return;
+                        if (ID == 1)
+                        {
+                            GameObject.FindObjectOfType<UnitBuildingEconomy>().tapsPerSecond *= 20;
+                            break;
+                        }
+                        currentProduction = baseProduction * 2;
+                        break;
                     }
             }
-            //upgradeLevel++;
-            //FindObjectOfType<UpgradesList>().RemoveFromList(ID);
+            GameObject.FindObjectOfType<UnitBuildingEconomy>().RefreshForUpgrades(ID);
+            upgradeLevel++;
+            currentUpgradeCost = priceIterator(currentUpgradeCost);
         }
+    }
+
+    float priceIterator(float costNext)
+    {
+        return costNext = baseUpgradeCost * Mathf.Round(Mathf.Pow((currentUpgradeCost * 0.05f), upgradeLevel));
     }
 }

@@ -23,7 +23,7 @@ public class SceneLoader : MonoBehaviour
     public void Prestiege()
     {
         SceneManager.LoadScene("Prestiege");
-        dataHandler.SaveData();
+        dataHandler.WriteToJson();
         prestigeData.SaveData();
     }
 
@@ -36,7 +36,7 @@ public class SceneLoader : MonoBehaviour
     public void Shop()
     {
         shop.SetActive(true);
-        dataHandler.SaveData();
+        dataHandler.WriteToJson();
     }
 
     public void CloseShop()
@@ -47,7 +47,7 @@ public class SceneLoader : MonoBehaviour
     public void Social()
     {
         social.SetActive(true);
-        dataHandler.SaveData();
+        dataHandler.WriteToJson();
     }
 
     public void CloseSocial()
@@ -68,6 +68,6 @@ public class SceneLoader : MonoBehaviour
     public void Grove()
     {
         SceneManager.LoadScene("TheGrove");
-        dataHandler.SaveData();
+        dataHandler.WriteToJson();
     }
 }

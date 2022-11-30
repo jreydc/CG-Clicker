@@ -8,71 +8,93 @@ public class DataHandler : MonoBehaviour
     [SerializeField] private UnitBuildingEconomy unitBuildingEconomy;
     [SerializeField] private PrestigeManager prestigeManager;
     //[SerializeField] private UpgradeListData upgradeDataList;
+    [SerializeField] string jsonFileName;
     string jsonData;
+    string path;
 
     private void Awake()
     {
         unitBuildingEconomy = FindObjectOfType<UnitBuildingEconomy>();
-        prestigeManager = FindObjectOfType<PrestigeManager>();
-        //upgradeDataList = FindObjectOfType<UpgradeListData>();
+        //prestigeManager = FindObjectOfType<PrestigeManager>();
 
-        LoadData();
+        ReadFromJson();
     }
 
-    void Start()
+    public void WriteToJson()
     {
-        //LoadData();
+        path = DataPath();
+        CheckFileExistance(path);
+
+        Data sData = new Data();
+
+        sData.currentPoints = unitBuildingEconomy.solCount;
+        sData.currentSPS = unitBuildingEconomy.solPerSecond;
+        sData.currentTPS = unitBuildingEconomy.tapsPerSecond;
+
+        jsonData = JsonUtility.ToJson(sData);
+        File.WriteAllText(path, jsonData);
     }
 
-    public void LoadData()
+    private void ReadFromJson()
     {
-        if(File.Exists(Application.dataPath + "/dataFile.json"))
+        path = DataPath();
+        CheckFileExistance(path, true);
+
+        jsonData = File.ReadAllText(path);
+
+        Data lData = new Data();
+
+        lData = JsonUtility.FromJson<Data>(jsonData);
+
+        unitBuildingEconomy.solCount = lData.currentPoints;
+        unitBuildingEconomy.solPerSecond = lData.currentSPS;
+        if(unitBuildingEconomy.tapsPerSecond > 0)
+            unitBuildingEconomy.tapsPerSecond = lData.currentTPS;
+
+
+    }
+
+    private string DataPath()
+    {
+        if (Directory.Exists(Application.persistentDataPath))
         {
-            jsonData = File.ReadAllText(Application.dataPath + "/dataFile.json");
-            Data loadedPData = JsonUtility.FromJson<Data>(jsonData);
-
-            unitBuildingEconomy.solCount = loadedPData.currentPoints;
-            unitBuildingEconomy.tapsPerSecond = loadedPData.currentTPS;
-            unitBuildingEconomy.solPerSecond = loadedPData.currentSPS;
-            //upgradeDataList.dataGO = loadedPData.dataList;
-            //loadDataList();
-            /*
-            upgradeMain.upgradeLevelList = loadedPData.upgradeLevelList;
-            upgradeMain.currentUpgradeCost = loadedPData.currentUpgradeCost;
-            upgradeMain.incrementalUpgradeCost = loadedPData.currentIteration;
-            */
+            return Path.Combine(Application.persistentDataPath, jsonFileName);
         }
+        return Path.Combine(Application.streamingAssetsPath, jsonFileName);
     }
 
-    public void SaveData()
+    private void CheckFileExistance(string filePath, bool isReading = false)
     {
-        Data pData = new Data();
+        if (!File.Exists(filePath))
+        {
+            File.Create(filePath).Close();
+            if (isReading)
+            {
+                //SetStartingData();
 
-        pData.currentPoints = unitBuildingEconomy.solCount;
-        pData.currentTPS = unitBuildingEconomy.tapsPerSecond;
-        pData.currentSPS = unitBuildingEconomy.solPerSecond;
-        //spData.dataList = upgradeDataList.dataGO;
-        /*
-        pData.upgradeLevelList = new List<int>();
-        pData.upgradeLevelList = upgradeMain.upgradeLevelList;
-        pData.currentUpgradeCost = new List<int>();
-        pData.currentUpgradeCost = upgradeMain.currentUpgradeCost;
-        pData.currentIteration = new List<int>();
-        pData.currentIteration = upgradeMain.incrementalUpgradeCost;
-        */
-        
-        //Serialization
-        //Machine Code > Assembly Languge > High Level (C#) > Unity Native Engine (GameObject, Prefab instance, vector, int etc.)
+                Data sData = new Data();
 
-        jsonData = JsonUtility.ToJson(pData);
-        File.WriteAllText(Application.dataPath + "/dataFile.json", jsonData);
+                sData.currentPoints = unitBuildingEconomy.solCount;
+                sData.currentSPS = unitBuildingEconomy.solPerSecond;
+                sData.currentTPS = unitBuildingEconomy.tapsPerSecond;
+
+                jsonData = JsonUtility.ToJson(sData);
+
+                File.WriteAllText(filePath, jsonData);
+            }
+        }
     }
 
     private void OnApplicationQuit()
     {
-        SaveData();
+        WriteToJson();
     }
 
+    private void OnApplicationFocus(bool focus)
+    {
+        if(!focus)
+            WriteToJson();
+    }
 
     private class Data
     {
