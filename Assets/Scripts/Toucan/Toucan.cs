@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Toucan : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Toucan : MonoBehaviour
     [SerializeField] GameObject textBox;
     [SerializeField] AdManager adManager;
 
+    bool fly;
+    Animator anim;
 
     int bonusTime, chooser;
 
@@ -26,7 +29,10 @@ public class Toucan : MonoBehaviour
         adManager = FindObjectOfType<AdManager>();
 
         chooser = Random.Range(1, 4);
-        bonusTime = Random.Range(60, 181);
+        bonusTime = Random.Range(15, 25);
+
+        anim = GetComponent<Animator>();
+        fly = false;
     }
 
     // Start is called before the first frame update
@@ -39,7 +45,14 @@ public class Toucan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+        if (!fly)
+        {
+            transform.Translate(Vector2.right * -moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(Vector2.up * moveSpeed * 3f * Time.deltaTime);
+        }
     }
 
     public void OnClick()
@@ -70,7 +83,10 @@ public class Toucan : MonoBehaviour
                 spawnText.ToucSpawn(chooser, bonusTime);
                 break;
         }
-        Die();
+        gameObject.GetComponent<Button>().interactable = false;
+        fly = true;
+        anim.Play("toucan_front_frame");
+        Invoke("Die", 15f);
     }
 
     void Die()

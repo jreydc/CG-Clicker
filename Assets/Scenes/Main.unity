@@ -5897,7 +5897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &431302264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5972,7 +5972,7 @@ MonoBehaviour:
   clickMulti: 1
   toucAuto: 1
   toucClick: 1
-  shineSpin: {fileID: 0}
+  shineSpin: {fileID: 462679848}
 --- !u!114 &431302269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16113,7 +16113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 600, y: -5.9863}
+  m_AnchoredPosition: {x: -600, y: -5.9863}
   m_SizeDelta: {x: 483, y: 289.9491}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1010582591
@@ -20945,7 +20945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1313623892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20964,7 +20964,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -609, y: 192}
+  m_AnchoredPosition: {x: 609, y: 192}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1313623893
@@ -39720,11 +39720,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1274004111531975350, guid: 75908689260a4cb4499c072976e091e4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 166.4226
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 1274004111531975350, guid: 75908689260a4cb4499c072976e091e4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 98.3554
+      value: 158
       objectReference: {fileID: 0}
     - target: {fileID: 1274004111531975350, guid: 75908689260a4cb4499c072976e091e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39760,7 +39760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1274004111531975350, guid: 75908689260a4cb4499c072976e091e4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.82227
+      value: -0.14
       objectReference: {fileID: 0}
     - target: {fileID: 1274004111531975350, guid: 75908689260a4cb4499c072976e091e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -39781,6 +39781,10 @@ PrefabInstance:
     - target: {fileID: 1274004112041541219, guid: 75908689260a4cb4499c072976e091e4, type: 3}
       propertyPath: m_Name
       value: Toucan
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274004112041541220, guid: 75908689260a4cb4499c072976e091e4, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1274004112041541220, guid: 75908689260a4cb4499c072976e091e4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
