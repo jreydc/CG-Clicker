@@ -15,7 +15,7 @@ MonoBehaviour:
   displayImage: {fileID: 21300000, guid: cbae450624077054eac478f1a3773fba, type: 3}
   baseCost: 1100
   currentCost: 1100
-  baseSol: 6
+  baseSol: 8
   currentSol: 0
   currentOwned: 0
   unitLevel: 1
