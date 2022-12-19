@@ -98,7 +98,7 @@ namespace EasyUI.Tabs {
 
       #if UNITY_EDITOR
       public void UpdateThemeColor (Color color) {
-         tabBtns [ 0 ].uiImage.color = color ;
+         //tabBtns [ 0 ].uiImage.color = color ;
          Color colorDark = DarkenColor (color, 0.3f) ;
          for (int i = 1; i < tabBtnsNum; i++)
             tabBtns [ i ].uiImage.color = colorDark ;

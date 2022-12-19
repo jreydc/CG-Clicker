@@ -40,11 +40,19 @@ public class UnitDataHolder : MonoBehaviour
         sound = FindObjectOfType<PlaySound>();
     }
 
+    private void Start()
+    {
+        UnitCost();
+    }
+
     private void Update()
     {
-        unitLevel.text = "Level: " + unit.unitLevel;
-        unitsOwned.text = "Owned: " + unit.currentOwned;
-        solPerSecond.text = unit.baseSol + "/s";
+        //unitLevel.text = "Level: " + unit.unitLevel;
+        unitsOwned.text = unit.currentOwned.ToString();
+        if(unit.currentSol == 0)
+            solPerSecond.text = "generating " + unit.baseSol + " sol/s per second";
+        else
+            solPerSecond.text = "generating " + unit.currentSol + " sol/s per second";
         UnitCost();
 
         if (buySell.buy == true)
@@ -53,7 +61,7 @@ public class UnitDataHolder : MonoBehaviour
 
             if (buySell.amount != 1)
             {
-                unitCost.text = Mathf.Round(Mathf.Round((unit.currentCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))).ToString("F0");
+                //unitCost.text = Mathf.Round(Mathf.Round((unit.currentCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))).ToString("F0");
 
                 if (economy.solCount >= Mathf.Round(Mathf.Round((unit.currentCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))))
                 {
@@ -66,7 +74,7 @@ public class UnitDataHolder : MonoBehaviour
             }
             else
             {
-                unitCost.text = unit.currentCost.ToString("F0");
+                //unitCost.text = unit.currentCost.ToString("F0");
 
                 if (economy.solCount >= unit.currentCost)
                 {
@@ -83,11 +91,11 @@ public class UnitDataHolder : MonoBehaviour
         {
             if (buySell.amount != 1)
             {
-                unitCost.text = Mathf.Round(Mathf.Round((unit.sellCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))).ToString("F0");
+                //unitCost.text = Mathf.Round(Mathf.Round((unit.sellCost * (1 - Mathf.Pow(1.15f, buySell.amount) / (1 - 1.15f))))).ToString("F0");
             }
             else
             {
-                unitCost.text = unit.sellCost.ToString("F0");
+                //unitCost.text = unit.sellCost.ToString("F0");
             }
 
             if (unit.currentOwned > buySell.amount)
@@ -97,7 +105,7 @@ public class UnitDataHolder : MonoBehaviour
             else
             {
                 buyButton.interactable = false;
-                unitCost.text = "";
+                //unitCost.text = "";
             }
             buyButton.GetComponent<Image>().color = Color.red;
         }
@@ -105,67 +113,187 @@ public class UnitDataHolder : MonoBehaviour
 
     void UnitCost()
     {
-        if (unit.sellCost < 1000) //less than 1000
+        if (unit.currentCost < 1000) //less than 1000
         {
-            unitCost.text = unit.sellCost.ToString("F1");
+            unitCost.text = unit.currentCost.ToString("F1");
         }
-        else if (unit.sellCost >= 1000 && unit.sellCost < 1000000) //greater than or equal to 1000
+        //Thousand
+        else if (unit.currentCost >= 1e+3f && unit.currentCost < 1e+4f)
         {
-            internalFloatCost = unit.sellCost / 1000;
-            unitCost.text = internalFloatCost.ToString("F1") + "K"; //Thousand
+            internalFloatCost = unit.currentCost / 1e+3f;
+            unitCost.text = internalFloatCost.ToString("F2") + "K";
         }
-        else if (unit.sellCost >= 1000000 && unit.sellCost < 1000000000) //Million
+        else if (unit.currentCost >= 1e+4f && unit.currentCost < 1e+5f)
         {
-            internalFloatCost = unit.sellCost / 1000000;
-            unitCost.text = internalFloatCost.ToString("F3") + "M";
+            internalFloatCost = unit.currentCost / 1e+3f;
+            unitCost.text = internalFloatCost.ToString("F2") + "K";
         }
-        else if (unit.sellCost >= 1000000000 && unit.sellCost < 1000000000000) //Billion
+        else if (unit.currentCost >= 1e+5f && unit.currentCost < 1e+6f)
         {
-            internalFloatCost = unit.sellCost / 1000000000;
-            unitCost.text = internalFloatCost.ToString("F3") + "B";
+            internalFloatCost = unit.currentCost / 1e+3f;
+            unitCost.text = internalFloatCost.ToString("F2") + "K";
         }
-        else if (unit.sellCost >= 1000000000000 && unit.sellCost < 1000000000000000) //Trillion
+        //Million
+        else if (unit.currentCost >= 1e+6f && unit.currentCost < 1e+7f)
         {
-            internalFloatCost = unit.sellCost / 1000000000000;
-            unitCost.text = internalFloatCost.ToString("F3") + "T";
+            internalFloatCost = unit.currentCost / 1e+6f;
+            unitCost.text = internalFloatCost.ToString("F2") + "M";
         }
-        else if (unit.sellCost >= 1000000000000000 && unit.sellCost < 1000000000000000000) // Quadrillion
+        else if (unit.currentCost >= 1e+7f && unit.currentCost < 1e+8f)
         {
-            internalFloatCost = unit.sellCost / 1000000000000000;
-            unitCost.text = internalFloatCost.ToString("F3") + "QD";
+            internalFloatCost = unit.currentCost / 1e+6f;
+            unitCost.text = internalFloatCost.ToString("F2") + "M";
         }
-        else if (unit.sellCost >= 1000000000000000000 && unit.sellCost < 1e+21) //Quintillion
+        else if (unit.currentCost >= 1e+8f && unit.currentCost < 1e+9f)
         {
-            internalFloatCost = unit.sellCost / 1000000000000000000;
-            unitCost.text = internalFloatCost.ToString("F3") + "QT";
+            internalFloatCost = unit.currentCost / 1e+6f;
+            unitCost.text = internalFloatCost.ToString("F2") + "M";
         }
-        else if (unit.sellCost >= 1e+21 && unit.sellCost < 1e+24) // Sextillion
+        //Billion
+        else if (unit.currentCost >= 1e+9f && unit.currentCost < 1e+10f)
         {
-            internalFloatCost = unit.sellCost / (float)1e+21;
-            unitCost.text = internalFloatCost.ToString("F3") + "SX";
+            internalFloatCost = unit.currentCost / 1e+9f;
+            unitCost.text = internalFloatCost.ToString("F2") + "B";
         }
-        else if (unit.sellCost >= 1e+24 && unit.sellCost < 1e+27) // Septillion
+        else if (unit.currentCost >= 1e+10f && unit.currentCost < 1e+11f)
         {
-            internalFloatCost = unit.sellCost / (float)1e+24;
-            unitCost.text = internalFloatCost.ToString("F3") + "SP";
+            internalFloatCost = unit.currentCost / 1e+9f;
+            unitCost.text = internalFloatCost.ToString("F2") + "B";
         }
-        else if (unit.sellCost >= 1e+27 && unit.sellCost < 1e+30) // Octillion
+        else if (unit.currentCost >= 1e+11f && unit.currentCost < 1e+12f)
         {
-            internalFloatCost = unit.sellCost / (float)1e+27;
-            unitCost.text = internalFloatCost.ToString("F3") + "O";
+            internalFloatCost = unit.currentCost / 1e+9f;
+            unitCost.text = internalFloatCost.ToString("F2") + "B";
         }
-        else if (unit.sellCost >= 1e+30 && unit.sellCost < 1e+33) //Nonillion
+        //Trillion
+        else if (unit.currentCost >= 1e+12f && unit.currentCost < 1e+13f)
         {
-            internalFloatCost = unit.sellCost / (float)1e+30;
-            unitCost.text = internalFloatCost.ToString("F3") + "N";
+            internalFloatCost = unit.currentCost / 1e+12f;
+            unitCost.text = internalFloatCost.ToString("F2") + "T";
         }
-        else if (unit.sellCost >= 1e+33) //Decillion
+        else if (unit.currentCost >= 1e+13f && unit.currentCost < 1e+14f)
         {
-            internalFloatCost = unit.sellCost / (float)1e+33;
-            unitCost.text = internalFloatCost.ToString("F3") + "D";
+            internalFloatCost = unit.currentCost / 1e+12f;
+            unitCost.text = internalFloatCost.ToString("F2") + "T";
+        }
+        else if (unit.currentCost >= 1e+14f && unit.currentCost < 1e+15f)
+        {
+            internalFloatCost = unit.currentCost / 1e+12f;
+            unitCost.text = internalFloatCost.ToString("F2") + "T";
+        }
+        //Quadrillion
+        else if (unit.currentCost >= 1e+15f && unit.currentCost < 1e+16f)
+        {
+            internalFloatCost = unit.currentCost / 1e+15f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Qd";
+        }
+        else if (unit.currentCost >= 1e+16f && unit.currentCost < 1e+17f)
+        {
+            internalFloatCost = unit.currentCost / 1e+15f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Qd";
+        }
+        else if (unit.currentCost >= 1e+17f && unit.currentCost < 1e+18f)
+        {
+            internalFloatCost = unit.currentCost / 1e+15f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Qd";
+        }
+        //Quintillion
+        else if (unit.currentCost >= 1e+18f && unit.currentCost < 1e+19f)
+        {
+            internalFloatCost = unit.currentCost / 1e+18f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Qt";
+        }
+        else if (unit.currentCost >= 1e+19f && unit.currentCost < 1e+20f)
+        {
+            internalFloatCost = unit.currentCost / 1e+18f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Qt";
+        }
+        else if (unit.currentCost >= 1e+20f && unit.currentCost < 1e+21f)
+        {
+            internalFloatCost = unit.currentCost / 1e+18f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Qt";
+        }
+        //Sextillion
+        else if (unit.currentCost >= 1e+21f && unit.currentCost < 1e+22f)
+        {
+            internalFloatCost = unit.currentCost / 1e+21f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Sx";
+        }
+        else if (unit.currentCost >= 1e+22f && unit.currentCost < 1e+23f)
+        {
+            internalFloatCost = unit.currentCost / 1e+21f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Sx";
+        }
+        else if (unit.currentCost >= 1e+23f && unit.currentCost < 1e+24f)
+        {
+            internalFloatCost = unit.currentCost / 1e+21f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Sx";
+        }
+        //Septillion
+        else if (unit.currentCost >= 1e+24f && unit.currentCost < 1e+25f)
+        {
+            internalFloatCost = unit.currentCost / 1e+24f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Sp";
+        }
+        else if (unit.currentCost >= 1e+25f && unit.currentCost < 1e+26f)
+        {
+            internalFloatCost = unit.currentCost / 1e+24f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Sp";
+        }
+        else if (unit.currentCost >= 1e+26f && unit.currentCost < 1e+27f)
+        {
+            internalFloatCost = unit.currentCost / 1e+24f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Sp";
+        }
+        //Octillion
+        else if (unit.currentCost >= 1e+27f && unit.currentCost < 1e+28f)
+        {
+            internalFloatCost = unit.currentCost / 1e+27f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Oc";
+        }
+        else if (unit.currentCost >= 1e+28f && unit.currentCost < 1e+29f)
+        {
+            internalFloatCost = unit.currentCost / 1e+27f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Oc";
+        }
+        else if (unit.currentCost >= 1e+29f && unit.currentCost < 1e+30f)
+        {
+            internalFloatCost = unit.currentCost / 1e+27f;
+            unitCost.text = internalFloatCost.ToString("F2") + "Oc";
+        }
+        //Nonillion
+        else if (unit.currentCost >= 1e+30f && unit.currentCost < 1e+31f)
+        {
+            internalFloatCost = unit.currentCost / 1e+30f;
+            unitCost.text = internalFloatCost.ToString("F2") + "N";
+        }
+        else if (unit.currentCost >= 1e+31f && unit.currentCost < 1e+32f)
+        {
+            internalFloatCost = unit.currentCost / 1e+30f;
+            unitCost.text = internalFloatCost.ToString("F2") + "N";
+        }
+        else if (unit.currentCost >= 1e+32f && unit.currentCost < 1e+33f)
+        {
+            internalFloatCost = unit.currentCost / 1e+30f;
+            unitCost.text = internalFloatCost.ToString("F2") + "N";
+        }
+        //Decillion
+        else if (unit.currentCost >= 1e+33f && unit.currentCost < 1e+34f)
+        {
+            internalFloatCost = unit.currentCost / 1e+33f;
+            unitCost.text = internalFloatCost.ToString("F2") + "D";
+        }
+        else if (unit.currentCost >= 1e+34f && unit.currentCost < 1e+35f)
+        {
+            internalFloatCost = unit.currentCost / 1e+33f;
+            unitCost.text = internalFloatCost.ToString("F2") + "D";
+        }
+        else if (unit.currentCost >= 1e+35f && unit.currentCost < 1e+36f)
+        {
+            internalFloatCost = unit.currentCost / 1e+33f;
+            unitCost.text = internalFloatCost.ToString("F2") + "D";
         }
     }
-
     public void OnClick_Buy()
     {
         if (buySell.buy == true)
@@ -182,7 +310,7 @@ public class UnitDataHolder : MonoBehaviour
         {
             unit.unitLevel += buySell.amount;
             unit.currentOwned += buySell.amount;
-            unit.currentSol += unit.baseSol * buySell.amount;
+            unit.currentSol += (unit.baseSol * buySell.amount);
 
         if (buySell.amount != 1)
         {
@@ -193,32 +321,32 @@ public class UnitDataHolder : MonoBehaviour
             economy.solCount -= unit.currentCost;
         }
 
-            unit.currentCost = priceActuator(unit.baseCost, unit.currentOwned, 0f);
-            economy.solPerSecond += unit.currentSol * buySell.amount;
+            unit.currentCost = priceActuator(unit.baseCost, (unit.currentOwned * buySell.amount), 0f);
+            economy.solPerSecond += (unit.baseSol * buySell.amount);
             unit.sellCost = unit.currentCost / 2.2f;
             if (unit.currentOwned >= buildingBuy.buildingCount[nextAch])
             {
-            switch (nextAch)
-            {
-                case 0:
-                    achievementTracker.Unlock(unit.unitID);
-                    achievementText.achName.text = unit.name + " Bronze";
-                    achievementText.Play();
-                    break;
+                switch (nextAch)
+                {
+                    case 0:
+                        achievementTracker.Unlock(unit.unitLevel);
+                        achievementText.achName.text = unit.name + " Bronze";
+                        achievementText.Play();
+                        break;
 
-                case 1:
-                    achievementTracker.Unlock(unit.unitID + 19);
-                    achievementText.achName.text = unit.name + " Silver";
-                    achievementText.Play();
-                    break;
+                    case 1:
+                        achievementTracker.Unlock(unit.unitLevel + 19);
+                        achievementText.achName.text = unit.name + " Silver";
+                        achievementText.Play();
+                        break;
 
-                case 2:
-                    achievementTracker.Unlock(unit.unitID + 38);
-                    achievementText.achName.text = unit.name + " Gold";
-                    achievementText.Play();
-                    break;
-            }
-                nextAch++;
+                    case 2:
+                        achievementTracker.Unlock(unit.unitLevel + 38);
+                        achievementText.achName.text = unit.name + " Gold";
+                        achievementText.Play();
+                        break;
+                }
+            nextAch++;
             }
             sound.Buy();
         }

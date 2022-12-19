@@ -9,13 +9,18 @@ public class ClickText : MonoBehaviour
     private UnitBuildingEconomy unit;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        unit = FindObjectOfType<UnitBuildingEconomy>();
+    }
+
     void Start()
     {
         transform.SetParent(GameObject.Find("ScoreText").transform);
 
         //unit = GameObject.Find("Game Manager").GetComponent<UnitBuildingEconomy>();
 
-        //self.text = "+" + unit.tapsPerSecond.ToString() + " Sol";
+        self.text = "+" + unit.tapsPerSecond.ToString() + " Sol";
 
         Invoke("Die", 1f);
     }

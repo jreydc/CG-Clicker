@@ -1,3 +1,4 @@
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +10,12 @@ public class BuildingUnit : ScriptableObject
     public Sprite displayImage;
 
     public float baseCost;
-    public float currentCost;
+    public float currentCost; //Need
     public float baseSol;
-    public float currentSol;
-    public float currentOwned;
-    public int unitLevel = 1;
+    public float currentSol; //Need
+    public float currentOwned; //Need
+    public int unitLevel = 1; // Need
     public int unitID;
 
-    public float sellCost;
+    public float sellCost; //Need
 }
